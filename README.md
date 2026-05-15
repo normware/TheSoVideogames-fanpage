@@ -180,6 +180,15 @@ The override game **must appear in an episode's description text** for backfill 
 
 This old format can be placed directly in `games_flat.json` (not `games_overrides.json`) for one-off fixes.
 
+## Setup
+
+Copy the template and fill in credentials, then load them into your shell:
+
+```bash
+cp .env.template .env
+export $(cat .env | xargs)   # or use direnv, or set them in your shell rc
+```
+
 ## Notes
 
 - **366 / 486** episodes in feed (pre-2019 not in RSS)

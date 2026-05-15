@@ -102,7 +102,12 @@ open index.html
 
 ### 4. GitHub Actions (automated)
 
-The repo includes a CI workflow at `.github/workflows/rebuild.yml` that runs scenario 2 automatically every Monday at 10:00 UTC. It commits and pushes any changes — no manual intervention needed.
+The repo includes a CI workflow at `.github/workflows/rebuild.yml` that runs scenario 2 automatically on:
+- **Schedule** — every Monday at 10:00 UTC
+- **Override push** — any push to `games_overrides.json` triggers an immediate rebuild
+- **Manual** — via `workflow_dispatch` in the GitHub UI
+
+It commits and pushes any changes — no manual intervention needed.
 
 ```mermaid
 flowchart LR

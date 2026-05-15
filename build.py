@@ -119,7 +119,7 @@ mark {{ background: var(--mark-bg); color: inherit; }}
 </div>
 <div class="controls">
   <span id="count"></span>
-  <button id="toggle-posters">Hide posters</button>
+  <button id="toggle-posters">Show posters</button>
 </div>
 <div id="results"></div>
 <div class="footer">
@@ -140,7 +140,7 @@ const episodes = {data_json};
 const episodeGames = {games_json};
 const gamePosters = {posters_json};
 
-let postersVisible = true;
+let postersVisible = false;
 
 (function initTheme() {{
   const t = document.getElementById('theme');

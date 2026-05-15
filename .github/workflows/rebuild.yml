@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "0 10 * * 1"
   workflow_dispatch:
+  push:
+    paths:
+      - "games_overrides.json"
 
 permissions:
   contents: write

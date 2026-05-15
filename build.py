@@ -180,9 +180,10 @@ function posterStrip(epNum) {{
   const games = episodeGames[String(epNum)];
   if (!games || !games.length) return '';
   const imgs = games.map(g => {{
-    const poster = gamePosters[g];
-    if (!poster) return '';
-    return '<img src="' + esc(poster) + '" alt="' + esc(g) + '" loading="lazy">';
+    const entry = gamePosters[g];
+    const url = entry ? entry.poster : null;
+    if (!url) return '';
+    return '<img src="' + esc(url) + '" alt="' + esc(g) + '" loading="lazy">';
   }}).filter(s => s).join('');
   if (!imgs) return '';
   return '<div class="posters' + (postersVisible ? '' : ' hidden') + '">' + imgs + '</div>';

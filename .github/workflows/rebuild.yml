@@ -21,6 +21,7 @@ jobs:
       - run: python3 extract_games_flat.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: python3 distinct_games.py
       - run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"

@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
-"""Build index.html from episodes.json with search, highlights, dark mode."""
+"""Build index.html from episodes.json with search, highlights, dark mode, game posters."""
 
 import json
 
 EPISODES_FILE = "episodes.json"
+GAMES_FLAT_FILE = "games_flat.json"
+ENRICHED_FILE = "games_enriched.json"
 EXPECTED_EPISODES = 486
 
-def load_episodes():
-    with open(EPISODES_FILE) as f:
-        return json.load(f)
 
-def generate_html(eps):
+def load_json(path):
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def generate_html(eps, episode_games, game_posters):
     data_json = json.dumps(eps)
+    games_json = json.dumps(episode_games)
+    posters_json = json.dumps(game_posters)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -70,11 +79,13 @@ mark {{ background: var(--mark-bg); color: inherit; }}
 .search-row {{ display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }}
 .search-row input {{ flex: 1; }}
 #ep-filter {{ width: 120px; flex: 0 0 auto; }}
-.nav {{ display: flex; align-items: center; gap: 1rem; font-size: 0.85rem; margin-bottom: 1rem; color: var(--muted); }}
-.nav a {{ color: var(--link); text-decoration: none; }}
-.nav a:hover {{ text-decoration: underline; }}
-.nav .sep {{ color: var(--border); }}
-.nav .github {{ display: inline-flex; align-items: center; gap: 0.3rem; }}
+.controls {{ display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; }}
+#toggle-posters {{ background: none; border: 1px solid var(--border); color: var(--fg); cursor: pointer; font-size: 0.85rem; padding: 0.3rem 0.6rem; border-radius: 5px; white-space: nowrap; }}
+#toggle-posters:hover {{ background: var(--card-bg); }}
+.posters {{ display: flex; gap: 4px; margin: 0.5rem 0; overflow-x: auto; padding-bottom: 2px; }}
+.posters.hidden {{ display: none; }}
+.posters img {{ height: 40px; width: auto; border-radius: 3px; flex-shrink: 0; background: var(--border); }}
+.posters img[src=""] {{ display: none; }}
 </style>
 </head>
 <body>
@@ -86,7 +97,10 @@ mark {{ background: var(--mark-bg); color: inherit; }}
   <input type="text" id="search" placeholder="Search titles and descriptions…" autofocus>
   <input type="number" id="ep-filter" placeholder="Ep #" min="1">
 </div>
-<p class="meta" id="count"></p>
+<div class="controls">
+  <p class="meta" id="count" style="margin:0;flex:1"></p>
+  <button id="toggle-posters">▦ Posters</button>
+</div>
 <div id="results"></div>
 <div class="footer">
   <span>made by a fan —</span>
@@ -101,6 +115,10 @@ mark {{ background: var(--mark-bg); color: inherit; }}
 </div>
 <script>
 const episodes = {data_json};
+const episodeGames = {games_json};
+const gamePosters = {posters_json};
+
+let postersVisible = true;
 
 (function initTheme() {{
   const t = document.getElementById('theme');
@@ -115,6 +133,12 @@ const episodes = {data_json};
     t.textContent = isLight ? '☾ Dark' : '☀ Light';
   }};
 }})();
+
+document.getElementById('toggle-posters').onclick = function() {{
+  postersVisible = !postersVisible;
+  this.textContent = postersVisible ? '▦ Posters' : '▦ Posters off';
+  document.querySelectorAll('.posters').forEach(p => p.classList.toggle('hidden', !postersVisible));
+}};
 
 function filter() {{
   const q = document.getElementById('search').value.toLowerCase().trim();
@@ -143,11 +167,25 @@ function epHTML(e, q) {{
   const inDesc = q && desc.toLowerCase().includes(q);
   const vis = q && !e.title.toLowerCase().includes(q) && inDesc;
   const hlDesc = q ? hlDescText(desc, q) : desc;
+  const posters = posterStrip(e.episode);
   return '<div class="ep"><div class="ep-title"><a href="' + e.url + '" target="_blank">' + title + '</a></div>'
     + '<div class="ep-meta">' + (epLabel ? epLabel + ' · ' : '') + e.date + '</div>'
+    + posters
     + (desc ? '<div id="' + tid + '" class="desc' + (vis ? ' vis' : '') + '">' + hlDesc + '</div>' : '')
     + (desc ? '<div class="tog" onclick="var d=document.getElementById(\\'' + tid + '\\');d.classList.toggle(\\'vis\\');this.textContent=d.classList.contains(\\'vis\\')?\\'▾ Hide\\':\\'▸ Show\\'">' + (vis ? '▾ Hide' : '▸ Show') + '</div>' : '')
     + '</div>';
+}}
+
+function posterStrip(epNum) {{
+  const games = episodeGames[String(epNum)];
+  if (!games || !games.length) return '';
+  const imgs = games.map(g => {{
+    const poster = gamePosters[g];
+    if (!poster) return '';
+    return '<img src="' + esc(poster) + '" alt="' + esc(g) + '" loading="lazy">';
+  }}).filter(s => s).join('');
+  if (!imgs) return '';
+  return '<div class="posters' + (postersVisible ? '' : ' hidden') + '">' + imgs + '</div>';
 }}
 
 function hl(t, q) {{
@@ -188,12 +226,27 @@ filter();
 </body>
 </html>"""
 
-if __name__ == "__main__":
+
+def main():
     print(f"Loading {EPISODES_FILE}...")
-    eps = load_episodes()
+    eps = load_json(EPISODES_FILE)
     print(f"  {len(eps)} episodes loaded")
+
+    episode_games = load_json(GAMES_FLAT_FILE)
+    game_posters = load_json(ENRICHED_FILE)
+
+    if episode_games:
+        print(f"  {len(episode_games)} episodes with game data")
+    if game_posters:
+        with_poster = sum(1 for v in game_posters.values() if v.get("poster"))
+        print(f"  {len(game_posters)} games enriched ({with_poster} with posters)")
+
     print("Generating index.html...")
-    html_out = generate_html(eps)
+    html_out = generate_html(eps, episode_games, game_posters)
     with open("index.html", "w") as f:
         f.write(html_out)
     print(f"Done. {len(eps)} episodes ({len(html_out)} bytes)")
+
+
+if __name__ == "__main__":
+    main()

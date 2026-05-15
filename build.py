@@ -133,6 +133,8 @@ mark {{ background: var(--mark-bg); color: inherit; }}
   {len(eps)} / {EXPECTED_EPISODES} episodes · data from <a href="https://gamecritics.com/category/podcasts/so-videogames/">gamecritics.com</a>
   <br>
   <a href="https://normware.org/impressum">Impressum</a> · <a href="https://normware.org/datenschutz">Datenschutz</a>
+  <br>
+  Game artwork © respective publishers · Posters via <a href="https://store.steampowered.com">Steam</a>
 </div>
 <script>
 const episodes = {data_json};
@@ -227,7 +229,10 @@ function posterGrid(epNum, q) {{
     }}
     if (!url) return '';
     const match = ql && g.toLowerCase().includes(ql);
-    return '<img src="' + esc(url) + '" alt="' + esc(g) + '" loading="lazy"' + (match ? ' class="hl"' : '') + '>';
+    const attrs = ' src="' + esc(url) + '" alt="' + esc(g) + '" loading="lazy"' + (match ? ' class="hl"' : '');
+    const steamLink = entry && entry.steam_id ? 'https://store.steampowered.com/app/' + entry.steam_id : null;
+    const img = '<img' + attrs + '>';
+    return steamLink ? '<a href="' + steamLink + '" target="_blank" rel="noopener">' + img + '</a>' : img;
   }}).filter(s => s).join('');
   if (!imgs) return '';
   return '<div class="ep-posters' + (postersVisible ? '' : ' hidden') + '">' + imgs + '</div>';

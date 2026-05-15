@@ -79,6 +79,9 @@ h1 {{ font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }}
 .game-list {{ list-style: none; padding: 0; margin: 0 0 0.4rem 0; columns: 2; column-gap: 1rem; }}
 .game-list li {{ font-size: 0.85rem; padding: 0.1rem 0; padding-left: 1em; text-indent: -1em; color: var(--fg); }}
 .game-list li::before {{ content: "▸"; color: var(--accent); padding-right: 0.4em; font-size: 0.7em; }}
+.game-list li.known a {{ color: var(--fg); text-decoration: none; border-bottom: 1px dotted var(--muted); }}
+.game-list li.known a:hover {{ color: var(--link); border-bottom-color: var(--link); }}
+.game-list li .steam-badge {{ font-size: 0.65rem; color: var(--muted); margin-left: 0.3rem; }}
 .desc {{ font-size: 0.85rem; line-height: 1.6; color: var(--muted); margin-top: 0.5rem; display: none; overflow-wrap: break-word; }}
 .desc.vis {{ display: block; }}
 .desc p {{ margin: 0.4em 0; }}
@@ -200,7 +203,14 @@ function epHTML(e, q) {{
 function gameList(epNum) {{
   const games = episodeGames[String(epNum)];
   if (!games || !games.length) return '';
-  return '<ul class="game-list">' + games.map(g => '<li>' + esc(g) + '</li>').join('') + '</ul>';
+  return '<ul class="game-list">' + games.map(g => {{
+    const entry = gamePosters[g];
+    const hasSteam = entry && entry.steam_id;
+    if (hasSteam) {{
+      return '<li class="known"><a href="https://store.steampowered.com/app/' + entry.steam_id + '" target="_blank" rel="noopener">' + esc(g) + '<span class="steam-badge">Steam</span></a></li>';
+    }}
+    return '<li>' + esc(g) + '</li>';
+  }}).join('') + '</ul>';
 }}
 
 function posterGrid(epNum) {{

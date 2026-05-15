@@ -1781,6 +1781,10 @@
     "steam_id": 1562430,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1562430/d6c28e6402e85395421ac06ac86cdb0e28b48e27/capsule_231x87.jpg?t=1766050211"
   },
+  "Drill Core": {
+    "steam_id": 2821800,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2821800/d639210c9ad743023330a5b8cacb2284b104ffb7/capsule_231x87_alt_assets_6.jpg?t=1777394859"
+  },
   "Drop Duchy": {
     "steam_id": 2525310,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2525310/0ad912f50d8c485ef74ee3a7c4a12a385975cbcb/capsule_231x87.jpg?t=1778589329"
@@ -3610,8 +3614,16 @@
     "steam_id": 817840,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/817840/capsule_231x87.jpg?t=1737497845"
   },
+  "Max Payne": {
+    "steam_id": 12150,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/12150/capsule_231x87.jpg?t=1709651720"
+  },
   "Max Payne 1 & 3": {
     "poster": null
+  },
+  "Max Payne 3": {
+    "steam_id": 204100,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/204100/capsule_231x87.jpg?t=1718391374"
   },
   "Mayhem in Single Valley": {
     "steam_id": 622680,

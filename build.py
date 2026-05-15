@@ -187,17 +187,16 @@ function epHTML(e, q) {{
   const title = hl(esc(e.title), esc(q));
   const epLabel = e.episode ? 'Ep. ' + e.episode : '';
   let desc = e.desc || '';
-  const inDesc = q && desc.toLowerCase().includes(q);
-  const vis = q && !e.title.toLowerCase().includes(q) && inDesc;
   const hlDesc = q ? hlDescText(desc, q) : desc;
+  const vis = false;
 
   return '<div class="ep">'
     + '<div class="ep-main">'
     + '<div class="ep-title"><a href="' + e.url + '" target="_blank">' + title + '</a></div>'
     + '<div class="ep-meta">' + (epLabel ? epLabel + ' · ' : '') + e.date + '</div>'
     + gameList(e.episode, q)
-    + (desc ? '<div id="' + tid + '" class="desc' + (vis ? ' vis' : '') + '">' + hlDesc + '</div>' : '')
-    + (desc ? '<div class="tog" onclick="var d=document.getElementById(\\'' + tid + '\\');d.classList.toggle(\\'vis\\');this.textContent=d.classList.contains(\\'vis\\')?\\'▾ Hide description\\':\\'▸ Show description\\'">' + (vis ? '▾ Hide description' : '▸ Show description') + '</div>' : '')
+    + (desc ? '<div id="' + tid + '" class="desc">' + hlDesc + '</div>' : '')
+    + (desc ? '<div class="tog" onclick="var d=document.getElementById(\\'' + tid + '\\');d.classList.toggle(\\'vis\\');this.textContent=d.classList.contains(\\'vis\\')?\\'▾ Hide description\\':\\'▸ Show description\\'">▸ Show description</div>' : '')
     + '</div>'
     + posterGrid(e.episode, q)
     + '</div>';

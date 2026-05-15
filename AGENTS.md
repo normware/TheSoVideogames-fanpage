@@ -2,12 +2,12 @@
 
 ```bash
 python3 fetch.py                  # fetch/update episode data from RSS
-python3 build.py                  # bake into index.html
 python3 extract_games_flat.py     # extract games using GitHub Models API (free)
 python3 merge_overrides.py        # apply manual game overrides
 python3 backfill_games.py         # backfill games LLM missed into other episodes
 python3 distinct_games.py         # build distinct game list
 python3 enrich_games.py           # fetch poster URLs from Steam API
+python3 build.py                  # bake everything into index.html
 open index.html
 ```
 

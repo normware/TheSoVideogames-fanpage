@@ -66,8 +66,9 @@ h1 {{ font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }}
 #ep-filter:focus {{ border-color: var(--accent); }}
 .controls {{ display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }}
 #count {{ color: var(--muted); font-size: 0.85rem; }}
-#toggle-posters {{ background: none; border: 1px solid var(--border); color: var(--fg); cursor: pointer; font-size: 0.8rem; padding: 0.3rem 0.7rem; border-radius: 6px; }}
-#toggle-posters:hover {{ background: var(--card-bg); }}
+#toggle-posters, #carlos-toggle {{ background: none; border: 1px solid var(--border); color: var(--fg); cursor: pointer; font-size: 0.8rem; padding: 0.3rem 0.7rem; border-radius: 6px; }}
+#toggle-posters:hover, #carlos-toggle:hover {{ background: var(--card-bg); }}
+#carlos-toggle.active {{ background: var(--accent); color: #fff; border-color: var(--accent); }}
 
 .ep {{ display: flex; gap: 1.5rem; margin-bottom: 1.5rem; padding: 1.25rem; border-radius: 10px; background: var(--card-bg); border: 1px solid var(--border); transition: background 0.15s; }}
 .ep:hover {{ background: var(--card-hover); }}
@@ -126,6 +127,7 @@ mark {{ background: var(--mark-bg); color: inherit; }}
 <div class="controls">
   <span id="count"></span>
   <button id="toggle-posters">Show posters</button>
+  <button id="carlos-toggle">🤘 Carlos</button>
 </div>
 <div id="results"></div>
 <div class="footer">
@@ -163,9 +165,16 @@ let postersVisible = false;
 }})();
 
 document.getElementById('toggle-posters').onclick = function() {{
-  postersVisible = !postersVisible;
+  postersVisible = postersVisible ? false : true;
   this.textContent = postersVisible ? 'Hide posters' : 'Show posters';
-  document.querySelectorAll('.ep-posters').forEach(p => p.classList.toggle('hidden', !postersVisible));
+  document.querySelectorAll('.ep-posters').forEach(p => p.classList.toggle('hidden', postersVisible ? false : true));
+}};
+
+let carlosOnly = false;
+document.getElementById('carlos-toggle').onclick = function() {{
+  carlosOnly = carlosOnly ? false : true;
+  this.classList.toggle('active', carlosOnly);
+  filter();
 }};
 
 function filter() {{
@@ -178,6 +187,9 @@ function filter() {{
   }}
   if (epNum) {{
     f = f.filter(e => e.episode === parseInt(epNum));
+  }}
+  if (carlosOnly) {{
+    f = f.filter(e => (e.title + ' ' + (e.desc || '')).toLowerCase().includes('carlos'));
   }}
   document.getElementById('count').textContent = f.length + ' / {EXPECTED_EPISODES} episodes';
   r.innerHTML = f.length ? f.map(e => epHTML(e, q)).join('') : '<p style="color:#666">No matches</p>';

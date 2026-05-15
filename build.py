@@ -94,6 +94,7 @@ mark {{ background: var(--mark-bg); color: inherit; }}
 .ep-posters img {{ width: 110px; height: auto; border-radius: 4px; background: var(--border); display: block; }}
 .ep-posters.hidden {{ display: none; }}
 .ep-posters img[src=""] {{ display: none; }}
+.ep-posters img.hl {{ outline: 2px solid var(--accent); outline-offset: -2px; box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 50%, transparent); }}
 
 .footer {{ margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); text-align: center; line-height: 1.8; }}
 .footer a {{ color: var(--link); }}
@@ -192,30 +193,32 @@ function epHTML(e, q) {{
     + '<div class="ep-main">'
     + '<div class="ep-title"><a href="' + e.url + '" target="_blank">' + title + '</a></div>'
     + '<div class="ep-meta">' + (epLabel ? epLabel + ' · ' : '') + e.date + '</div>'
-    + gameList(e.episode)
+    + gameList(e.episode, q)
     + (desc ? '<div id="' + tid + '" class="desc' + (vis ? ' vis' : '') + '">' + hlDesc + '</div>' : '')
     + (desc ? '<div class="tog" onclick="var d=document.getElementById(\\'' + tid + '\\');d.classList.toggle(\\'vis\\');this.textContent=d.classList.contains(\\'vis\\')?\\'▾ Hide description\\':\\'▸ Show description\\'">' + (vis ? '▾ Hide description' : '▸ Show description') + '</div>' : '')
     + '</div>'
-    + posterGrid(e.episode)
+    + posterGrid(e.episode, q)
     + '</div>';
 }}
 
-function gameList(epNum) {{
+function gameList(epNum, q) {{
   const games = episodeGames[String(epNum)];
   if (!games || !games.length) return '';
   return '<ul class="game-list">' + games.map(g => {{
     const entry = gamePosters[g];
     const hasSteam = entry && entry.steam_id;
+    const name = q ? hl(esc(g), esc(q)) : esc(g);
     if (hasSteam) {{
-      return '<li class="known"><a href="https://store.steampowered.com/app/' + entry.steam_id + '" target="_blank" rel="noopener">' + esc(g) + '<span class="steam-badge">Steam</span></a></li>';
+      return '<li class="known"><a href="https://store.steampowered.com/app/' + entry.steam_id + '" target="_blank" rel="noopener">' + name + '<span class="steam-badge">Steam</span></a></li>';
     }}
-    return '<li>' + esc(g) + '</li>';
+    return '<li>' + name + '</li>';
   }}).join('') + '</ul>';
 }}
 
-function posterGrid(epNum) {{
+function posterGrid(epNum, q) {{
   const games = episodeGames[String(epNum)];
   if (!games || !games.length) return '';
+  const ql = q ? q.toLowerCase() : '';
   const imgs = games.map(g => {{
     const entry = gamePosters[g];
     let url = entry ? entry.poster : null;
@@ -223,7 +226,8 @@ function posterGrid(epNum) {{
       url = 'https://shared.akamai.steamstatic.com/steam/apps/' + entry.steam_id + '/capsule_231x87.jpg';
     }}
     if (!url) return '';
-    return '<img src="' + esc(url) + '" alt="' + esc(g) + '" loading="lazy">';
+    const match = ql && g.toLowerCase().includes(ql);
+    return '<img src="' + esc(url) + '" alt="' + esc(g) + '" loading="lazy"' + (match ? ' class="hl"' : '') + '>';
   }}).filter(s => s).join('');
   if (!imgs) return '';
   return '<div class="ep-posters' + (postersVisible ? '' : ' hidden') + '">' + imgs + '</div>';

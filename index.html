@@ -244,8 +244,13 @@ function walkText(node, q) {
   }
 }
 
-document.getElementById('search').addEventListener('input', filter);
-document.getElementById('ep-filter').addEventListener('input', filter);
+let filterTimer;
+function debounceFilter() {
+  clearTimeout(filterTimer);
+  filterTimer = setTimeout(filter, 200);
+}
+document.getElementById('search').addEventListener('input', debounceFilter);
+document.getElementById('ep-filter').addEventListener('input', debounceFilter);
 filter();
 </script>
 </body>

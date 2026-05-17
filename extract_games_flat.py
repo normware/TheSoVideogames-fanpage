@@ -5,7 +5,7 @@ import json
 import argparse
 import re
 import os
-import urllib.request
+import urllib.request, urllib.error
 import time
 from pathlib import Path
 
@@ -89,16 +89,25 @@ def extract_games(episode: dict, model: str, token: str) -> list:
         }
     )
 
-    try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            data = json.loads(resp.read())
-        raw = data["choices"][0]["message"]["content"]
-        result = json.loads(raw)
-        games = result.get("games", []) if isinstance(result, dict) else []
-        return post_process(games)
-    except Exception as e:
-        print(f"\nError on episode {episode.get('episode')}: {e}")
-        return []
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                data = json.loads(resp.read())
+            raw = data["choices"][0]["message"]["content"]
+            result = json.loads(raw)
+            games = result.get("games", []) if isinstance(result, dict) else []
+            return post_process(games)
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < 2:
+                wait = 10 * (attempt + 1)
+                print(f"\nRate limited on episode {episode.get('episode')}, waiting {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"\nError on episode {episode.get('episode')}: {e}")
+                return []
+        except Exception as e:
+            print(f"\nError on episode {episode.get('episode')}: {e}")
+            return []
 
 
 def main():
@@ -162,7 +171,7 @@ def main():
         if i % 10 == 0 or i == len(to_process):
             print(f"  {i}/{len(to_process)}")
 
-        time.sleep(0.25)
+        time.sleep(1.0)
 
     total = sum(len(v) for v in results.values())
     with_games = sum(1 for v in results.values() if v)

@@ -23,7 +23,7 @@ jobs:
       - run: python3 build.py
       - run: python3 extract_games_flat.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_MODELS_TOKEN }}
       - run: python3 merge_overrides.py
       - run: python3 backfill_games.py
       - run: python3 distinct_games.py

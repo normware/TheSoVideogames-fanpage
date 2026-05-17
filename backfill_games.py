@@ -30,12 +30,13 @@ def main():
     with open(GAMES_FLAT) as f:
         flat = json.load(f)
 
-    # Build a lookup of episode number → clean description
+    # Build a lookup of episode number → clean description + title
     ep_desc = {}
     for ep in episodes:
         eid = str(ep.get("episode", ""))
         if eid:
-            ep_desc[eid] = clean(ep.get("desc", "")).lower()
+            text = (ep.get("title", "") + " " + clean(ep.get("desc", ""))).lower()
+            ep_desc[eid] = text
 
     # Build a set of all known game names (≥4 chars)
     known = set()

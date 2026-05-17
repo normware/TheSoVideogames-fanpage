@@ -164,68 +164,50 @@ let postersVisible = false;
   }};
 }})();
 
-document.getElementById('toggle-posters').onclick = function() {{
-  postersVisible = postersVisible ? false : true;
-  this.textContent = postersVisible ? 'Hide posters' : 'Show posters';
-  document.querySelectorAll('.ep-posters').forEach(p => p.classList.toggle('hidden', postersVisible ? false : true));
-}};
+const epEls = episodes.map((e, i) => {{
+  const div = document.createElement('div');
+  div.innerHTML = epHTML(e);
+  const el = div.firstElementChild;
+  el.dataset.index = i;
+  el.dataset.episode = e.episode != null ? String(e.episode) : '';
+  el.dataset.title = (e.title || '').toLowerCase();
+  el.dataset.desc = (e.desc || '').toLowerCase();
+  return el;
+}});
+const r = document.getElementById('results');
+epEls.forEach(el => r.appendChild(el));
 
 let carlosOnly = false;
+
+document.getElementById('toggle-posters').onclick = function() {{
+  postersVisible = !postersVisible;
+  this.textContent = postersVisible ? 'Hide posters' : 'Show posters';
+  document.querySelectorAll('.ep-posters').forEach(p => p.classList.toggle('hidden'));
+}};
+
 document.getElementById('carlos-toggle').onclick = function() {{
-  carlosOnly = carlosOnly ? false : true;
+  carlosOnly = !carlosOnly;
   this.classList.toggle('active', carlosOnly);
   filter();
 }};
-
-function filter() {{
-  const q = document.getElementById('search').value.toLowerCase().trim();
-  const epNum = document.getElementById('ep-filter').value.trim();
-  const r = document.getElementById('results');
-  let f = episodes;
-  if (q) {{
-    f = f.filter(e => e.title.toLowerCase().includes(q) || (e.desc && e.desc.toLowerCase().includes(q)));
-  }}
-  if (epNum) {{
-    f = f.filter(e => e.episode === parseInt(epNum));
-  }}
-  if (carlosOnly) {{
-    f = f.filter(e => (e.title + ' ' + (e.desc || '')).toLowerCase().includes('carlos'));
-  }}
-  document.getElementById('count').textContent = f.length + ' / {EXPECTED_EPISODES} episodes';
-  r.innerHTML = f.length ? f.map(e => epHTML(e, q)).join('') : '<p style="color:#666">No matches</p>';
-}}
 
 function esc(s) {{
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }}
 
-function epHTML(e, q) {{
-  const tid = 'd' + e.url.replace(/[^a-zA-Z0-9]/g, '');
-  const title = hl(esc(e.title), esc(q));
-  const epLabel = e.episode ? 'Ep. ' + e.episode : '';
-  let desc = e.desc || '';
-  const hlDesc = q ? hlDescText(desc, q) : desc;
-  const vis = false;
-
-  return '<div class="ep">'
-    + '<div class="ep-main">'
-    + '<div class="ep-title"><a href="' + e.url + '" target="_blank">' + title + '</a></div>'
-    + '<div class="ep-meta">' + (epLabel ? epLabel + ' · ' : '') + e.date + '</div>'
-    + gameList(e.episode, q)
-    + (desc ? '<div id="' + tid + '" class="desc">' + hlDesc + '</div>' : '')
-    + (desc ? '<div class="tog" onclick="var d=document.getElementById(\\'' + tid + '\\');d.classList.toggle(\\'vis\\');this.textContent=d.classList.contains(\\'vis\\')?\\'▾ Hide description\\':\\'▸ Show description\\'">▸ Show description</div>' : '')
-    + '</div>'
-    + posterGrid(e.episode)
-    + '</div>';
+function hl(t, q) {{
+  if (!q) return t;
+  try {{ return t.replace(new RegExp('(' + q.replace(/[.*+?^${{}}()|[\\]\\\\]/g, '\\\\$&') + ')', 'gi'), '<mark>$1</mark>'); }}
+  catch(e) {{ return t; }}
 }}
 
-function gameList(epNum, q) {{
+function gameList(epNum) {{
   const games = episodeGames[String(epNum)];
   if (!games || !games.length) return '';
   return '<ul class="game-list">' + games.map(g => {{
     const entry = gamePosters[g];
     const hasSteam = entry && entry.steam_id;
-    const name = q ? hl(esc(g), esc(q)) : esc(g);
+    const name = esc(g);
     if (hasSteam) {{
       return '<li class="known"><a href="https://store.steampowered.com/app/' + entry.steam_id + '" target="_blank" rel="noopener">' + name + '<span class="steam-badge">Steam</span></a></li>';
     }}
@@ -251,41 +233,73 @@ function posterGrid(epNum) {{
   return '<div class="ep-posters' + (postersVisible ? '' : ' hidden') + '">' + imgs + '</div>';
 }}
 
-function hl(t, q) {{
-  if (!q) return t;
-  try {{ return t.replace(new RegExp('(' + q.replace(/[.*+?^${{}}()|[\\]\\\\]/g, '\\\\$&') + ')', 'gi'), '<mark>$1</mark>'); }}
-  catch(e) {{ return t; }}
+function epHTML(e) {{
+  const tid = 'd' + e.url.replace(/[^a-zA-Z0-9]/g, '');
+  const title = esc(e.title);
+  const epLabel = e.episode ? 'Ep. ' + e.episode : '';
+  const desc = e.desc || '';
+
+  return '<div class="ep">'
+    + '<div class="ep-main">'
+    + '<div class="ep-title"><a href="' + e.url + '" target="_blank">' + title + '</a></div>'
+    + '<div class="ep-meta">' + (epLabel ? epLabel + ' · ' : '') + e.date + '</div>'
+    + gameList(e.episode)
+    + (desc ? '<div id="' + tid + '" class="desc">' + desc + '</div>' : '')
+    + (desc ? '<div class="tog" onclick="var d=document.getElementById(\\'' + tid + '\\');d.classList.toggle(\\'vis\\');this.textContent=d.classList.contains(\\'vis\\')?\\'▾ Hide description\\':\\'▸ Show description\\'">▸ Show description</div>' : '')
+    + '</div>'
+    + posterGrid(e.episode)
+    + '</div>';
 }}
 
-function hlDescText(html, q) {{
-  if (!q) return html;
-  const tmp = document.createElement('div');
-  tmp.innerHTML = html;
-  walkText(tmp, q);
-  return tmp.innerHTML;
-}}
+function filter() {{
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  const epNum = document.getElementById('ep-filter').value.trim();
+  let count = 0;
+  let anyShown = false;
 
-function walkText(node, q) {{
-  if (node.nodeType === 3) {{
-    const txt = node.textContent;
-    if (txt.toLowerCase().includes(q)) {{
-      const span = document.createElement('span');
-      span.innerHTML = hl(esc(txt), esc(q));
-      node.parentNode.replaceChild(span, node);
+  epEls.forEach(el => {{
+    let show = true;
+    if (q) {{
+      show = el.dataset.title.includes(q) || el.dataset.desc.includes(q);
     }}
-  }} else {{
-    for (let i = node.childNodes.length - 1; i >= 0; i--) {{
-      if (node.childNodes[i].nodeType !== 1 || !/^(script|style|iframe)$/i.test(node.childNodes[i].tagName)) {{
-        walkText(node.childNodes[i], q);
+    if (show && epNum) {{
+      show = parseInt(el.dataset.episode) === parseInt(epNum);
+    }}
+    if (show && carlosOnly) {{
+      show = (el.dataset.title + ' ' + el.dataset.desc).includes('carlos');
+    }}
+    el.style.display = show ? '' : 'none';
+    if (show) {{
+      count++;
+      anyShown = true;
+      const i = parseInt(el.dataset.index);
+      const link = el.querySelector('.ep-title a');
+      if (link) {{
+        link.innerHTML = q ? hl(esc(episodes[i].title), esc(q)) : esc(episodes[i].title);
       }}
     }}
+  }});
+
+  document.getElementById('count').textContent = count + ' / {EXPECTED_EPISODES} episodes';
+
+  const nm = document.getElementById('no-match');
+  if (!anyShown) {{
+    if (!nm) {{
+      const p = document.createElement('p');
+      p.id = 'no-match';
+      p.style.cssText = 'color:#666;padding:1rem 0';
+      p.textContent = 'No matches';
+      r.appendChild(p);
+    }}
+  }} else if (nm) {{
+    nm.remove();
   }}
 }}
 
 let filterTimer;
 function debounceFilter() {{
   clearTimeout(filterTimer);
-  filterTimer = setTimeout(filter, 200);
+  filterTimer = setTimeout(filter, 150);
 }}
 document.getElementById('search').addEventListener('input', debounceFilter);
 document.getElementById('ep-filter').addEventListener('input', debounceFilter);

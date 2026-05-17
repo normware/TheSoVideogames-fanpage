@@ -533,7 +533,9 @@
     "Pine",
     "GOTY"
   ],
-  "420": [],
+  "420": [
+    "GOTY"
+  ],
   "419": [
     "Keeper's Toll",
     "Indiana Jones & the Great Circle",
@@ -1447,7 +1449,9 @@
     "Weird West",
     "Vampire Survivors"
   ],
-  "317": [],
+  "317": [
+    "GOTY"
+  ],
   "316": [
     "Krampus Kills",
     "The Feast",
@@ -2915,7 +2919,8 @@
     "Ritual: Crown of Horns",
     "Metal Gear Solid V: The Phantom Pain",
     "Warp Through",
-    "Metal Gear Solid V"
+    "Metal Gear Solid V",
+    "ReCore"
   ],
   "156": [
     "Black Future '88",
@@ -2940,7 +2945,8 @@
     "Death Stranding",
     "Garden Story",
     "Door Kickers: Action Squad",
-    "Reventure"
+    "Reventure",
+    "No Man’s Sky"
   ],
   "153": [
     "Afterparty",
@@ -2985,7 +2991,8 @@
     "Haven"
   ],
   "148": [
-    "Control"
+    "Control",
+    "Far Cry Primal"
   ],
   "147": [
     "ELEA",
@@ -3001,14 +3008,17 @@
     "Torchlight 2",
     "ELEX",
     "ELEA",
-    "Skelly Selest"
+    "Skelly Selest",
+    "Afterparty",
+    "GOTY"
   ],
   "145": [
     "Creature in the Well",
     "Plunge",
     "Devil May Cry V",
     "Forager",
-    "The Game: The Game"
+    "The Game: The Game",
+    "GOTY"
   ],
   "144": [
     "Black Paradox",
@@ -3031,7 +3041,8 @@
     "DOOM 3",
     "World War Z",
     "Hitman: Siberia Sniper DLC",
-    "Fission Superstar X"
+    "Fission Superstar X",
+    "Fallout 4"
   ],
   "141": [
     "My Friend Pedro",
@@ -3115,7 +3126,8 @@
   ],
   "123": [
     "Beat Cop",
-    "The Occupation"
+    "The Occupation",
+    "Demon's Souls"
   ],
   "122": [
     "Ape Out",
@@ -3152,6 +3164,100 @@
   ],
   "None": [
     "Stray",
+    "Haven",
+    "Saints Row"
+  ],
+  "428": [
+    "Stories from Sol: the Gun-Dog",
+    "Vampire Survivors",
+    "Gears Tactics",
+    "Elden Ring"
+  ],
+  "78": [
+    "Sleeping Dogs",
+    "Birth",
+    "Risen"
+  ],
+  "76": [
     "Haven"
+  ],
+  "139": [
+    "Mad Max",
+    "Metal Gear Solid V"
+  ],
+  "113": [
+    "Watch Dogs"
+  ],
+  "108": [
+    "GOTY"
+  ],
+  "104": [
+    "GOTY"
+  ],
+  "103": [
+    "GOTY"
+  ],
+  "99": [
+    "Demon's Souls"
+  ],
+  "98": [
+    "Saints Row"
+  ],
+  "95": [
+    "Sleeping Dogs"
+  ],
+  "89": [
+    "Fallout: New Vegas"
+  ],
+  "80": [
+    "Torchlight 2"
+  ],
+  "75": [
+    "Haven"
+  ],
+  "74": [
+    "Max Payne 3",
+    "Max Payne"
+  ],
+  "65": [
+    "Elder Scrolls",
+    "Corpse Party"
+  ],
+  "64": [
+    "Elder Scrolls"
+  ],
+  "63": [
+    "Lake"
+  ],
+  "62": [
+    "Dead Island"
+  ],
+  "61": [
+    "Demon's Souls"
+  ],
+  "60": [
+    "Deus Ex: Human Revolution"
+  ],
+  "50": [
+    "Dead Island"
+  ],
+  "24": [
+    "God of War"
+  ],
+  "23": [
+    "Demon's Souls"
+  ],
+  "16": [
+    "Control"
+  ],
+  "10": [
+    "Rage 2",
+    "Rage"
+  ],
+  "264": [
+    "GOTY"
+  ],
+  "14": [
+    "Grow Up"
   ]
 }

@@ -52,8 +52,10 @@ def post_process(games: list) -> list:
 
 
 def extract_games(episode: dict, model: str, token: str) -> list:
+    title = episode.get("title", "").strip()
     desc = clean_description(episode.get("desc", ""))
-    if not desc:
+    text = (title + "\n" + desc).strip()
+    if not text:
         return []
 
     system_prompt = (
@@ -71,7 +73,7 @@ def extract_games(episode: dict, model: str, token: str) -> list:
     body = json.dumps({
         "messages": [
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"Extract all video game titles from:\n{desc}"}
+            {"role": "user", "content": f"Extract all video game titles from:\n{text}"}
         ],
         "model": model,
         "temperature": 0.0,

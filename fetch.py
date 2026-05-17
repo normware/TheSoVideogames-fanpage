@@ -5,7 +5,10 @@ import urllib.request
 import xml.etree.ElementTree as ET
 import html, re, json, ssl, time, os
 
-RSS_URL = "https://gamecritics.com/category/podcasts/so-videogames/feed/"
+RSS_FEEDS = [
+    ("https://gamecritics.com/category/podcasts/so-videogames/feed/", 50),
+    ("https://gamecritics.com/podcasts/feed/", 80),
+]
 NS = {"content": "http://purl.org/rss/1.0/modules/content/"}
 ctx = ssl._create_unverified_context()
 EPISODES_FILE = "episodes.json"
@@ -38,45 +41,55 @@ def extract_episode(title):
         return int(m.group(1))
     return None
 
+def parse_item(item):
+    url = item.findtext("link", "")
+    content_el = item.find("content:encoded", NS)
+    desc = sanitize(content_el.text if content_el is not None else item.findtext("description", ""))
+    desc = re.sub(r'\s*<p>\s*The post\s+.*?appeared first on\s+.*?\.?\s*</p>\s*', '', desc, flags=re.IGNORECASE)
+    desc = desc.strip()
+    pub_date = item.findtext("pubDate", "")
+    date = ""
+    if pub_date:
+        parts = pub_date.split()
+        if len(parts) >= 4:
+            date = f"{parts[3]}-{months.get(parts[2],'00')}-{parts[1].zfill(2)}"
+    title = item.findtext("title", "")
+    return {
+        "title": title,
+        "episode": extract_episode(title),
+        "desc": desc,
+        "date": date,
+        "url": url,
+    }
+
 def fetch_rss():
     eps = []
     seen = set()
-    page = 0
-    while True:
-        try:
-            with urllib.request.urlopen(f"{RSS_URL}?paged={page}", context=ctx) as resp:
-                root = ET.fromstring(resp.read())
-        except Exception:
-            break
-        items = root.findall(".//item")
-        if not items:
-            break
-        for item in items:
-            url = item.findtext("link", "")
-            if url in seen:
-                continue
-            seen.add(url)
-            content_el = item.find("content:encoded", NS)
-            desc = sanitize(content_el.text if content_el is not None else item.findtext("description", ""))
-            desc = re.sub(r'\s*<p>\s*The post\s+.*?appeared first on\s+.*?\.?\s*</p>\s*', '', desc, flags=re.IGNORECASE)
-            desc = desc.strip()
-            pub_date = item.findtext("pubDate", "")
-            date = ""
-            if pub_date:
-                parts = pub_date.split()
-                if len(parts) >= 4:
-                    date = f"{parts[3]}-{months.get(parts[2],'00')}-{parts[1].zfill(2)}"
-            title = item.findtext("title", "")
-            eps.append({
-                "title": title,
-                "episode": extract_episode(title),
-                "desc": desc,
-                "date": date,
-                "url": url,
-            })
-        print(f"  RSS page {page}: {len(items)} items ({len(eps)} unique)")
-        page += 1
-        time.sleep(0.5)
+    for rss_url, max_pages in RSS_FEEDS:
+        label = rss_url.split("/")[-3]
+        for page in range(max_pages):
+            try:
+                with urllib.request.urlopen(f"{rss_url}?paged={page}", context=ctx) as resp:
+                    root = ET.fromstring(resp.read())
+            except Exception:
+                break
+            items = root.findall(".//item")
+            if not items:
+                break
+            for item in items:
+                url = item.findtext("link", "")
+                if url in seen:
+                    continue
+                title = item.findtext("title", "").lower()
+                if not any(kw in title for kw in ["so videogames", "gamecritics.com podcast", "the so videogames"]):
+                    continue
+                if "bridge crew" in title or "transcript" in title:
+                    continue
+                seen.add(url)
+                eps.append(parse_item(item))
+            print(f"  {label} page {page}: {len(items)} items ({len(eps)} unique)")
+            time.sleep(0.2)
+    eps.sort(key=lambda e: e.get("date", ""), reverse=True)
     return eps
 
 def merge(existing, fresh):

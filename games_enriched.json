@@ -30,6 +30,10 @@
     "steam_id": 504920,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504920/capsule_231x87.jpg?t=1745881953"
   },
+  "3DS": {
+    "steam_id": 1147940,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1147940/22eee9adbba2ccdb56705a47c3b5748ba896388e/capsule_231x87.jpg?t=1767850018"
+  },
   "40K: Gladius": {
     "poster": null
   },
@@ -186,6 +190,10 @@
     "steam_id": 1843540,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1843540/capsule_231x87.jpg?t=1732093384"
   },
+  "Alan Wake": {
+    "steam_id": 108710,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/108710/a0e04fbe5de4b8116dbf8102354fcf4db5503fe1/capsule_231x87.jpg?t=1769717716"
+  },
   "Alan Wake 2": {
     "poster": null
   },
@@ -204,6 +212,10 @@
     "steam_id": 1009290,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1009290/capsule_231x87.jpg?t=1750782350"
   },
+  "Aliens: Colonial Marines": {
+    "steam_id": 49540,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/49540/capsule_231x87.jpg?t=1763649735"
+  },
   "Aliens: Dark Descent": {
     "steam_id": 1150440,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1150440/capsule_231x87.jpg?t=1757943677"
@@ -211,6 +223,9 @@
   "Aliens: Fireteam Elite": {
     "steam_id": 1549970,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1549970/capsule_231x87.jpg?t=1727102951"
+  },
+  "Aliens: Infestation": {
+    "poster": null
   },
   "Alina of the Arena": {
     "steam_id": 1668690,
@@ -265,6 +280,14 @@
     "steam_id": 999220,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/999220/dfd3a1d0189d37f110d85093eb81763bf48d3d2a/capsule_231x87.jpg?t=1752056337"
   },
+  "Amnesia: The Dark Descent": {
+    "steam_id": 57300,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/57300/ce0f84d25ace136096191d215a5d49c57d832999/capsule_231x87.jpg?t=1751032707"
+  },
+  "Animal Crossing": {
+    "steam_id": 1630290,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1630290/capsule_231x87.jpg?t=1765780629"
+  },
   "Anno Mutationem": {
     "steam_id": 1368030,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1368030/capsule_231x87.jpg?t=1769505996"
@@ -293,6 +316,9 @@
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1390190/capsule_231x87.jpg?t=1763481362"
   },
   "Apocalypse Golf Wasteland": {
+    "poster": null
+  },
+  "Aquaman: Battle for Atlantis": {
     "poster": null
   },
   "Ara Fell": {
@@ -330,6 +356,10 @@
     "steam_id": 866140,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/866140/capsule_231x87.jpg?t=1776527749"
   },
+  "Arkham Knight": {
+    "steam_id": 208650,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/208650/capsule_231x87.jpg?t=1745534372"
+  },
   "Arknights Endfied": {
     "poster": null
   },
@@ -348,6 +378,14 @@
   "As far As The Eye": {
     "steam_id": 1119700,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1119700/capsule_231x87.jpg?t=1727781048"
+  },
+  "Assassin's Creed": {
+    "steam_id": 3751950,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751950/e38674a3067b5ac028974bbfb42c835d0cf27122/capsule_231x87.jpg?t=1777900688"
+  },
+  "Assassin's Creed 2": {
+    "steam_id": 33230,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/33230/capsule_231x87.jpg?t=1682004272"
   },
   "Assassin's Creed: Black Flag": {
     "steam_id": 3751950,
@@ -520,9 +558,21 @@
     "steam_id": 1129260,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1129260/798788e975ccf9091eb28796703b36ad31361000/capsule_231x87.jpg?t=1775722737"
   },
+  "Bastion": {
+    "steam_id": 107100,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/107100/capsule_231x87.jpg?t=1729113932"
+  },
   "Batbarian: Testament of the Primordials": {
     "steam_id": 837460,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/837460/capsule_231x87.jpg?t=1732066122"
+  },
+  "Batman: Arkham Knight": {
+    "steam_id": 208650,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/208650/capsule_231x87.jpg?t=1745534372"
+  },
+  "Batman: Arkham Origins": {
+    "steam_id": 209000,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/209000/capsule_231x87.jpg?t=1746562474"
   },
   "Batora: Lost Haven": {
     "steam_id": 1506440,
@@ -578,6 +628,10 @@
     "steam_id": 2625420,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2625420/5e79c9d089ce939fe07f32ff16a27561dd2c0df4/capsule_231x87.jpg?t=1776286881"
   },
+  "Beyond Two Souls": {
+    "steam_id": 960990,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/960990/capsule_231x87.jpg?t=1667468566"
+  },
   "Big Hops": {
     "steam_id": 1221480,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1221480/af9b30ddccdd2f9e96ddfde08ed9da5ba4e0b2f1/capsule_231x87.jpg?t=1776274634"
@@ -592,6 +646,10 @@
   "Bionic Bay": {
     "steam_id": 1928690,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1928690/ab501933fd2505a66f9946dd061a2fcbef5ccc57/capsule_231x87.jpg?t=1770619630"
+  },
+  "BioShock": {
+    "steam_id": 8870,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8870/capsule_231x87.jpg?t=1728673518"
   },
   "Birth": {
     "steam_id": 1889040,
@@ -676,6 +734,9 @@
     "steam_id": 880300,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/880300/capsule_231x87.jpg?t=1762804146"
   },
+  "Bloodborne": {
+    "poster": null
+  },
   "Bloodless": {
     "steam_id": 3957540,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3957540/3b1cbcea51ee2cf3b6c380346d330a69e7c884f9/capsule_231x87.jpg?t=1777046280"
@@ -738,9 +799,20 @@
     "steam_id": 1432100,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1432100/capsule_231x87.jpg?t=1763649337"
   },
+  "Borderlands": {
+    "steam_id": 1285190,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1285190/7f4b1a9cbe01d19fdcbf10ef5dce492098ef0ba8/capsule_231x87.jpg?t=1778543046"
+  },
+  "Borderlands 2": {
+    "steam_id": 49520,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/49520/capsule_231x87.jpg?t=1751931279"
+  },
   "Borderlands 4": {
     "steam_id": 1285190,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1285190/7f4b1a9cbe01d19fdcbf10ef5dce492098ef0ba8/capsule_231x87.jpg?t=1778543046"
+  },
+  "Borderlands DLC": {
+    "poster": null
   },
   "Boreal Tenebrae": {
     "steam_id": 4222910,
@@ -769,6 +841,10 @@
   "Braveland Trilogy": {
     "poster": null
   },
+  "Bravely Default": {
+    "steam_id": 2833580,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2833580/96cb5968be9de64661027f45411cad361e46fc33/capsule_231x87.jpg?t=1774544767"
+  },
   "Bravely Default 2": {
     "steam_id": 1446650,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1446650/capsule_231x87.jpg?t=1775033355"
@@ -796,6 +872,10 @@
   "Broken Roads": {
     "steam_id": 1403440,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1403440/capsule_231x87.jpg?t=1757529716"
+  },
+  "Broken Steel": {
+    "steam_id": 22410,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22410/capsule_231x87.jpg?t=1447353326"
   },
   "Buddy Simulator 1984": {
     "steam_id": 1269950,
@@ -847,6 +927,9 @@
   "Calico": {
     "steam_id": 1993180,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1993180/078d17bb8adf38202499df4e0995655557e56bac/capsule_231x87.jpg?t=1766044346"
+  },
+  "Call of Duty: Finest Hour": {
+    "poster": null
   },
   "Call of the Sea": {
     "steam_id": 1042490,
@@ -935,6 +1018,16 @@
     "steam_id": 1552550,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1552550/capsule_231x87.jpg?t=1734547063"
   },
+  "Castlevania: Destiny of Harmonicas": {
+    "poster": null
+  },
+  "Castlevania: Harmony of Dissonance": {
+    "poster": null
+  },
+  "Castlevania: Lords of Shadow 2": {
+    "steam_id": 239250,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/239250/capsule_231x87.jpg?t=1737506536"
+  },
   "Cat Interstellar": {
     "steam_id": 384740,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/384740/capsule_231x87.jpg?t=1708695896"
@@ -942,6 +1035,10 @@
   "Cat Quest 2": {
     "steam_id": 1179900,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1179900/capsule_231x87.jpg?t=1759232394"
+  },
+  "Catherine": {
+    "steam_id": 893180,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/893180/capsule_231x87.jpg?t=1763531355"
   },
   "Catlandia": {
     "steam_id": 1219700,
@@ -958,6 +1055,10 @@
   "Cats Away": {
     "steam_id": 3389020,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3389020/36e04f4d73f9ae0130c4fa9cbad48e8c6073e386/capsule_231x87.jpg?t=1752100547"
+  },
+  "CaveIn": {
+    "steam_id": 2944190,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2944190/capsule_231x87.jpg?t=1750975922"
   },
   "Caverns of Mars: Recharged": {
     "steam_id": 2213980,
@@ -1117,6 +1218,10 @@
   "Concrete Genie": {
     "poster": null
   },
+  "Conduit": {
+    "steam_id": 2923380,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2923380/capsule_231x87.jpg?t=1736511465"
+  },
   "Conscript": {
     "steam_id": 1286990,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286990/9e0b27372001ba7227daac2c7b7a7f15c27f7e59/capsule_231x87.jpg?t=1764865767"
@@ -1172,6 +1277,9 @@
     "steam_id": 1458100,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1458100/capsule_231x87.jpg?t=1764788370"
   },
+  "Crackdown": {
+    "poster": null
+  },
   "Crackdown 3": {
     "poster": null
   },
@@ -1214,6 +1322,9 @@
   "Crimson Keep": {
     "steam_id": 632110,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/632110/capsule_231x87.jpg?t=1632150284"
+  },
+  "Critter Round-Up": {
+    "poster": null
   },
   "Cronos: The New Dawn": {
     "steam_id": 2101960,
@@ -1338,6 +1449,13 @@
     "steam_id": 1037130,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1037130/capsule_231x87.jpg?t=1620854766"
   },
+  "Danganronpa: Another Episode": {
+    "steam_id": 555950,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/555950/capsule_231x87.jpg?t=1715701294"
+  },
+  "Dante's Inferno": {
+    "poster": null
+  },
   "Dark Devotion": {
     "steam_id": 718590,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/718590/capsule_231x87.jpg?t=1738773189"
@@ -1358,6 +1476,14 @@
     "steam_id": 2453840,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2453840/2d97b757cee9c9626f8c56a418d8c865a29a1a00/capsule_231x87.jpg?t=1766179713"
   },
+  "Dark Souls 2 Crown of the Sunken King": {
+    "steam_id": 271942,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271942/capsule_231x87.jpg?t=1721683384"
+  },
+  "Dark Souls 3": {
+    "steam_id": 374320,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/374320/capsule_231x87.jpg?t=1748630784"
+  },
   "Darkest Dungeon II": {
     "steam_id": 1940340,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1940340/88bce465a7e3df7d1974f7669ec44b7b07a1e031/capsule_231x87.jpg?t=1759351183"
@@ -1365,6 +1491,10 @@
   "Darkside Detective: Backside of the Moon": {
     "steam_id": 3990360,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3990360/998aa52b529809c4ce1d1322008b06220a15cef2/capsule_231x87.jpg?t=1773932965"
+  },
+  "Darksiders": {
+    "steam_id": 710920,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/710920/capsule_231x87.jpg?t=1754079110"
   },
   "Darksiders: Genesis": {
     "steam_id": 710920,
@@ -1422,6 +1552,18 @@
     "steam_id": 2813100,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2813100/capsule_231x87.jpg?t=1713800339"
   },
+  "Dead Space": {
+    "steam_id": 1693980,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1693980/capsule_231x87.jpg?t=1777396576"
+  },
+  "Dead Space 2": {
+    "steam_id": 47780,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/47780/capsule_231x87.jpg?t=1777396491"
+  },
+  "Deadly Premonition": {
+    "steam_id": 1271100,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1271100/capsule_231x87.jpg?t=1688546947"
+  },
   "Death Crown": {
     "steam_id": 814530,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814530/capsule_231x87.jpg?t=1770697824"
@@ -1475,6 +1617,10 @@
   "Deathloop": {
     "steam_id": 1252330,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1252330/capsule_231x87.jpg?t=1750785409"
+  },
+  "DeathSpank": {
+    "steam_id": 18050,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/18050/capsule_231x87.jpg?t=1615197289"
   },
   "Deathtrap: World of Van Helsing": {
     "poster": null
@@ -1557,9 +1703,16 @@
     "steam_id": 1227280,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1227280/capsule_231x87.jpg?t=1774541964"
   },
+  "Destiny": {
+    "steam_id": 1085660,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/capsule_231x87.jpg?t=1765904462"
+  },
   "Destiny 2": {
     "steam_id": 1085660,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/capsule_231x87.jpg?t=1765904462"
+  },
+  "Destiny Beta": {
+    "poster": null
   },
   "Destiny: Lightbringer": {
     "poster": null
@@ -1583,6 +1736,10 @@
     "steam_id": 3461800,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3461800/26c197987a9105f852979818b80ea14fb47de5d0/capsule_231x87.jpg?t=1770200729"
   },
+  "Devil May Cry 3": {
+    "steam_id": 1426680,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1426680/capsule_231x87.jpg?t=1608051759"
+  },
   "Devil May Cry V": {
     "steam_id": 601150,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/601150/capsule_231x87.jpg?t=1768869803"
@@ -1590,6 +1747,9 @@
   "Devil Slayer Raksasi": {
     "steam_id": 3312310,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3312310/1ce9b7c6dde7f09e68ab115e040e628f1897e169/capsule_231x87.jpg?t=1778378540"
+  },
+  "Devil Survivor 2": {
+    "poster": null
   },
   "Devotion": {
     "steam_id": 4020850,
@@ -1639,6 +1799,10 @@
   "Diofeld Chronicle": {
     "poster": null
   },
+  "Disaster Report": {
+    "steam_id": 1060210,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1060210/51ff9c282ac397094298c76e14086c039173ced7/capsule_231x87.jpg?t=1732583921"
+  },
   "Disaster Report 4": {
     "steam_id": 1060210,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1060210/51ff9c282ac397094298c76e14086c039173ced7/capsule_231x87.jpg?t=1732583921"
@@ -1669,6 +1833,13 @@
   },
   "Dispatch – Scored Review !": {
     "poster": null
+  },
+  "Divinity II: Ego Draconis": {
+    "poster": null
+  },
+  "Divinity: Original Sin": {
+    "steam_id": 435150,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/435150/84ba1ad390af489cc07db121e2ed231cbabc9f57/capsule_231x87.jpg?t=1765811123"
   },
   "Divinity: Original Sin 2": {
     "steam_id": 435150,
@@ -1710,12 +1881,27 @@
     "steam_id": 1455840,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1455840/capsule_231x87.jpg?t=1769357001"
   },
+  "DOTA 2": {
+    "steam_id": 570,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570/capsule_231x87.jpg?t=1769535998"
+  },
   "Down Among the Dead Men": {
     "poster": null
   },
   "Drago Noka": {
     "steam_id": 1984790,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1984790/capsule_231x87.jpg?t=1728438632"
+  },
+  "Dragon Age II": {
+    "steam_id": 1238050,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238050/capsule_231x87.jpg?t=1609112422"
+  },
+  "Dragon Age: Origins": {
+    "steam_id": 47810,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/47810/capsule_231x87.jpg?t=1765562953"
+  },
+  "Dragon Age: Origins Second Opinion": {
+    "poster": null
   },
   "Dragon Audit": {
     "steam_id": 594380,
@@ -1724,6 +1910,12 @@
   "Dragon Quest Builders 2": {
     "steam_id": 1072420,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1072420/capsule_231x87.jpg?t=1775724306"
+  },
+  "Dragon Quest IX": {
+    "poster": null
+  },
+  "Dragon Quest IX: Sentinels of the Starry Skies": {
+    "poster": null
   },
   "Dragon Quest Treasures": {
     "steam_id": 2021210,
@@ -1867,9 +2059,18 @@
     "steam_id": 3008130,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3008130/121bbff32c3e334ffcd3167af007cb8c0513d558/capsule_231x87.jpg?t=1777373421"
   },
+  "Dynasty Warriors 6": {
+    "poster": null
+  },
+  "Dynasty Warriors: Strikeforce": {
+    "poster": null
+  },
   "Dysmantle": {
     "steam_id": 846770,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/846770/capsule_231x87.jpg?t=1772050662"
+  },
+  "EA Sports Active": {
+    "poster": null
   },
   "Earthnight": {
     "steam_id": 777410,
@@ -1978,6 +2179,21 @@
     "steam_id": 1203620,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203620/84d7ce762d0e0ad6a2dfdced85ea713d33b70e18/capsule_231x87.jpg?t=1776758849"
   },
+  "Enslaved: Odyssey to the West": {
+    "steam_id": 245280,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/245280/capsule_231x87.jpg?t=1580374672"
+  },
+  "Enslaved: Odyssey to the West – Pigsy's Perfect 10": {
+    "poster": null
+  },
+  "Epic Dungeon": {
+    "steam_id": 3602440,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3602440/022d7009c90b4bd3a0558c9381ce0af0600b0e1a/capsule_231x87.jpg?t=1761317239"
+  },
+  "Epic Mickey": {
+    "steam_id": 1522160,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1522160/capsule_231x87.jpg?t=1732714651"
+  },
   "Ereban: Shadow Legacy": {
     "steam_id": 1671360,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1671360/capsule_231x87.jpg?t=1776370419"
@@ -2013,6 +2229,10 @@
   "Etherborn": {
     "steam_id": 812160,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/812160/capsule_231x87.jpg?t=1769027784"
+  },
+  "Etrian Odyssey III": {
+    "steam_id": 1810820,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1810820/capsule_231x87.jpg?t=1763531464"
   },
   "Europa": {
     "steam_id": 3450310,
@@ -2073,6 +2293,22 @@
   "Fall Guys": {
     "poster": null
   },
+  "Fallout": {
+    "steam_id": 1151340,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1151340/af7712a8b6fa295c9314f1295bf75028d20a2e25/capsule_231x87.jpg?t=1778168267"
+  },
+  "Fallout 3": {
+    "steam_id": 22300,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22300/capsule_231x87.jpg?t=1732208474"
+  },
+  "Fallout 3: Broken Steel": {
+    "steam_id": 22410,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22410/capsule_231x87.jpg?t=1447353326"
+  },
+  "Fallout 3: Point Lookout": {
+    "steam_id": 22440,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22440/capsule_231x87.jpg?t=1447353329"
+  },
   "Fallout 4": {
     "steam_id": 377160,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/377160/capsule_231x87.jpg?t=1764687456"
@@ -2130,6 +2366,10 @@
   "FC6: Vaas DLC": {
     "poster": null
   },
+  "Fear Effect": {
+    "steam_id": 3504570,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3504570/b1bb659aafdec000979009edb3024002d7879dc0/capsule_231x87.jpg?t=1756933105"
+  },
   "Fear the Spotlight": {
     "steam_id": 1959390,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1959390/f7f87dec1ddd48c32b2e124e050ff57a456267e2/capsule_231x87.jpg?t=1751952809"
@@ -2160,6 +2400,9 @@
   "FF7: Rebirth": {
     "poster": null
   },
+  "FFXI: Lu Shang's Fishing Rod": {
+    "poster": null
+  },
   "Fhtagn Simulator": {
     "poster": null
   },
@@ -2179,13 +2422,33 @@
     "steam_id": 39210,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/39210/2e45b2f419d0beed57ba1ff1d80a13d31f947d54/capsule_231x87.jpg?t=1777372469"
   },
+  "Final Fantasy 7": {
+    "steam_id": 2909400,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2909400/159fb57397e436d35ae20ba0f62ba7a7f2974cb9/capsule_231x87.jpg?t=1775124617"
+  },
   "Final Fantasy 7 Remake": {
     "steam_id": 1462040,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1462040/capsule_231x87.jpg?t=1773895755"
   },
+  "Final Fantasy series": {
+    "steam_id": 3145880,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3145880/77eb01e0f3ad5fadef6ef4806c938e97a323f31f/capsule_231x87.jpg?t=1741638571"
+  },
   "Final Fantasy Tactics": {
     "steam_id": 1004640,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1004640/12bdfff11d35dbd64055124bcdbf690f49d6ce46/capsule_231x87.jpg?t=1766385464"
+  },
+  "Final Fantasy XIII": {
+    "steam_id": 292120,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292120/capsule_231x87.jpg?t=1775176878"
+  },
+  "Final Fantasy XIII-2": {
+    "steam_id": 292140,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292140/capsule_231x87.jpg?t=1775177243"
+  },
+  "Final Fantasy XIV": {
+    "steam_id": 39210,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/39210/2e45b2f419d0beed57ba1ff1d80a13d31f947d54/capsule_231x87.jpg?t=1777372469"
   },
   "Final Fantasy: Crystal Chronicles Remastered": {
     "poster": null
@@ -2238,6 +2501,14 @@
   "Floppy Knights": {
     "steam_id": 1057800,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1057800/capsule_231x87.jpg?t=1746806768"
+  },
+  "flOw": {
+    "steam_id": 1648390,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1648390/77cbfb94229664a4413400e9a07d9d75a9de68d6/capsule_231x87.jpg?t=1777892644"
+  },
+  "Flower": {
+    "steam_id": 1896700,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1896700/ec80c7b43b81e3e3fff7618b9c741babcd9fa5f2/capsule_231x87.jpg?t=1765310909"
   },
   "Fluffy Horde": {
     "steam_id": 777880,
@@ -2317,6 +2588,10 @@
     "steam_id": 2315020,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2315020/capsule_231x87.jpg?t=1745413411"
   },
+  "Front Mission 3": {
+    "steam_id": 3795900,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3795900/7d674cd8efddb0080d0f1db500e35bb2a26c9563/capsule_231x87.jpg?t=1777274608"
+  },
   "Frostpunk": {
     "steam_id": 1601580,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1601580/2c5b053c630a9cb57fa71e6eb018c2a0b008c05b/capsule_231x87.jpg?t=1778073400"
@@ -2368,6 +2643,10 @@
     "steam_id": 2512920,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2512920/capsule_231x87.jpg?t=1778642538"
   },
+  "Gears of War": {
+    "steam_id": 2523720,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2523720/f0477240dce46254a81741ad45bbc8c642153331/capsule_231x87.jpg?t=1757024702"
+  },
   "Gears Tactics": {
     "steam_id": 1184050,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1184050/capsule_231x87.jpg?t=1694616448"
@@ -2408,6 +2687,9 @@
   "Ghost of Tsushima": {
     "steam_id": 2215430,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/capsule_231x87.jpg?t=1763409398"
+  },
+  "Ghost Recon 3DS": {
+    "poster": null
   },
   "Ghost Song": {
     "steam_id": 347800,
@@ -2502,6 +2784,9 @@
   "Golden Idol Investigations": {
     "steam_id": 3335340,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3335340/f4804b8605497d3d528b09f70139e0fc81ac2b3e/capsule_231x87.jpg?t=1758883072"
+  },
+  "GoldenEye 007: Invincibility Cheat": {
+    "poster": null
   },
   "Golf Club Wasteland": {
     "poster": null
@@ -2629,6 +2914,9 @@
     "steam_id": 661680,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/661680/capsule_231x87.jpg?t=1745503324"
   },
+  "GTA 3": {
+    "poster": null
+  },
   "GTA: Definitive Edition": {
     "poster": null
   },
@@ -2691,9 +2979,17 @@
     "steam_id": 2218750,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2218750/de862be4dbf80a39e1e3f5e08479461ac2f2789b/capsule_231x87.jpg?t=1761660851"
   },
+  "Halo": {
+    "steam_id": 976730,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/976730/capsule_231x87.jpg?t=1774466074"
+  },
   "Halo Infinite": {
     "steam_id": 1240440,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1240440/9d64f5027f08e849ed1369f98b22326e2377b2b7/capsule_231x87.jpg?t=1774464322"
+  },
+  "Halo: Reach": {
+    "steam_id": 1064220,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1064220/capsule_231x87.jpg?t=1634231207"
   },
   "Hand of Merlin": {
     "steam_id": 600610,
@@ -2903,6 +3199,9 @@
   "Hyper Scape": {
     "poster": null
   },
+  "Hyrule Warriors": {
+    "poster": null
+  },
   "I Am Fish": {
     "steam_id": 1472560,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1472560/capsule_231x87.jpg?t=1777912665"
@@ -2922,6 +3221,10 @@
   "I Was A Teenage Exocolonist": {
     "steam_id": 1148760,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1148760/f73cb409703446ee8f26148b68ced91ed12de440/capsule_231x87.jpg?t=1739821920"
+  },
+  "ICO": {
+    "steam_id": 4031150,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4031150/92a07a41c9f2bbfe3f821a3926efad66b8f5cc7c/capsule_231x87.jpg?t=1773133239"
   },
   "Idle Champions of the Forgotten Realms": {
     "steam_id": 627690,
@@ -2984,17 +3287,37 @@
     "steam_id": 1119980,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1119980/capsule_231x87.jpg?t=1725488241"
   },
+  "Inazuma Eleven": {
+    "steam_id": 2799860,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2799860/9ee2aa35c24c19588eec70c6f7ff94f6efa26b1f/capsule_231x87.jpg?t=1764296831"
+  },
   "Indiana Jones & the Great Circle": {
     "steam_id": 2677660,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2677660/13f13e9124e41f9b931d2f286f4012cb9444c853/capsule_231x87.jpg?t=1778168392"
+  },
+  "Indigo Prophecy": {
+    "steam_id": 312840,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/312840/capsule_231x87.jpg?t=1715614331"
   },
   "Indika": {
     "steam_id": 1373960,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373960/9c07b9beeba4b7a02cf46d930fd393eb9b13f5b0/capsule_231x87.jpg?t=1765218123"
   },
+  "InFamous": {
+    "steam_id": 4502750,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4502750/db55dff9c20bd00a8faae5b41f9b93d4a4c3f9bd/capsule_231x87.jpg?t=1776445597"
+  },
   "Infernax": {
     "steam_id": 374190,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/374190/capsule_231x87.jpg?t=1739367973"
+  },
+  "Infinite Space": {
+    "steam_id": 269990,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/269990/capsule_231x87.jpg?t=1748130263"
+  },
+  "Infinity Blade II": {
+    "steam_id": 1249070,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1249070/capsule_231x87.jpg?t=1707569593"
   },
   "Infinity Nikki": {
     "steam_id": 3164330,
@@ -3176,6 +3499,9 @@
     "steam_id": 2405060,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2405060/707419bf1d9071ee9457197c6a469ba16dac0001/capsule_231x87.jpg?t=1778751784"
   },
+  "Kid Icarus": {
+    "poster": null
+  },
   "Kill Knight": {
     "steam_id": 2694420,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2694420/833b5eea0f58ffe9c933d3e59864f78437db6c20/capsule_231x87_alt_assets_0.jpg?t=1778809508"
@@ -3183,6 +3509,9 @@
   "Killsquad": {
     "steam_id": 910490,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/910490/capsule_231x87.jpg?t=1678348175"
+  },
+  "Killzone 2": {
+    "poster": null
   },
   "King Arthur: A Knight’s Tale": {
     "poster": null
@@ -3210,6 +3539,9 @@
   "Kingdoms of Amalur: Re-Reckoning": {
     "steam_id": 1041720,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1041720/capsule_231x87.jpg?t=1725013769"
+  },
+  "Kirby's Dream Course": {
+    "poster": null
   },
   "Knights & Bikes": {
     "steam_id": 592480,
@@ -3253,6 +3585,10 @@
     "steam_id": 2510710,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2510710/2c2d4f6f6fe2891e8501af888a129f7cce041ac3/capsule_231x87.jpg?t=1752199364"
   },
+  "L.A. Noire": {
+    "steam_id": 110800,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/110800/capsule_231x87.jpg?t=1741117102"
+  },
   "Labyrinth City": {
     "steam_id": 1421790,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1421790/capsule_231x87.jpg?t=1778492689"
@@ -3289,6 +3625,10 @@
     "steam_id": 761460,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/761460/capsule_231x87.jpg?t=1773648902"
   },
+  "Lara Croft and the Guardian of Light": {
+    "steam_id": 35130,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/35130/capsule_231x87.jpg?t=1729009567"
+  },
   "Last Epoch": {
     "steam_id": 899770,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/899770/7b349f115c9b3d82aae00ca97138d00a89f8fce9/capsule_231x87.jpg?t=1774542931"
@@ -3296,6 +3636,9 @@
   "Last Stop": {
     "steam_id": 1122690,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1122690/capsule_231x87.jpg?t=1733585594"
+  },
+  "Law of the West": {
+    "poster": null
   },
   "Laysara: Summit Kingdom": {
     "steam_id": 1823950,
@@ -3327,6 +3670,10 @@
   "Leila": {
     "steam_id": 2458430,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2458430/651b5bee5d4407b41fc5d67ea0f6e492d89a2479/capsule_231x87.jpg?t=1747954981"
+  },
+  "Leisure Suit Larry": {
+    "steam_id": 1373430,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1373430/capsule_231x87.jpg?t=1728901827"
   },
   "Let Them Come": {
     "steam_id": 505630,
@@ -3383,6 +3730,16 @@
     "steam_id": 1924360,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1924360/capsule_231x87.jpg?t=1773307473"
   },
+  "Limbo": {
+    "steam_id": 48000,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/48000/capsule_231x87.jpg?t=1761819450"
+  },
+  "Lineage II": {
+    "poster": null
+  },
+  "Link to the Past 2": {
+    "poster": null
+  },
   "LISA": {
     "steam_id": 335670,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/335670/capsule_231x87.jpg?t=1756162720"
@@ -3422,6 +3779,9 @@
     "steam_id": 1049890,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1049890/capsule_231x87.jpg?t=1740912949"
   },
+  "Littlebigplanet 2": {
+    "poster": null
+  },
   "Live a Live": {
     "steam_id": 2014380,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2014380/capsule_231x87.jpg?t=1776153357"
@@ -3429,6 +3789,10 @@
   "Loco Motive": {
     "steam_id": 1709880,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1709880/e386a382bdb36d7487e44a45c2e96c6330ae4d4b/capsule_231x87.jpg?t=1778778284"
+  },
+  "Lollipop Chainsaw": {
+    "steam_id": 2658450,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2658450/capsule_231x87.jpg?t=1732876695"
   },
   "Lone Ruin": {
     "steam_id": 1452070,
@@ -3498,9 +3862,21 @@
     "steam_id": 2564520,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2564520/f8468e4b3d349e911ef1cddacc012f9a5095d3ec/capsule_231x87.jpg?t=1765297362"
   },
+  "Lost in Shadows": {
+    "poster": null
+  },
   "Lost in Space: The First Adventure": {
     "steam_id": 1320430,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1320430/4bd06b958ee16700e9149870a3c755d548b80483/capsule_231x87.jpg?t=1771514258"
+  },
+  "Lost Odyssey": {
+    "poster": null
+  },
+  "Lost Planet 2": {
+    "poster": null
+  },
+  "Lost Planet: Extreme Conditions": {
+    "poster": null
   },
   "Lost Sphear": {
     "steam_id": 525240,
@@ -3557,6 +3933,9 @@
     "steam_id": 1941540,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1941540/4cba4ed7de77ea84d94e22eef5cd8c9b284e5b25/capsule_231x87.jpg?t=1764177372"
   },
+  "Magic the Gathering: Duels of the Planeswalkers": {
+    "poster": null
+  },
   "Maglam Lord": {
     "steam_id": 1799380,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1799380/capsule_231x87.jpg?t=1654050818"
@@ -3569,6 +3948,9 @@
     "steam_id": 4078910,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4078910/891f7a896cfb28e79218cd97d9238c30fc63dcfb/capsule_231x87.jpg?t=1760709915"
   },
+  "Mann Vs Machine": {
+    "poster": null
+  },
   "Maquette": {
     "steam_id": 967490,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/967490/capsule_231x87.jpg?t=1574797726"
@@ -3578,6 +3960,13 @@
   },
   "Mario + Rabbids: Sparks of Hope": {
     "poster": null
+  },
+  "Mario Kart": {
+    "poster": null
+  },
+  "Mark of the Ninja": {
+    "steam_id": 214560,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214560/capsule_231x87.jpg?t=1668892924"
   },
   "Mars 2120": {
     "steam_id": 1424290,
@@ -3594,9 +3983,27 @@
   "Marvel Ultimate Alliance 3": {
     "poster": null
   },
+  "Marvel vs. Capcom 2": {
+    "poster": null
+  },
   "Marvel's Midnight Suns": {
     "steam_id": 368260,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/368260/capsule_231x87.jpg?t=1732138093"
+  },
+  "Mass Effect": {
+    "steam_id": 17460,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17460/capsule_231x87.jpg?t=1777395273"
+  },
+  "Mass Effect 2": {
+    "steam_id": 17460,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17460/capsule_231x87.jpg?t=1777395273"
+  },
+  "Mass Effect 2: Lair of the Shadow Broker": {
+    "poster": null
+  },
+  "Mass Effect 3": {
+    "steam_id": 1238020,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1238020/capsule_231x87.jpg?t=1777395203"
   },
   "Mass Effect: LE": {
     "steam_id": 1328670,
@@ -3656,6 +4063,10 @@
     "steam_id": 1783360,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1783360/capsule_231x87.jpg?t=1773849366"
   },
+  "Mega Man": {
+    "steam_id": 742300,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/742300/capsule_231x87.jpg?t=1770613022"
+  },
   "Melobot": {
     "steam_id": 1937670,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1937670/a5bd0822977b4bfeda553b1bda64d8097bf6dd16/capsule_231x87.jpg?t=1738057827"
@@ -3664,6 +4075,9 @@
     "steam_id": 990380,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/990380/7351895b7c93b920b0e2861634e659187c6e760f/capsule_231x87.jpg?t=1760540216"
   },
+  "Metal Gear Solid Rising": {
+    "poster": null
+  },
   "Metal Gear Solid V": {
     "steam_id": 287700,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/287700/capsule_231x87.jpg?t=1778872866"
@@ -3671,6 +4085,10 @@
   "Metal Gear Solid V: The Phantom Pain": {
     "steam_id": 287700,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/287700/capsule_231x87.jpg?t=1778872866"
+  },
+  "Metal Gear Solid: Peace Walker": {
+    "steam_id": 4184360,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4184360/c07d600b787e083c25cba9d517e03cb9507765fd/capsule_231x87.jpg?t=1778709357"
   },
   "Metal Slug Attack Reloaded": {
     "steam_id": 2322440,
@@ -3715,6 +4133,10 @@
   "Metro: Exodus": {
     "steam_id": 412020,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/412020/capsule_231x87.jpg?t=1750772804"
+  },
+  "Metroid": {
+    "steam_id": 3598640,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3598640/7b3e8ab096068225688eb3440c63cd538814ab15/capsule_231x87.jpg?t=1742658423"
   },
   "Mewgenics": {
     "steam_id": 686060,
@@ -3790,6 +4212,10 @@
     "steam_id": 1672810,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1672810/661b8a5b74d8a4c1036252d5195c69833307a7e5/capsule_231x87.jpg?t=1778513009"
   },
+  "Mirror’s Edge Catalyst": {
+    "steam_id": 1233570,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1233570/capsule_231x87.jpg?t=1777486496"
+  },
   "Misk School's Quest": {
     "poster": null
   },
@@ -3805,6 +4231,10 @@
     "steam_id": 1168870,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1168870/capsule_231x87.jpg?t=1653368212"
   },
+  "Mithra": {
+    "steam_id": 2838890,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2838890/394d317ed697441deb605035e8460979cc03f34f/capsule_231x87.jpg?t=1778573508"
+  },
   "Mittelborg: City of Mages": {
     "steam_id": 956060,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/956060/capsule_231x87.jpg?t=1577634418"
@@ -3813,12 +4243,30 @@
     "steam_id": 2582320,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2582320/49a74db3ec8f153734bf6480ad0e5cf2db29a240/capsule_231x87.jpg?t=1778541597"
   },
+  "MMA": {
+    "steam_id": 2655080,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2655080/7851d1cda6a5737912a4e5944d309f11ac79fc4b/capsule_231x87.jpg?t=1777993861"
+  },
   "Mom Hid My Game! 2": {
     "poster": null
+  },
+  "Monday Night Combat": {
+    "steam_id": 63200,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/63200/capsule_231x87.jpg?t=1447353796"
   },
   "Monster Boy": {
     "steam_id": 449610,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/449610/capsule_231x87.jpg?t=1756647701"
+  },
+  "Monster Hunter": {
+    "steam_id": 2246340,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2246340/970508d58e4f11f6f9ff3e2921b7eec558a50af8/capsule_231x87.jpg?t=1771382452"
+  },
+  "Monster Hunter 3 Ultimate": {
+    "poster": null
+  },
+  "Monster Hunter 4 Ultimate": {
+    "poster": null
   },
   "Monster Hunter Rise": {
     "steam_id": 1446780,
@@ -3834,6 +4282,10 @@
   "Monster Hunter Stories 2": {
     "steam_id": 1277400,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1277400/capsule_231x87.jpg?t=1768870791"
+  },
+  "Monster Hunter Tri": {
+    "steam_id": 1346500,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1346500/capsule_231x87.jpg?t=1593101225"
   },
   "Monster Hunter Wilds": {
     "steam_id": 2246340,
@@ -3932,9 +4384,16 @@
     "steam_id": 489140,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489140/capsule_231x87.jpg?t=1727200337"
   },
+  "Ms. 'Splosion Man": {
+    "steam_id": 105420,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105420/capsule_231x87.jpg?t=1667851301"
+  },
   "Mundaun": {
     "steam_id": 720350,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/720350/capsule_231x87.jpg?t=1709316632"
+  },
+  "Muramasa: The Demon Blade": {
+    "poster": null
   },
   "Murder Mystery Machine": {
     "steam_id": 930280,
@@ -4055,6 +4514,10 @@
     "steam_id": 1414850,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1414850/capsule_231x87.jpg?t=1746026335"
   },
+  "Nier": {
+    "steam_id": 524220,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/capsule_231x87.jpg?t=1773364834"
+  },
   "Nier Replicant": {
     "steam_id": 1113560,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1113560/capsule_231x87.jpg?t=1773365156"
@@ -4090,6 +4553,13 @@
   "Ninja Gaiden 2": {
     "steam_id": 3287520,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3287520/b9c000d94ab8b69fedc7070cd1d8c1571f31c83d/capsule_231x87.jpg?t=1760595265"
+  },
+  "Ninja Golf": {
+    "steam_id": 2361940,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2361940/capsule_231x87.jpg?t=1682860083"
+  },
+  "Nintendo Wii": {
+    "poster": null
   },
   "Nioh 2": {
     "steam_id": 1325200,
@@ -4241,6 +4711,10 @@
     "steam_id": 2346840,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2346840/841aa4c2ae85a4816d4257c6655c282dfe1e6c2f/capsule_231x87.jpg?t=1753780825"
   },
+  "Onechanbara": {
+    "steam_id": 446390,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/446390/capsule_231x87.jpg?t=1728663743"
+  },
   "Oni: The Road to Be the Mightiest Oni": {
     "poster": null
   },
@@ -4350,6 +4824,10 @@
     "steam_id": 1149220,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1149220/capsule_231x87.jpg?t=1569914128"
   },
+  "Pac-Man": {
+    "steam_id": 1859470,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1859470/capsule_231x87.jpg?t=1708327445"
+  },
   "Pacific Drive": {
     "steam_id": 1458140,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1458140/7c7238c946abefe1c7bc08e69f84af015e7c39ed/capsule_231x87.jpg?t=1763777212"
@@ -4445,8 +4923,15 @@
     "steam_id": 1883370,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1883370/a68c0ef90ad394cf77012c807a780727f62aadb9/capsule_231x87.jpg?t=1773155939"
   },
+  "Perfect Dark": {
+    "poster": null
+  },
   "Perseverance: Complete Edition": {
     "poster": null
+  },
+  "Persona 4": {
+    "steam_id": 2963950,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2963950/0a27c907c84779b61b4b24ecb73ee1a7a22f74fa/capsule_231x87.jpg?t=1752764434"
   },
   "Phantom Spark": {
     "steam_id": 1924180,
@@ -4525,6 +5010,9 @@
   "Pokopia": {
     "poster": null
   },
+  "Pokémon": {
+    "poster": null
+  },
   "Police Shootout": {
     "steam_id": 1279240,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1279240/capsule_231x87.jpg?t=1758644293"
@@ -4536,6 +5024,14 @@
   "Ponpu": {
     "steam_id": 1261530,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1261530/capsule_231x87.jpg?t=1738068633"
+  },
+  "Portal": {
+    "steam_id": 620,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/capsule_231x87.jpg?t=1745363004"
+  },
+  "Portal 2": {
+    "steam_id": 620,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/620/capsule_231x87.jpg?t=1745363004"
   },
   "Portal Dungeon Goblin Escape": {
     "steam_id": 1202140,
@@ -4591,6 +5087,12 @@
     "steam_id": 2261870,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2261870/5b9d6e0e5ca4abcc249fc1351ebdd7d7e0edd30d/capsule_231x87.jpg?t=1772449049"
   },
+  "Project Dust": {
+    "poster": null
+  },
+  "Project Trico": {
+    "poster": null
+  },
   "Promise Mascot Agency": {
     "steam_id": 2585830,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2585830/4742d744a7080c9bdeba967b5ff1ab4d143c6ae2/capsule_231x87.jpg?t=1773057797"
@@ -4602,6 +5104,14 @@
   "Protocol": {
     "steam_id": 3643210,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3643210/5ef9ca6b2bd3e6a0fd1a10ed465c7cf4297af680/capsule_231x87.jpg?t=1778830160"
+  },
+  "Prototype": {
+    "steam_id": 10150,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10150/capsule_231x87.jpg?t=1655760765"
+  },
+  "Prototype 2": {
+    "steam_id": 2520550,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2520550/capsule_231x87.jpg?t=1761530860"
   },
   "PS4 era": {
     "poster": null
@@ -4633,6 +5143,10 @@
   "Puss!": {
     "steam_id": 4626010,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4626010/65625cb71fd3c064a4e567fe49a5cb23c09c9e7d/capsule_231x87.jpg?t=1777997652"
+  },
+  "Puzzle Quest 2": {
+    "steam_id": 718080,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/718080/capsule_231x87.jpg?t=1715609939"
   },
   "Puzzle Quest 3": {
     "steam_id": 1380410,
@@ -4693,6 +5207,9 @@
     "steam_id": 1627710,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1627710/capsule_231x87.jpg?t=1623979507"
   },
+  "Rapelay": {
+    "poster": null
+  },
   "Raptor Boyfriend: A High School Romance": {
     "steam_id": 1273080,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1273080/capsule_231x87.jpg?t=1768666705"
@@ -4708,6 +5225,10 @@
     "steam_id": 1615290,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1615290/capsule_231x87.jpg?t=1778135029"
   },
+  "Rayman Origins": {
+    "steam_id": 207490,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/207490/capsule_231x87.jpg?t=1777993639"
+  },
   "RE2 DLC": {
     "steam_id": 2384071,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2384071/f2ff12afd730481f70ec661c9226813c5dfa6de2/capsule_231x87.jpg?t=1727996973"
@@ -4718,6 +5239,13 @@
   "Read Only Memories: Neurodiver": {
     "steam_id": 1293910,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1293910/capsule_231x87.jpg?t=1736211713"
+  },
+  "Ready 2 Rumble Boxing": {
+    "poster": null
+  },
+  "Real Heroes: Firefighter": {
+    "steam_id": 1333700,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1333700/capsule_231x87.jpg?t=1654477205"
   },
   "Reanimal": {
     "steam_id": 2129530,
@@ -4737,6 +5265,10 @@
   "ReCore": {
     "steam_id": 537450,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/537450/capsule_231x87.jpg?t=1667851411"
+  },
+  "Red Dead Redemption": {
+    "steam_id": 2668510,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2668510/c9c0dd50da5b3543c74beb11b6c806fb9fd88a8c/capsule_231x87.jpg?t=1741118459"
   },
   "Red Dead Redemption (PS4)": {
     "poster": null
@@ -4804,6 +5336,9 @@
     "steam_id": 418370,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/418370/capsule_231x87.jpg?t=1778464947"
   },
+  "Resident Evil Code: Veronica": {
+    "poster": null
+  },
   "Resident Evil Requiem": {
     "steam_id": 3764200,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3764200/64f506b9b6210df6055136e7017f2082957e5b22/capsule_231x87.jpg?t=1772587704"
@@ -4838,6 +5373,9 @@
   "Revolgear Zero": {
     "steam_id": 3941820,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3941820/b617eff861dddc97bc84124a1f5d5a09446ba721/capsule_231x87.jpg?t=1776305147"
+  },
+  "Ribbit King": {
+    "poster": null
   },
   "Ride 4": {
     "steam_id": 1259980,
@@ -4929,6 +5467,9 @@
   "Robotry": {
     "steam_id": 1461930,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1461930/capsule_231x87.jpg?t=1720196909"
+  },
+  "Rock of the Dead": {
+    "poster": null
   },
   "Rogue Legacy 2": {
     "steam_id": 1253920,
@@ -5031,6 +5572,9 @@
     "steam_id": 1464500,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1464500/capsule_231x87.jpg?t=1709978595"
   },
+  "Rythm Heaven Plus": {
+    "poster": null
+  },
   "Saborus": {
     "steam_id": 2768030,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2768030/ee7f8188681ff582681f078d6c9c5bde4a3847e7/capsule_231x87.jpg?t=1772550686"
@@ -5072,6 +5616,10 @@
     "steam_id": 541570,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/541570/capsule_231x87.jpg?t=1767808850"
   },
+  "Salt": {
+    "steam_id": 4213930,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4213930/ac52d6429028862601c947827d1ac383b5333137/capsule_231x87.jpg?t=1778235498"
+  },
   "Saltsea Chronicles": {
     "steam_id": 1419620,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1419620/capsule_231x87.jpg?t=1746778874"
@@ -5091,6 +5639,10 @@
   "Sanabi": {
     "steam_id": 1562700,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1562700/capsule_231x87.jpg?t=1764564242"
+  },
+  "Sanctuary": {
+    "steam_id": 4132150,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4132150/236cd1b6ddd35c42750798589380afc6631291fe/capsule_231x87.jpg?t=1769075719"
   },
   "Sand Land": {
     "steam_id": 1979440,
@@ -5164,6 +5716,10 @@
     "steam_id": 1323900,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1323900/e0511f1460e59a2cee0ce59110917cbd96191ee7/capsule_231x87.jpg?t=1770728819"
   },
+  "Scribblenauts": {
+    "steam_id": 218680,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/218680/capsule_231x87.jpg?t=1773779134"
+  },
   "Sea Horizon": {
     "steam_id": 1611420,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1611420/capsule_231x87.jpg?t=1668074120"
@@ -5201,6 +5757,10 @@
     "steam_id": 2177150,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2177150/capsule_231x87.jpg?t=1778054427"
   },
+  "Sequence": {
+    "steam_id": 630640,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/630640/capsule_231x87.jpg?t=1650059037"
+  },
   "Serial Cleaners": {
     "steam_id": 1337920,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1337920/capsule_231x87.jpg?t=1689098124"
@@ -5215,6 +5775,10 @@
   "Seven: The Days Long Gone": {
     "steam_id": 784980,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/784980/capsule_231x87.jpg?t=1516629495"
+  },
+  "Shadow Complex": {
+    "steam_id": 385560,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/385560/capsule_231x87.jpg?t=1470279978"
   },
   "Shadow Gambit: the Cursed Crew": {
     "steam_id": 1545560,
@@ -5269,6 +5833,10 @@
     "steam_id": 1216320,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1216320/capsule_231x87.jpg?t=1683086427"
   },
+  "Shin Megami Tensei": {
+    "steam_id": 1875830,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1875830/capsule_231x87.jpg?t=1763530264"
+  },
   "Shinsekai: Into the Depths": {
     "steam_id": 1335120,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1335120/capsule_231x87.jpg?t=1593100849"
@@ -5280,6 +5848,10 @@
   "Shogun Showdown": {
     "steam_id": 2084000,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2084000/capsule_231x87.jpg?t=1763395118"
+  },
+  "Shoot 1UP": {
+    "steam_id": 373610,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/373610/capsule_231x87.jpg?t=1726761276"
   },
   "Shoot 1UP DX": {
     "steam_id": 373610,
@@ -5463,6 +6035,10 @@
     "steam_id": 1012560,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1012560/capsule_231x87.jpg?t=1579657570"
   },
+  "Sniper Elite V2": {
+    "steam_id": 728740,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/728740/capsule_231x87.jpg?t=1601483608"
+  },
   "Sniper: Ghost Warrior Contracts 2": {
     "steam_id": 1619170,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1619170/capsule_231x87.jpg?t=1623158901"
@@ -5504,6 +6080,9 @@
     "steam_id": 1237320,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1237320/capsule_231x87.jpg?t=1778176871"
   },
+  "Sorcerian": {
+    "poster": null
+  },
   "Sorcery!": {
     "steam_id": 629730,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/629730/af06ceb984281d88ace61451c6bae51c5ef52323/capsule_231x87.jpg?t=1765901841"
@@ -5523,6 +6102,9 @@
   "Souls of Chronos": {
     "steam_id": 1629910,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1629910/capsule_231x87.jpg?t=1698202908"
+  },
+  "Souls series": {
+    "poster": null
   },
   "Soulstice": {
     "steam_id": 1602080,
@@ -5639,6 +6221,10 @@
     "steam_id": 2001120,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2001120/1988bcdc421d71cbe4c8c07940967e7a0cd752be/capsule_231x87.jpg?t=1763484567"
   },
+  "Splosion Man": {
+    "steam_id": 105420,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/105420/capsule_231x87.jpg?t=1667851301"
+  },
   "Square Keeper": {
     "steam_id": 1944730,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1944730/capsule_231x87.jpg?t=1726464362"
@@ -5657,9 +6243,17 @@
     "steam_id": 1776380,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1776380/capsule_231x87.jpg?t=1775122549"
   },
+  "Star Ocean: The Last Hope": {
+    "steam_id": 609150,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/609150/capsule_231x87.jpg?t=1775121864"
+  },
   "Star Ocean: The Second Story R": {
     "steam_id": 2238900,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2238900/capsule_231x87.jpg?t=1775123089"
+  },
+  "Star Trek Online": {
+    "steam_id": 9900,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/9900/aa38cbad688d0a640737cee6e93be9573f6ff55e/capsule_231x87.jpg?t=1776788569"
   },
   "Star Trek Voyager: Across the Universe": {
     "poster": null
@@ -5686,6 +6280,10 @@
     "steam_id": 2842040,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2842040/9e887b6e39c690a305e509e598a125cbc6b2bd1c/capsule_231x87.jpg?t=1773407100"
   },
+  "Star Wars: The Old Republic": {
+    "steam_id": 1286830,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286830/capsule_231x87.jpg?t=1776790854"
+  },
   "Starbase Startopia": {
     "poster": null
   },
@@ -5696,6 +6294,13 @@
   "Starless Abyss": {
     "steam_id": 3167970,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3167970/00c41f171013019f70b37309eea2d9d80304dbd1/capsule_231x87.jpg?t=1774508935"
+  },
+  "State of Decay: Lifeline": {
+    "steam_id": 259041,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/259041/capsule_231x87.jpg?t=1557516380"
+  },
+  "Steam Box": {
+    "poster": null
   },
   "Steampunk Tower 2": {
     "steam_id": 622460,
@@ -5798,6 +6403,10 @@
     "steam_id": 2162020,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2162020/capsule_231x87.jpg?t=1756799953"
   },
+  "Street Fighter": {
+    "steam_id": 1364780,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1364780/7f4bcdebc8dc0d9c1e77d70fe2c6ed13a3ab2381/capsule_231x87_alt_assets_18.jpg?t=1776917924"
+  },
   "Street Fighter 6": {
     "steam_id": 1364780,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1364780/7f4bcdebc8dc0d9c1e77d70fe2c6ed13a3ab2381/capsule_231x87_alt_assets_18.jpg?t=1776917924"
@@ -5874,6 +6483,15 @@
   "Super Hiking League DX": {
     "steam_id": 915850,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/915850/capsule_231x87.jpg?t=1696269357"
+  },
+  "Super Mario Bros. 2": {
+    "poster": null
+  },
+  "Super Mario Galaxy": {
+    "poster": null
+  },
+  "Super Mario Galaxy 2": {
+    "poster": null
   },
   "Super Mining Mechs": {
     "steam_id": 2830150,
@@ -6009,6 +6627,14 @@
     "steam_id": 1496590,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1496590/capsule_231x87.jpg?t=1772227146"
   },
+  "Team Fortress": {
+    "steam_id": 440,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440/capsule_231x87.jpg?t=1757348372"
+  },
+  "Team Fortress 2": {
+    "steam_id": 440,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440/capsule_231x87.jpg?t=1757348372"
+  },
   "Teardown": {
     "steam_id": 1167630,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1167630/84cdc9c69746daeee59a56b5269596ebbdb014fb/capsule_231x87_alt_assets_5.jpg?t=1776678144"
@@ -6109,6 +6735,9 @@
   "The Complex": {
     "steam_id": 1107790,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1107790/capsule_231x87.jpg?t=1757513067"
+  },
+  "The Conduit": {
+    "poster": null
   },
   "The Cosmic Wheel Sisterhood": {
     "steam_id": 1340480,
@@ -6267,6 +6896,15 @@
     "steam_id": 1579280,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1579280/capsule_231x87.jpg?t=1765980987"
   },
+  "The Legend of Zelda": {
+    "poster": null
+  },
+  "The Legend of Zelda: Link Between Worlds": {
+    "poster": null
+  },
+  "The Legend of Zelda: Skyward Sword": {
+    "poster": null
+  },
   "The Lies of P": {
     "poster": null
   },
@@ -6363,6 +7001,10 @@
     "steam_id": 1453790,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1453790/capsule_231x87.jpg?t=1778534987"
   },
+  "The Sims": {
+    "steam_id": 1222670,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222670/capsule_231x87.jpg?t=1778778231"
+  },
   "The Sinking City": {
     "steam_id": 2825860,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2825860/ed82cb1a0bfd2331c5bbcf297dba3e6a5635d56e/capsule_231x87.jpg?t=1777887622"
@@ -6395,6 +7037,22 @@
     "steam_id": 598700,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/598700/1e09f8decdbc6c357f69ff23ded1f54cf911924c/capsule_231x87.jpg?t=1778495362"
   },
+  "The Walking Dead": {
+    "steam_id": 207610,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/207610/capsule_231x87.jpg?t=1729702559"
+  },
+  "The Walking Dead Episode Three": {
+    "poster": null
+  },
+  "The Walking Dead: Episode 4": {
+    "poster": null
+  },
+  "The Walking Dead: Episode Five–No Time Left": {
+    "poster": null
+  },
+  "The Walking Dead: Episode One–A New Day": {
+    "poster": null
+  },
   "The Wandering Village": {
     "steam_id": 1121640,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1121640/3c59f658cfac54c415d68f7ba6a9fbcf6ce330da/capsule_231x87.jpg?t=1778694073"
@@ -6406,6 +7064,9 @@
   "The Wizard & The Slug": {
     "steam_id": 1271170,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1271170/06760718f134bfb5b752719979b3a13abf0b7642/capsule_231x87.jpg?t=1770492529"
+  },
+  "The Wolf Among Us Episode 3": {
+    "poster": null
   },
   "The World Next Door": {
     "steam_id": 755470,
@@ -6422,6 +7083,10 @@
   "There Is No Light": {
     "steam_id": 1132980,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1132980/capsule_231x87.jpg?t=1735573480"
+  },
+  "Thief": {
+    "steam_id": 3223070,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3223070/8ff4bbc13a073a6aa4209ef3c68f372b90c14ded/capsule_231x87.jpg?t=1778743990"
   },
   "Thirsty Suitors": {
     "steam_id": 1617220,
@@ -6495,6 +7160,10 @@
     "steam_id": 1307580,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1307580/9d5bbbd1c9343d02bd94a48c1be786d4320d5dc8/capsule_231x87_alt_assets_0.jpg?t=1777555928"
   },
+  "Tomb Raider": {
+    "steam_id": 3558670,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3558670/560eb591bb96d39b4d9c2349854ce728e3208ea4/capsule_231x87.jpg?t=1765564329"
+  },
   "Tomb Raider Remaster 1-3": {
     "poster": null
   },
@@ -6506,6 +7175,14 @@
   },
   "Tony Hawk 5": {
     "poster": null
+  },
+  "Too Human": {
+    "steam_id": 2217480,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2217480/capsule_231x87.jpg?t=1710436449"
+  },
+  "Torchlight": {
+    "steam_id": 1974050,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974050/f052cd2b216a032bd1ca7c45976e4d7b4b37a4a5/capsule_231x87.jpg?t=1776329357"
   },
   "Torchlight 2": {
     "steam_id": 200710,
@@ -6543,6 +7220,9 @@
     "steam_id": 1291340,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1291340/capsule_231x87.jpg?t=1776072963"
   },
+  "Toy Soldiers DLC": {
+    "poster": null
+  },
   "Trailmakers: Pioneers": {
     "steam_id": 3456630,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3456630/39d8593ca4b789163884b2a69106b8edffa20e7d/capsule_231x87.jpg?t=1741262434"
@@ -6560,6 +7240,13 @@
   "Transformers: Battlegrounds": {
     "poster": null
   },
+  "Transformers: Revenge of the Fallen": {
+    "poster": null
+  },
+  "Transistor": {
+    "steam_id": 237930,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/237930/capsule_231x87.jpg?t=1729113992"
+  },
   "Trash Goblin": {
     "steam_id": 2407830,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2407830/b5f73d55cbca5df86e2feb1a92636ce62bb1439e/capsule_231x87.jpg?t=1778601348"
@@ -6576,6 +7263,9 @@
     "steam_id": 1164940,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1164940/capsule_231x87.jpg?t=1765814715"
   },
+  "Trials HD": {
+    "poster": null
+  },
   "Trials of Mana": {
     "steam_id": 924980,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/924980/capsule_231x87.jpg?t=1776921685"
@@ -6587,6 +7277,10 @@
   "Trinity Trigger": {
     "steam_id": 2176930,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2176930/capsule_231x87.jpg?t=1750960165"
+  },
+  "Trino": {
+    "steam_id": 965010,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/965010/a0a716f0216afaf2c10eef7b979d6feb791266e5/capsule_231x87.jpg?t=1764611842"
   },
   "Tron: RUN/r": {
     "steam_id": 392000,
@@ -6623,11 +7317,26 @@
     "steam_id": 2520310,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2520310/capsule_231x87.jpg?t=1752696901"
   },
+  "Turtles in Time": {
+    "poster": null
+  },
   "Tux & Fanny": {
     "steam_id": 2094730,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2094730/capsule_231x87.jpg?t=1760438180"
   },
   "Twilight Zone VR": {
+    "poster": null
+  },
+  "UFC": {
+    "poster": null
+  },
+  "UFC 2009: Undisputed": {
+    "poster": null
+  },
+  "UFC Undisputed": {
+    "poster": null
+  },
+  "UFC Undisputed 2010": {
     "poster": null
   },
   "UFO 50": {
@@ -6775,6 +7484,10 @@
     "steam_id": 1096410,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1096410/capsule_231x87.jpg?t=1748869309"
   },
+  "Vanquish": {
+    "steam_id": 460810,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/460810/capsule_231x87.jpg?t=1763675489"
+  },
   "Varney Lake": {
     "steam_id": 1933180,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1933180/capsule_231x87.jpg?t=1721409594"
@@ -6859,6 +7572,9 @@
   "Waking": {
     "steam_id": 227200,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/227200/capsule_231x87.jpg?t=1447357132"
+  },
+  "Walking Dead S2 Episode 4": {
+    "poster": null
   },
   "Walking Dead: Destinies": {
     "steam_id": 2192790,
@@ -6968,6 +7684,13 @@
     "steam_id": 1823930,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1823930/capsule_231x87.jpg?t=1759330606"
   },
+  "Way of the Samurai 3": {
+    "steam_id": 427510,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427510/012f8a7faf82cc33770bd0ea884b34bb1cf20e22/capsule_231x87.jpg?t=1757054196"
+  },
+  "Way of the Samurai series": {
+    "poster": null
+  },
   "Way of the Tray": {
     "steam_id": 3373830,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3373830/bdef7dc6ab63d44489e02ac6eff37a351f13efbd/capsule_231x87.jpg?t=1757950184"
@@ -6983,6 +7706,10 @@
   "Weakwood Throne": {
     "steam_id": 760990,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/760990/capsule_231x87.jpg?t=1637229724"
+  },
+  "Weapon of Choice": {
+    "steam_id": 373600,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/373600/capsule_231x87.jpg?t=1726761132"
   },
   "Weapon of Choice DX": {
     "steam_id": 373600,
@@ -7058,6 +7785,9 @@
     "steam_id": 1198040,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1198040/capsule_231x87.jpg?t=1669489440"
   },
+  "Wii Sports": {
+    "poster": null
+  },
   "Wild Bastards": {
     "steam_id": 1660840,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1660840/capsule_231x87.jpg?t=1764600518"
@@ -7085,6 +7815,12 @@
   "Windswept": {
     "steam_id": 1660960,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1660960/d0062dac360e0f553d63829f2ff26b2ba88bf79b/capsule_231x87.jpg?t=1778058651"
+  },
+  "Wing Commander": {
+    "poster": null
+  },
+  "Wing Commander series": {
+    "poster": null
   },
   "Wingspan": {
     "steam_id": 1054490,
@@ -7135,6 +7871,12 @@
     "steam_id": 913740,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/913740/capsule_231x87.jpg?t=1730740660"
   },
+  "World of Warcraft": {
+    "poster": null
+  },
+  "World of Warcraft: Cataclysm": {
+    "poster": null
+  },
   "World War Z": {
     "steam_id": 699130,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/699130/bc262c3fd0b77d064cae97471f4218a8f1f34495/capsule_231x87.jpg?t=1772017589"
@@ -7147,6 +7889,12 @@
     "steam_id": 3014070,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3014070/capsule_231x87.jpg?t=1747956723"
   },
+  "WoW: Delicious Chocolate Cake Recipe": {
+    "poster": null
+  },
+  "Wreck-It Ralph": {
+    "poster": null
+  },
   "Wreckfest": {
     "steam_id": 1203190,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1203190/28ac9667b9104933188498bac4b469132269a05a/capsule_231x87.jpg?t=1772727380"
@@ -7154,6 +7902,18 @@
   "Wytchwood": {
     "steam_id": 729000,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/729000/capsule_231x87.jpg?t=1705693631"
+  },
+  "X-Men Destiny": {
+    "poster": null
+  },
+  "XBL Community Games: CaveIn": {
+    "poster": null
+  },
+  "XBL Community Games: Mithra": {
+    "poster": null
+  },
+  "XBL Community Games: Trino": {
+    "poster": null
   },
   "Xel": {
     "steam_id": 2690610,
@@ -7249,5 +8009,8 @@
   "Zombie Rollerz: Pinball Heroes": {
     "steam_id": 915230,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/915230/capsule_231x87.jpg?t=1756141757"
+  },
+  "ZombiU": {
+    "poster": null
   }
 }

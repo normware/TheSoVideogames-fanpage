@@ -132,7 +132,8 @@
     "Arknights Endfied",
     "Crystal of Atlan",
     "Dragon Traveler",
-    "Fallout: New Vegas"
+    "Fallout: New Vegas",
+    "Fallout"
   ],
   "471": [
     "Star Trek Voyager: Across the Universe",
@@ -254,7 +255,8 @@
     "Fire Emblem",
     "Hotel Barcelona",
     "Borderlands 4",
-    "Wander Stars"
+    "Wander Stars",
+    "Borderlands"
   ],
   "454": [
     "Ritual of Raven",
@@ -271,7 +273,8 @@
     "Hell is Us",
     "Daemon x Machina: Titanic Scion",
     "Borderlands 4",
-    "Discounty"
+    "Discounty",
+    "Borderlands"
   ],
   "452": [
     "Discounty",
@@ -429,7 +432,8 @@
     "Rusty Rabbit",
     "South of Midnight",
     "Split Fiction",
-    "Ixion"
+    "Ixion",
+    "Monster Hunter"
   ],
   "433": [
     "Assassin's Creed: Shadows",
@@ -439,7 +443,8 @@
     "Police Shootout",
     "Split Fiction",
     "Trailmakers: Pioneers",
-    "The Hundred Line: Last Defense Academy"
+    "The Hundred Line: Last Defense Academy",
+    "Monster Hunter"
   ],
   "432": [
     "Assassin's Creed: Shadows",
@@ -452,7 +457,8 @@
   ],
   "431": [
     "Monster Hunter Wilds",
-    "Centum"
+    "Centum",
+    "Monster Hunter"
   ],
   "430": [
     "Stories from Sol: the Gun-Dog",
@@ -460,7 +466,8 @@
     "Break the Loop",
     "Luck be a Landlord",
     "Cabernet",
-    "Monster Hunter Wilds"
+    "Monster Hunter Wilds",
+    "Monster Hunter"
   ],
   "429": [
     "Infinity Nikki",
@@ -1309,7 +1316,8 @@
     "Library of Babel",
     "Ghostwire: Tokyo",
     "Atari Mania",
-    "The Good Life"
+    "The Good Life",
+    "Divinity: Original Sin"
   ],
   "331": [
     "40K: Inquisitor",
@@ -1371,13 +1379,15 @@
     "Meg's Monster",
     "Little Witch Nobeta",
     "Labyrinth of Galleria: the Moon Society",
-    "Wo Long: Fallen Empire"
+    "Wo Long: Fallen Empire",
+    "Destiny"
   ],
   "325": [
     "Destiny 2",
     "Souls of Chronos",
     "Wanted: Dead",
-    "Exploria"
+    "Exploria",
+    "Destiny"
   ],
   "324": [
     "Rise of Fox Hero",
@@ -1447,7 +1457,8 @@
     "Soulstice",
     "Vampire Survivors DLC",
     "Weird West",
-    "Vampire Survivors"
+    "Vampire Survivors",
+    "Portal"
   ],
   "317": [
     "GOTY"
@@ -1679,7 +1690,8 @@
     "PowerWash Simulator",
     "Solasta: Crown of the Magister",
     "Stray",
-    "Monster Hunter Rise"
+    "Monster Hunter Rise",
+    "Monster Hunter"
   ],
   "292": [
     "Ara Fell",
@@ -1952,7 +1964,8 @@
     "Nobody Saves the World",
     "Shovel Knight Puzzle Dungeon",
     "Solar Ash",
-    "The Last Oricru"
+    "The Last Oricru",
+    "Halo"
   ],
   "261": [
     "Deathloop",
@@ -2920,7 +2933,8 @@
     "Metal Gear Solid V: The Phantom Pain",
     "Warp Through",
     "Metal Gear Solid V",
-    "ReCore"
+    "ReCore",
+    "Metroid"
   ],
   "156": [
     "Black Future '88",
@@ -2975,10 +2989,18 @@
     "Into the Dead 2",
     "Valfaris",
     "Devotion",
-    "Fortnite"
+    "Fortnite",
+    "Team Fortress 2",
+    "Team Fortress"
   ],
   "151": [],
-  "150": [],
+  "150": [
+    "Dark Souls 3",
+    "Mirror’s Edge Catalyst",
+    "Salt",
+    "Sanctuary",
+    "Souls series"
+  ],
   "149": [
     "Sayonara Wild Hearts",
     "Overland",
@@ -2992,7 +3014,8 @@
   ],
   "148": [
     "Control",
-    "Far Cry Primal"
+    "Far Cry Primal",
+    "Street Fighter"
   ],
   "147": [
     "ELEA",
@@ -3010,7 +3033,8 @@
     "ELEA",
     "Skelly Selest",
     "Afterparty",
-    "GOTY"
+    "GOTY",
+    "Borderlands"
   ],
   "145": [
     "Creature in the Well",
@@ -3033,7 +3057,8 @@
     "Solo: Islands of the Heart",
     "Gravity Ghost",
     "Sagebrush",
-    "Metal Wolf Chaos XD"
+    "Metal Wolf Chaos XD",
+    "Bloodborne"
   ],
   "142": [
     "39 Days to Mars",
@@ -3042,14 +3067,16 @@
     "World War Z",
     "Hitman: Siberia Sniper DLC",
     "Fission Superstar X",
-    "Fallout 4"
+    "Fallout 4",
+    "Fallout"
   ],
   "141": [
     "My Friend Pedro",
     "198X",
     "Metro: Exodus",
     "SOMA",
-    "The Talos Principle"
+    "The Talos Principle",
+    "Steam Box"
   ],
   "140": [
     "Etherborn",
@@ -3057,7 +3084,8 @@
     "The World Next Door",
     "System Shock 2",
     "Flooded",
-    "Haven"
+    "Haven",
+    "Destiny"
   ],
   "138": [
     "Scavengers",
@@ -3078,8 +3106,13 @@
     "Observation",
     "The Sinking City"
   ],
-  "136": [],
-  "135": [],
+  "136": [
+    "Monster Hunter",
+    "Persona 4"
+  ],
+  "135": [
+    "Arkham Knight"
+  ],
   "132": [
     "Far Cry: New Dawn",
     "Overcooked",
@@ -3097,7 +3130,8 @@
     "The Secret Mine",
     "Fortnite",
     "Deus Ex: Human Revolution",
-    "Sekiro: Shadows Die Twice"
+    "Sekiro: Shadows Die Twice",
+    "Monster Hunter"
   ],
   "128": [
     "The Division 2",
@@ -3105,7 +3139,8 @@
     "Sekiro: Shadows Die Twice",
     "Ninja Gaiden 2",
     "Resident Evil 7",
-    "Undead's Building"
+    "Undead's Building",
+    "Bloodborne"
   ],
   "127": [
     "Heaven's Vault",
@@ -3127,7 +3162,9 @@
   "123": [
     "Beat Cop",
     "The Occupation",
-    "Demon's Souls"
+    "Demon's Souls",
+    "Crackdown",
+    "Too Human"
   ],
   "122": [
     "Ape Out",
@@ -3160,7 +3197,8 @@
     "Trials Rising",
     "RemiLore: Lost Girl in the Lands of Lore",
     "Devotion",
-    "Mr. Shifty"
+    "Mr. Shifty",
+    "Hyrule Warriors"
   ],
   "None": [
     "Stray",
@@ -3176,10 +3214,12 @@
   "78": [
     "Sleeping Dogs",
     "Birth",
-    "Risen"
+    "Risen",
+    "Darksiders"
   ],
   "76": [
-    "Haven"
+    "Haven",
+    "The Walking Dead"
   ],
   "139": [
     "Mad Max",
@@ -3189,10 +3229,12 @@
     "Watch Dogs"
   ],
   "108": [
-    "GOTY"
+    "GOTY",
+    "The Walking Dead"
   ],
   "104": [
-    "GOTY"
+    "GOTY",
+    "Too Human"
   ],
   "103": [
     "GOTY"
@@ -3207,10 +3249,14 @@
     "Sleeping Dogs"
   ],
   "89": [
-    "Fallout: New Vegas"
+    "Fallout: New Vegas",
+    "Fallout 3",
+    "Fallout"
   ],
   "80": [
-    "Torchlight 2"
+    "Torchlight 2",
+    "Torchlight",
+    "Kid Icarus"
   ],
   "75": [
     "Haven"
@@ -3222,10 +3268,13 @@
   ],
   "65": [
     "Elder Scrolls",
-    "Corpse Party"
+    "Corpse Party",
+    "The Legend of Zelda: Skyward Sword",
+    "The Legend of Zelda"
   ],
   "64": [
-    "Elder Scrolls"
+    "Elder Scrolls",
+    "Assassin's Creed"
   ],
   "63": [
     "Lake"
@@ -3237,16 +3286,20 @@
     "Demon's Souls"
   ],
   "60": [
-    "Deus Ex: Human Revolution"
+    "Deus Ex: Human Revolution",
+    "Gears of War"
   ],
   "50": [
     "Dead Island"
   ],
   "24": [
-    "God of War"
+    "God of War",
+    "Muramasa: The Demon Blade",
+    "Borderlands"
   ],
   "23": [
-    "Demon's Souls"
+    "Demon's Souls",
+    "Shin Megami Tensei"
   ],
   "16": [
     "Control"
@@ -3259,30 +3312,80 @@
     "GOTY"
   ],
   "14": [
-    "Grow Up"
+    "Grow Up",
+    "Leisure Suit Larry",
+    "Gears of War"
   ],
   "2020": [],
-  "81": [],
-  "77": [],
-  "134": [],
+  "81": [
+    "The Walking Dead: Episode 4",
+    "The Walking Dead"
+  ],
+  "77": [
+    "Sniper Elite V2"
+  ],
+  "134": [
+    "Rythm Heaven Plus",
+    "Nier",
+    "Batman: Arkham Knight",
+    "Arkham Knight"
+  ],
   "133": [],
-  "129": [],
+  "129": [
+    "Bloodborne"
+  ],
   "125": [],
   "124": [],
-  "119": [],
-  "118": [],
+  "119": [
+    "Monster Hunter 4 Ultimate",
+    "Danganronpa: Another Episode",
+    "Monster Hunter"
+  ],
+  "118": [
+    "Destiny"
+  ],
   "117": [],
   "116": [],
-  "115": [],
-  "114": [],
+  "115": [
+    "Mark of the Ninja"
+  ],
+  "114": [
+    "Destiny Beta",
+    "Divinity: Original Sin",
+    "Walking Dead S2 Episode 4",
+    "State of Decay: Lifeline",
+    "DOTA 2",
+    "Dark Souls 2 Crown of the Sunken King",
+    "Transistor",
+    "Hyrule Warriors",
+    "Destiny"
+  ],
   "112": [],
-  "111": [],
-  "110": [],
+  "111": [
+    "Souls series"
+  ],
+  "110": [
+    "The Wolf Among Us Episode 3"
+  ],
   "109": [],
-  "107": [],
-  "106": [],
+  "107": [
+    "Bravely Default",
+    "Thief",
+    "Castlevania: Lords of Shadow 2",
+    "Inazuma Eleven"
+  ],
+  "106": [
+    "Mass Effect"
+  ],
   "105": [],
-  "102": [],
+  "102": [
+    "Beyond Two Souls",
+    "Batman: Arkham Origins",
+    "ZombiU",
+    "The Legend of Zelda: Link Between Worlds",
+    "Link to the Past 2",
+    "The Legend of Zelda"
+  ],
   "101": [],
   "100": [],
   "97": [],
@@ -3290,68 +3393,351 @@
   "94": [],
   "93": [],
   "92": [],
-  "91": [],
-  "90": [],
-  "88": [],
-  "87": [],
+  "91": [
+    "Pokémon"
+  ],
+  "90": [
+    "Tomb Raider"
+  ],
+  "88": [
+    "Monster Hunter 3 Ultimate",
+    "Aliens: Colonial Marines",
+    "Monster Hunter"
+  ],
+  "87": [
+    "3DS"
+  ],
   "86": [],
-  "85": [],
+  "85": [
+    "Steam Box"
+  ],
   "84": [],
-  "83": [],
-  "82": [],
-  "2": [],
-  "79": [],
-  "73": [],
-  "71": [],
-  "70": [],
+  "83": [
+    "The Walking Dead",
+    "The Walking Dead: Episode Five–No Time Left"
+  ],
+  "82": [
+    "Wreck-It Ralph"
+  ],
+  "2": [
+    "Team Fortress 2",
+    "Mann Vs Machine",
+    "Team Fortress"
+  ],
+  "79": [
+    "The Walking Dead Episode Three",
+    "The Walking Dead"
+  ],
+  "73": [
+    "The Walking Dead",
+    "The Walking Dead: Episode One–A New Day",
+    "Toy Soldiers DLC"
+  ],
+  "71": [
+    "Mass Effect 3",
+    "Super Mario Bros. 2",
+    "Devil Survivor 2",
+    "Mass Effect"
+  ],
+  "70": [
+    "Star Wars: The Old Republic",
+    "Mass Effect 3",
+    "Final Fantasy XIII-2",
+    "Final Fantasy XIII",
+    "Mass Effect"
+  ],
   "69": [],
-  "68": [],
-  "67": [],
+  "68": [
+    "Rayman Origins",
+    "X-Men Destiny",
+    "Destiny"
+  ],
+  "67": [
+    "Fallout",
+    "Infinity Blade II",
+    "Sequence",
+    "Darksiders",
+    "The Legend of Zelda: Skyward Sword",
+    "The Legend of Zelda"
+  ],
   "66": [],
-  "59": [],
-  "58": [],
-  "57": [],
+  "59": [
+    "Lollipop Chainsaw",
+    "Aliens: Infestation",
+    "Borderlands 2",
+    "Prototype 2",
+    "Borderlands",
+    "Prototype"
+  ],
+  "58": [
+    "Catherine"
+  ],
+  "57": [
+    "Bastion",
+    "Ms. 'Splosion Man",
+    "L.A. Noire",
+    "Ghost Recon 3DS",
+    "Lost Odyssey",
+    "Splosion Man"
+  ],
   "56": [],
   "55": [],
-  "54": [],
-  "53": [],
-  "52": [],
-  "51": [],
+  "54": [
+    "Wing Commander"
+  ],
+  "53": [
+    "Portal 2",
+    "Dead Space 2",
+    "Final Fantasy XIV",
+    "Dante's Inferno",
+    "Dead Space",
+    "Portal"
+  ],
+  "52": [
+    "Dragon Age II",
+    "Dragon Age: Origins",
+    "Dragon Age: Origins Second Opinion"
+  ],
+  "51": [
+    "Team Fortress 2",
+    "World of Warcraft",
+    "Team Fortress"
+  ],
   "49": [],
   "48": [],
   "47": [],
-  "46": [],
-  "45": [],
-  "44": [],
-  "43": [],
-  "42": [],
-  "41": [],
-  "40": [],
-  "39": [],
-  "38": [],
-  "37": [],
-  "36": [],
-  "35": [],
-  "34": [],
-  "33": [],
-  "32": [],
-  "31": [],
-  "30": [],
-  "29": [],
-  "28": [],
-  "27": [],
-  "26": [],
-  "25": [],
-  "22": [],
-  "21": [],
-  "20": [],
-  "19": [],
-  "18": [],
-  "17": [],
-  "15": [],
-  "13": [],
-  "12": [],
-  "11": [],
+  "46": [
+    "World of Warcraft: Cataclysm",
+    "Epic Dungeon",
+    "World of Warcraft"
+  ],
+  "45": [
+    "Enslaved: Odyssey to the West",
+    "Enslaved: Odyssey to the West – Pigsy's Perfect 10"
+  ],
+  "44": [
+    "Amnesia: The Dark Descent",
+    "Metal Gear Solid: Peace Walker",
+    "Alan Wake",
+    "Halo: Reach",
+    "Halo"
+  ],
+  "43": [
+    "Mega Man",
+    "Pac-Man"
+  ],
+  "42": [
+    "Deadly Premonition"
+  ],
+  "41": [
+    "Infinite Space",
+    "Mass Effect 2: Lair of the Shadow Broker",
+    "Red Dead Redemption",
+    "Mass Effect 2",
+    "Mass Effect"
+  ],
+  "40": [
+    "Too Human",
+    "Dynasty Warriors 6"
+  ],
+  "39": [
+    "Monday Night Combat",
+    "Castlevania: Destiny of Harmonicas",
+    "Lara Croft and the Guardian of Light",
+    "Castlevania: Harmony of Dissonance",
+    "Lineage II",
+    "Too Human",
+    "Destiny"
+  ],
+  "38": [
+    "Street Fighter",
+    "UFC",
+    "MMA",
+    "Limbo",
+    "Monday Night Combat"
+  ],
+  "37": [
+    "Dragon Quest IX",
+    "Dragon Quest IX: Sentinels of the Starry Skies",
+    "Etrian Odyssey III",
+    "Puzzle Quest 2",
+    "DeathSpank"
+  ],
+  "36": [
+    "Epic Mickey",
+    "Project Dust",
+    "Lost in Shadows",
+    "Vanquish",
+    "Kid Icarus",
+    "The Legend of Zelda: Skyward Sword",
+    "Portal 2",
+    "Littlebigplanet 2",
+    "Final Fantasy XIV",
+    "Metal Gear Solid Rising",
+    "The Legend of Zelda",
+    "Portal"
+  ],
+  "35": [
+    "Super Mario Galaxy 2",
+    "Monster Hunter Tri",
+    "Final Fantasy series",
+    "Super Mario Galaxy",
+    "Monster Hunter"
+  ],
+  "34": [
+    "UFC Undisputed 2010",
+    "Alan Wake",
+    "Final Fantasy XIV",
+    "UFC Undisputed"
+  ],
+  "33": [
+    "Dragon Age: Origins",
+    "Portal",
+    "BioShock",
+    "Final Fantasy series",
+    "Wing Commander series",
+    "ICO",
+    "Way of the Samurai series",
+    "Front Mission 3",
+    "Wing Commander"
+  ],
+  "32": [
+    "Lost Planet 2",
+    "Final Fantasy XIII",
+    "Dynasty Warriors: Strikeforce",
+    "The Legend of Zelda",
+    "Shin Megami Tensei"
+  ],
+  "31": [
+    "Shoot 1UP",
+    "Rock of the Dead"
+  ],
+  "30": [
+    "Mass Effect 2",
+    "Mass Effect"
+  ],
+  "29": [
+    "Divinity II: Ego Draconis",
+    "Star Trek Online"
+  ],
+  "28": [
+    "Too Human"
+  ],
+  "27": [
+    "Dragon Age: Origins",
+    "Assassin's Creed 2",
+    "Way of the Samurai 3",
+    "Torchlight",
+    "Borderlands DLC",
+    "Law of the West",
+    "Assassin's Creed",
+    "Borderlands"
+  ],
+  "26": [
+    "Resident Evil Code: Veronica"
+  ],
+  "25": [
+    "Borderlands",
+    "GTA 3",
+    "Disaster Report",
+    "FFXI: Lu Shang's Fishing Rod",
+    "WoW: Delicious Chocolate Cake Recipe",
+    "GoldenEye 007: Invincibility Cheat"
+  ],
+  "22": [
+    "Scribblenauts",
+    "Muramasa: The Demon Blade",
+    "Sorcerian"
+  ],
+  "21": [
+    "flOw",
+    "Flower",
+    "Final Fantasy 7"
+  ],
+  "20": [
+    "Splosion Man",
+    "Turtles in Time",
+    "Marvel vs. Capcom 2",
+    "Trials HD",
+    "Shadow Complex"
+  ],
+  "19": [
+    "Real Heroes: Firefighter",
+    "Call of Duty: Finest Hour",
+    "Critter Round-Up",
+    "Conduit"
+  ],
+  "18": [
+    "Nintendo Wii",
+    "Super Mario Galaxy",
+    "Wii Sports",
+    "EA Sports Active",
+    "Mario Kart",
+    "Metroid",
+    "The Legend of Zelda",
+    "Animal Crossing",
+    "Assassin's Creed",
+    "The Conduit",
+    "Conduit"
+  ],
+  "17": [
+    "Fallout 3",
+    "Fallout 3: Point Lookout",
+    "Magic the Gathering: Duels of the Planeswalkers",
+    "The Conduit",
+    "Transformers: Revenge of the Fallen",
+    "Halo",
+    "Perfect Dark",
+    "Fallout",
+    "Conduit"
+  ],
+  "15": [
+    "Project Trico",
+    "InFamous",
+    "Broken Steel",
+    "UFC Undisputed",
+    "Dead Space",
+    "Trino",
+    "CaveIn",
+    "Mithra",
+    "Prototype",
+    "Crackdown",
+    "Fallout 3: Broken Steel",
+    "UFC 2009: Undisputed",
+    "XBL Community Games: Trino",
+    "XBL Community Games: CaveIn",
+    "XBL Community Games: Mithra",
+    "Fallout 3",
+    "Fallout"
+  ],
+  "13": [
+    "Killzone 2",
+    "Gears of War",
+    "Halo",
+    "Aquaman: Battle for Atlantis",
+    "Ready 2 Rumble Boxing",
+    "Fallout 3",
+    "Lost Planet: Extreme Conditions",
+    "Ninja Golf",
+    "Ribbit King",
+    "Kirby's Dream Course",
+    "Leisure Suit Larry",
+    "Mass Effect",
+    "Star Ocean: The Last Hope",
+    "Onechanbara",
+    "Rapelay",
+    "The Sims",
+    "Indigo Prophecy",
+    "Fear Effect",
+    "Fallout"
+  ],
+  "12": [
+    "Flower"
+  ],
+  "11": [
+    "Weapon of Choice",
+    "Devil May Cry 3"
+  ],
   "__manual__": [
     "Dragon's Dogma"
   ]

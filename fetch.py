@@ -33,7 +33,7 @@ def sanitize(raw):
     return raw.strip()
 
 def extract_episode(title):
-    m = re.search(r'(?:Episode|So\s*Videogames?)?\s*(\d+)\s*[:\s–-]', title, re.IGNORECASE)
+    m = re.search(r'(?:Episode|Ep|So\s*Videogames?)\s*(\d+)(?:\s*[:\s–-]|$)', title, re.IGNORECASE)
     if m:
         return int(m.group(1))
     m = re.search(r'\b(\d{3})\b', title)
@@ -112,6 +112,9 @@ if __name__ == "__main__":
     existing = load_existing()
     merged = merge(existing, fresh)
     print(f"  {len(existing)} existing → {len(merged)} total")
+    # Re-extract episode numbers for all entries (handles regex improvements)
+    for e in merged:
+        e["episode"] = extract_episode(e["title"])
     with open(EPISODES_FILE, "w") as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
     if len(merged) > len(existing):

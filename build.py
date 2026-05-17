@@ -21,6 +21,7 @@ def generate_html(eps, episode_games, game_posters):
     data_json = json.dumps(eps)
     games_json = json.dumps(episode_games)
     posters_json = json.dumps(game_posters)
+    highest = max((e.get("episode") or 0 for e in eps), default=0)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -137,7 +138,7 @@ mark {{ background: var(--mark-bg); color: inherit; }}
     GitHub
   </a>
   <br>
-  {len(eps)} episodes · data from <a href="https://gamecritics.com/category/podcasts/so-videogames/">gamecritics.com</a>
+  {len(eps)} episodes · highest: #{highest} · data from <a href="https://gamecritics.com/category/podcasts/so-videogames/">gamecritics.com</a>
   <br>
   <a href="https://normware.org/impressum">Impressum</a> · <a href="https://normware.org/datenschutz">Datenschutz</a>
   <br>

@@ -6,7 +6,7 @@ import json
 EPISODES_FILE = "episodes.json"
 GAMES_FLAT_FILE = "games_flat.json"
 ENRICHED_FILE = "games_enriched.json"
-EXPECTED_EPISODES = 486
+EXPECTED_COUNT = None  # computed at build time from loaded data
 
 
 def load_json(path):
@@ -137,7 +137,7 @@ mark {{ background: var(--mark-bg); color: inherit; }}
     GitHub
   </a>
   <br>
-  {len(eps)} / {EXPECTED_EPISODES} episodes · data from <a href="https://gamecritics.com/category/podcasts/so-videogames/">gamecritics.com</a>
+  {len(eps)} episodes · data from <a href="https://gamecritics.com/category/podcasts/so-videogames/">gamecritics.com</a>
   <br>
   <a href="https://normware.org/impressum">Impressum</a> · <a href="https://normware.org/datenschutz">Datenschutz</a>
   <br>
@@ -280,7 +280,7 @@ function filter() {{
     }}
   }});
 
-  document.getElementById('count').textContent = count + ' / {EXPECTED_EPISODES} episodes';
+  document.getElementById('count').textContent = count + ' / ' + episodes.length + ' episodes';
 
   const nm = document.getElementById('no-match');
   if (!anyShown) {{

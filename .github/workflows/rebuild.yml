@@ -20,7 +20,6 @@ jobs:
         with:
           python-version: "3.x"
       - run: python3 fetch.py
-      - run: python3 build.py
       - run: python3 extract_games_flat.py
         env:
           GITHUB_TOKEN: ${{ secrets.GH_MODELS_TOKEN }}
@@ -28,6 +27,7 @@ jobs:
       - run: python3 backfill_games.py
       - run: python3 distinct_games.py
       - run: python3 enrich_games.py
+      - run: python3 build.py
       - run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"

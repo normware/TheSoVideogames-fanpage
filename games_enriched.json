@@ -1,4 +1,7 @@
 {
+  "007 Last Light": {
+    "poster": null
+  },
   "1000xResist": {
     "steam_id": 1675830,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675830/b81cf765f762c10fd2f2e616a9d92b212ebe8d08/capsule_231x87.jpg?t=1777398642"
@@ -889,6 +892,10 @@
   "Broken Steel": {
     "steam_id": 22410,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/22410/capsule_231x87.jpg?t=1447353326"
+  },
+  "Bubsy 4D": {
+    "steam_id": 3237970,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3237970/846539b195581eb112df162e9e646e5d0ae2ef62/capsule_231x87.jpg?t=1779477564"
   },
   "Buddy Simulator 1984": {
     "steam_id": 1269950,
@@ -3468,6 +3475,10 @@
     "steam_id": 1761600,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1761600/capsule_231x87.jpg?t=1677186440"
   },
+  "John Carpenter’s Toxic Commando": {
+    "steam_id": 2157830,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2157830/e0beec6285313e3d14921d7a693a102e3801a65c/capsule_231x87.jpg?t=1774963782"
+  },
   "John Wick Hex": {
     "poster": null
   },
@@ -3966,6 +3977,10 @@
   "Lumines Arise": {
     "steam_id": 2370000,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2370000/6f207625e9d5a83d636a43917d1c40d74d4dc6b1/capsule_231x87.jpg?t=1774037826"
+  },
+  "Luna Abyss": {
+    "steam_id": 1933000,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1933000/3160a681955ff6f1b80fd681a9207fdcd2907a03/capsule_231x87.jpg?t=1779870125"
   },
   "Lunistice": {
     "steam_id": 1701800,
@@ -5212,6 +5227,10 @@
   "Puzzle Quest 3": {
     "steam_id": 1380410,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1380410/capsule_231x87.jpg?t=1717460940"
+  },
+  "Q Collection": {
+    "steam_id": 4037760,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4037760/5e84fb4cb4868327818d2b94745dee71ccb906ac/capsule_231x87.jpg?t=1764950896"
   },
   "Racine": {
     "steam_id": 2428790,
@@ -7678,6 +7697,10 @@
   "Wall World": {
     "steam_id": 2187290,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2187290/0a141bd86fd1b4497aeb1aaa97e6ada2bca2e859/capsule_231x87_alt_assets_7.jpg?t=1776425388"
+  },
+  "Wall World 2": {
+    "steam_id": 3467710,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3467710/2a255e9f6a9b9320987d0f14eb66b88d9a87c32b/capsule_231x87_alt_assets_0.jpg?t=1776425443"
   },
   "Wampus": {
     "poster": null

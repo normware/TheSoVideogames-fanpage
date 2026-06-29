@@ -2,6 +2,10 @@
   "007 Last Light": {
     "poster": null
   },
+  "007: First Light": {
+    "steam_id": 3768760,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3768760/244e00f17e6d0b5d1e88320dfbb5a12b483be700/capsule_231x87.jpg?t=1782467029"
+  },
   "1000xResist": {
     "steam_id": 1675830,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1675830/b81cf765f762c10fd2f2e616a9d92b212ebe8d08/capsule_231x87.jpg?t=1777398642"
@@ -1649,6 +1653,10 @@
     "steam_id": 1190060,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1190060/capsule_231x87.jpg?t=1655874906"
   },
+  "Deathbulge: Battle of the Bands": {
+    "steam_id": 1083790,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1083790/capsule_231x87.jpg?t=1776805212"
+  },
   "Deathless: The Hero's Quest": {
     "poster": null
   },
@@ -2758,6 +2766,9 @@
   "Ghost of Tsushima": {
     "steam_id": 2215430,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/capsule_231x87.jpg?t=1763409398"
+  },
+  "Ghost of Yotei": {
+    "poster": null
   },
   "Ghost Recon 3DS": {
     "poster": null
@@ -4638,6 +4649,10 @@
     "steam_id": 1113560,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1113560/capsule_231x87.jpg?t=1773365156"
   },
+  "Nier: Automata": {
+    "steam_id": 524220,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/capsule_231x87.jpg?t=1773364834"
+  },
   "Night at the Gates of Hell": {
     "steam_id": 2026870,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2026870/capsule_231x87.jpg?t=1669910081"
@@ -5361,6 +5376,10 @@
     "steam_id": 2384071,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2384071/f2ff12afd730481f70ec661c9226813c5dfa6de2/capsule_231x87.jpg?t=1727996973"
   },
+  "RE2 Remake": {
+    "steam_id": 2701660,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2701660/capsule_231x87.jpg?t=1772703499"
+  },
   "RE: Village Demo": {
     "steam_id": 2062120,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2062120/capsule_231x87.jpg?t=1773814528"
@@ -5688,6 +5707,10 @@
     "steam_id": 464060,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/464060/capsule_231x87.jpg?t=1708036132"
   },
+  "Rune Dice": {
+    "steam_id": 3542380,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3542380/be46a7d44676c4b49f3826dd1e176bb532b1e0b3/capsule_231x87.jpg?t=1779267089"
+  },
   "Runestone Keeper": {
     "steam_id": 339400,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/339400/capsule_231x87.jpg?t=1583574534"
@@ -5753,6 +5776,10 @@
   "Saints Row III: Remastered": {
     "poster": null
   },
+  "Saints Row: Gat Out of Hell": {
+    "steam_id": 301910,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/301910/capsule_231x87.jpg?t=1764671041"
+  },
   "Sakura Wars": {
     "poster": null
   },
@@ -5795,6 +5822,9 @@
   "Sandland": {
     "steam_id": 1979440,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1979440/capsule_231x87.jpg?t=1744601452"
+  },
+  "Saros": {
+    "poster": null
   },
   "Saturnalia": {
     "steam_id": 916350,
@@ -5914,7 +5944,8 @@
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2113850/15065e911c2a991ba55c56d4a1638c6c43637051/capsule_231x87.jpg?t=1774273526"
   },
   "Seven Pirates H": {
-    "poster": null
+    "steam_id": 4494020,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4494020/e75492f5210cbf990e404a2833a3079220cc4e06/capsule_231x87.jpg?t=1782349793"
   },
   "Seven: The Days Long Gone": {
     "steam_id": 784980,
@@ -6947,6 +6978,10 @@
   "The Division 2": {
     "steam_id": 2221490,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2221490/b97763366f3f1bfe1a5bab3d12db65d7d981d40a/capsule_231x87.jpg?t=1778172597"
+  },
+  "The Drifter": {
+    "steam_id": 1170570,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1170570/fc7303995b1298b88005a280fead6a30ba9fdf7a/capsule_231x87.jpg?t=1781750377"
   },
   "The Eternal Castle Remastered": {
     "steam_id": 963450,

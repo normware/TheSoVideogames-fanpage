@@ -629,6 +629,10 @@
     "steam_id": 761620,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/761620/capsule_231x87.jpg?t=1762949587"
   },
+  "Bellwright": {
+    "steam_id": 1812450,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1812450/c479dda6fcd1e9edf38fe18a02ca21aab153664e/capsule_231x87.jpg?t=1782335635"
+  },
   "Bem Feito": {
     "steam_id": 2368190,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2368190/9b0761699d2b573bc40346578e04a893cb231e81/capsule_231x87.jpg?t=1772743889"
@@ -682,6 +686,10 @@
   },
   "Black Desert Online": {
     "poster": null
+  },
+  "Black Flag": {
+    "steam_id": 3751950,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3751950/e38674a3067b5ac028974bbfb42c835d0cf27122/capsule_231x87.jpg?t=1783617053"
   },
   "Black Future '88": {
     "steam_id": 751820,
@@ -1585,6 +1593,10 @@
   "Dead Cells": {
     "steam_id": 588650,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/588650/capsule_231x87.jpg?t=1772726488"
+  },
+  "Dead Estate": {
+    "steam_id": 1484720,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1484720/capsule_231x87.jpg?t=1783604726"
   },
   "Dead Island": {
     "steam_id": 934700,
@@ -2715,6 +2727,10 @@
     "steam_id": 1062140,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1062140/capsule_231x87.jpg?t=1746806887"
   },
+  "Gargoyles Remastered": {
+    "steam_id": 1928020,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1928020/capsule_231x87.jpg?t=1709659667"
+  },
   "Garlic": {
     "steam_id": 2512920,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2512920/capsule_231x87.jpg?t=1778642538"
@@ -3284,6 +3300,10 @@
   "Hyper Scape": {
     "poster": null
   },
+  "Hyperwired": {
+    "steam_id": 3234910,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3234910/e8f3dd4dc55227afd4a29ae5595947c067cd3919/capsule_231x87.jpg?t=1779268970"
+  },
   "Hyrule Warriors": {
     "poster": null
   },
@@ -3437,6 +3457,9 @@
     "steam_id": 1385100,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1385100/capsule_231x87.jpg?t=1772040228"
   },
+  "Intelligent Qube": {
+    "poster": null
+  },
   "Into the Breach": {
     "steam_id": 590380,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/590380/capsule_231x87.jpg?t=1755610784"
@@ -3542,6 +3565,10 @@
   },
   "Jydge": {
     "poster": null
+  },
+  "Kabuto Park": {
+    "steam_id": 3376990,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3376990/46fc170c99b88a84a6125c2110391f4a9c6108b2/capsule_231x87.jpg?t=1777577757"
   },
   "Kaichu: The Kaiju Dating Sim": {
     "steam_id": 1848590,
@@ -5605,6 +5632,10 @@
     "steam_id": 2069580,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2069580/capsule_231x87.jpg?t=1666257451"
   },
+  "Roadout": {
+    "steam_id": 1829270,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1829270/b614a8bdcef2c28f3945ab1c486f71060e3d57e9/capsule_231x87.jpg?t=1783398726"
+  },
   "Roadwarden": {
     "steam_id": 1155970,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1155970/capsule_231x87.jpg?t=1771493971"
@@ -6167,6 +6198,10 @@
     "steam_id": 1989270,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1989270/90faf29da4637bbf2e935d6b587b34fd01e16799/capsule_231x87.jpg?t=1775751748"
   },
+  "Slay the Princess: The Pristine Cut": {
+    "steam_id": 1989270,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1989270/90faf29da4637bbf2e935d6b587b34fd01e16799/capsule_231x87.jpg?t=1775751748"
+  },
   "Slaycation Paradise": {
     "steam_id": 1643850,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1643850/capsule_231x87.jpg?t=1738069337"
@@ -6252,6 +6287,10 @@
   "SOMA": {
     "steam_id": 282140,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/282140/c0bc2d011b98cdcd7c4c57f140a604da13014932/capsule_231x87.jpg?t=1773329055"
+  },
+  "Somber Echoes": {
+    "steam_id": 1299290,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1299290/5201f821d2defa3e3d5ec270178081bf0f908dee/capsule_231x87.jpg?t=1766135484"
   },
   "Sommerville": {
     "poster": null

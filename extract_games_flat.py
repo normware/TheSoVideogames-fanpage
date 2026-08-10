@@ -36,7 +36,7 @@ def post_process(games: list) -> list:
         g = re.sub(r'\s+', ' ', g).strip()
         if len(g) < 3:
             continue
-        if g.lower() in ('game', 'video game', 'games', 'gameplay'):
+        if g.lower() in ('game', 'video game', 'games', 'gameplay', 'goty'):
             continue
         # Split merged entries joined by " & "
         if ' & ' in g and not any(x in g.lower() for x in ('& co', '& sons', '& ltd')):

@@ -195,13 +195,12 @@ def compute_stats(eps, episode_games, game_posters):
             })
 
     if mention:
-        top_game = next((g for g, _ in mention.most_common() if g.upper() != "GOTY"), None)
-        if top_game:
-            stats.append({
-                "emoji": "🏆", "value": top_game,
-                "label": "Most-discussed game",
-                "note": f"{mention[top_game]} episodes",
-            })
+        top_game, top_count = mention.most_common(1)[0]
+        stats.append({
+            "emoji": "🏆", "value": top_game,
+            "label": "Most-discussed game",
+            "note": f"{top_count} episodes",
+        })
 
         repeats = sum(1 for c in mention.values() if c >= 2)
         stats.append({
@@ -210,13 +209,12 @@ def compute_stats(eps, episode_games, game_posters):
             "note": "games discussed in 2+ episodes",
         })
 
-        goty = mention.get("GOTY", 0)
-        if goty:
-            stats.append({
-                "emoji": "🃏", "value": "GOTY",
-                "label": "The top “game” is a lie",
-                "note": f"“GOTY” shows up {goty}× — it's not a game",
-            })
+        one_hit = sum(1 for c in mention.values() if c == 1)
+        stats.append({
+            "emoji": "🎲", "value": f"{one_hit:,}",
+            "label": "One-hit wonders",
+            "note": "games that only ever got a single mention",
+        })
 
     with_poster = sum(1 for v in game_posters.values() if isinstance(v, dict) and v.get("poster"))
     if game_posters:

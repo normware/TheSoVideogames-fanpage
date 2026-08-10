@@ -6429,7 +6429,8 @@
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/746400/capsule_231x87.jpg?t=1617835652"
   },
   "Spellbreak": {
-    "poster": null
+    "steam_id": 5002380,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5002380/2086ea4382b6401e33def0d55eea5be2918fc6d6/capsule_231x87.jpg?t=1786028558"
   },
   "Spellforce III: Reforced": {
     "steam_id": 311290,

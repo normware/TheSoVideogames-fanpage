@@ -134,6 +134,7 @@ flowchart LR
 - **Game list** — per-episode bullet list of mentioned games
 - **Steam links** — known games link directly to their Steam store page
 - **Poster thumbnails** — Steam capsule images in a 2-column grid (togglable, hidden by default)
+- **Statistics tab** — 20 fun facts about the show, computed at build time
 - **Manual overrides** — add games the LLM missed via `games_overrides.json`
 
 ## Adding Missed Games

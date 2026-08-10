@@ -2,6 +2,10 @@
 """Build index.html — premium podcast episode browser with game poster grid."""
 
 import json
+import re
+import html
+from collections import Counter
+from datetime import date
 
 EPISODES_FILE = "episodes.json"
 GAMES_FLAT_FILE = "games_flat.json"
@@ -17,7 +21,229 @@ def load_json(path):
         return {}
 
 
-def generate_html(eps, episode_games, game_posters):
+def _clean_text(s):
+    return html.unescape(re.sub(r"<[^>]+>", " ", s or "")).lower()
+
+
+def _short_title(e):
+    t = re.sub(r"(?i)^.*?episode\s*\d+[:.\-–—]*\s*", "", e.get("title") or "")
+    t = re.sub(r"(?i)^so videogames\s*:?\s*", "", t)
+    t = t.strip(" :-–—.")
+    if len(t) > 40:
+        t = t[:37] + "…"
+    return t
+
+
+def _ep_int(e):
+    v = e.get("episode")
+    if isinstance(v, int):
+        return v
+    if isinstance(v, str) and v.isdigit():
+        return int(v)
+    return None
+
+
+def compute_stats(eps, episode_games, game_posters):
+    """Compute 20 fun statistics from the episode/game data."""
+    stats = []
+
+    eps_num = [e for e in eps if _ep_int(e) is not None]
+    nums = sorted({_ep_int(e) for e in eps_num})
+    bonus = [e for e in eps if e not in eps_num]
+
+    stats.append({
+        "emoji": "🎙", "value": f"{len(eps):,}",
+        "label": "Episodes in the feed",
+        "note": f"{len(eps_num):,} numbered + {len(bonus)} bonus",
+    })
+
+    if nums:
+        top = max(nums)
+        e = next(x for x in eps_num if _ep_int(x) == top)
+        stats.append({
+            "emoji": "🆕", "value": f"#{top}",
+            "label": "Newest episode",
+            "note": f"{_short_title(e)} · {(e.get('date') or 'no date')[:7]}",
+        })
+
+    dates = []
+    for e in eps:
+        d = e.get("date")
+        if d:
+            try:
+                dates.append(date.fromisoformat(d))
+            except ValueError:
+                pass
+    dates.sort()
+
+    if dates:
+        span_years = (dates[-1] - dates[0]).days / 365.25
+        stats.append({
+            "emoji": "📅", "value": f"{span_years:.0f} yrs",
+            "label": "Show history",
+            "note": f"{dates[0].isoformat()} → {dates[-1].isoformat()}",
+        })
+
+        gaps = [(dates[i + 1] - dates[i]).days for i in range(len(dates) - 1)]
+        if gaps:
+            g = max(gaps)
+            i = gaps.index(g)
+            stats.append({
+                "emoji": "⏳", "value": f"{g:,} days",
+                "label": "Longest hiatus",
+                "note": f"{dates[i].isoformat()} → {dates[i + 1].isoformat()}",
+            })
+
+    years = Counter(e.get("date", "")[:4] for e in eps if e.get("date"))
+    if years:
+        y, c = years.most_common(1)[0]
+        stats.append({
+            "emoji": "📈", "value": f"{c} eps",
+            "label": "Busiest year",
+            "note": y,
+        })
+
+    in_range = [n for n in nums if 1 <= n <= 500]
+    stats.append({
+        "emoji": "🗄", "value": f"{500 - len(in_range):,}",
+        "label": "Episode numbers missing",
+        "note": "pre-2019 shows not in the archive",
+    })
+
+    titles = sorted(eps, key=lambda e: len(e.get("title") or ""))
+    if titles:
+        short, long = titles[0], titles[-1]
+        sn, ln = len(short.get("title") or ""), len(long.get("title") or "")
+        if ln:
+            stats.append({
+                "emoji": "📏", "value": f"{ln} chars",
+                "label": "Longest title",
+                "note": f"#{long.get('episode')} · {_short_title(long)}",
+            })
+        if sn < ln:
+            stats.append({
+                "emoji": "✂️", "value": f"{sn} chars",
+                "label": "Shortest title",
+                "note": f"#{short.get('episode')}",
+            })
+
+    alltext = " ".join(_clean_text(e.get("desc")) for e in eps)
+    stats.append({
+        "emoji": "🎤", "value": f"{alltext.count('brad'):,}×",
+        "label": "Host shout-outs",
+        "note": "“Brad” in the show notes",
+    })
+    stats.append({
+        "emoji": "🤘", "value": f"{alltext.count('carlos'):,}×",
+        "label": "Carlos mentions",
+        "note": "he even has a toggle button on this site",
+    })
+
+    e3 = sum(1 for e in eps if re.search(r"\be3\b", (e.get("title") or "").lower()))
+    stats.append({
+        "emoji": "🏟", "value": f"{e3}",
+        "label": "E3 episodes",
+        "note": "E3 in the title · rest in peace",
+    })
+
+    reunion = next((e for e in eps if "reunion" in (e.get("title") or "").lower()), None)
+    if reunion:
+        stats.append({
+            "emoji": "🤝", "value": "2020",
+            "label": "Reunion special",
+            "note": _short_title(reunion),
+        })
+
+    gcounts = {k: len(v) for k, v in episode_games.items()
+               if k != "__manual__" and isinstance(v, list)}
+    total = sum(gcounts.values())
+    stats.append({
+        "emoji": "🕹", "value": f"{total:,}",
+        "label": "Game mentions",
+        "note": "across the whole show",
+    })
+
+    distinct = len(game_posters)
+    if not distinct:
+        distinct = len({g for v in episode_games.values() if isinstance(v, list) for g in v})
+    stats.append({
+        "emoji": "🎮", "value": f"{distinct:,}",
+        "label": "Distinct games",
+        "note": "unique titles ever discussed",
+    })
+
+    mention = Counter()
+    for v in episode_games.values():
+        if isinstance(v, list):
+            for g in set(v):
+                mention[g] += 1
+
+    if gcounts:
+        top_num = max(gcounts, key=lambda k: gcounts[k])
+        stats.append({
+            "emoji": "🧺", "value": f"{gcounts[top_num]}",
+            "label": "Most games in one episode",
+            "note": f"Episode {top_num}",
+        })
+
+        gc = [c for c in gcounts.values() if c]
+        if gc:
+            stats.append({
+                "emoji": "➗", "value": f"{sum(gc) / len(gc):.1f}",
+                "label": "Games per episode",
+                "note": "episodes that discussed games",
+            })
+
+    if mention:
+        top_game = next((g for g, _ in mention.most_common() if g.upper() != "GOTY"), None)
+        if top_game:
+            stats.append({
+                "emoji": "🏆", "value": top_game,
+                "label": "Most-discussed game",
+                "note": f"{mention[top_game]} episodes",
+            })
+
+        repeats = sum(1 for c in mention.values() if c >= 2)
+        stats.append({
+            "emoji": "🔁", "value": f"{repeats:,}",
+            "label": "Repeat offenders",
+            "note": "games discussed in 2+ episodes",
+        })
+
+        goty = mention.get("GOTY", 0)
+        if goty:
+            stats.append({
+                "emoji": "🃏", "value": "GOTY",
+                "label": "The top “game” is a lie",
+                "note": f"“GOTY” shows up {goty}× — it's not a game",
+            })
+
+    with_poster = sum(1 for v in game_posters.values() if isinstance(v, dict) and v.get("poster"))
+    if game_posters:
+        stats.append({
+            "emoji": "🖼", "value": f"{round(100 * with_poster / len(game_posters))}%",
+            "label": "Findable on Steam",
+            "note": f"{with_poster:,} of {len(game_posters):,} games · {len(game_posters) - with_poster:,} too obscure",
+        })
+
+    return stats
+
+
+def render_stats_html(stats):
+    cards = []
+    for s in stats:
+        cards.append(
+            '<div class="stat-card">'
+            '<div class="stat-emoji">' + html.escape(s["emoji"]) + '</div>'
+            '<div class="stat-value">' + html.escape(s["value"]) + '</div>'
+            '<div class="stat-label">' + html.escape(s["label"]) + '</div>'
+            + (('<div class="stat-note">' + html.escape(s["note"]) + '</div>') if s.get("note") else '')
+            + '</div>'
+        )
+    return '<div class="stats-grid">' + ''.join(cards) + '</div>'
+
+
+def generate_html(eps, episode_games, game_posters, stats_html=""):
     data_json = json.dumps(eps)
     games_json = json.dumps(episode_games)
     posters_json = json.dumps(game_posters)
@@ -97,6 +323,22 @@ mark {{ background: var(--mark-bg); color: inherit; }}
 .ep-posters.hidden {{ display: none; }}
 .ep-posters img[src=""] {{ display: none; }}
 
+.tabs {{ display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }}
+.tab {{ background: none; border: 1px solid var(--border); color: var(--muted); cursor: pointer; font-size: 0.85rem; padding: 0.4rem 0.9rem; border-radius: 999px; }}
+.tab:hover {{ color: var(--fg); background: var(--card-bg); }}
+.tab.active {{ background: var(--accent); border-color: var(--accent); color: #fff; }}
+
+#stats-view {{ display: none; }}
+#stats-view.vis {{ display: block; }}
+.stats-hint {{ color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }}
+.stats-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.75rem; }}
+.stat-card {{ background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }}
+.stat-card:hover {{ background: var(--card-hover); }}
+.stat-emoji {{ font-size: 1.1rem; }}
+.stat-value {{ font-size: 1.35rem; font-weight: 700; margin: 0.35rem 0 0.1rem; letter-spacing: -0.02em; overflow-wrap: anywhere; }}
+.stat-label {{ font-size: 0.85rem; color: var(--muted); }}
+.stat-note {{ font-size: 0.75rem; color: var(--muted); margin-top: 0.4rem; opacity: 0.8; }}
+
 .footer {{ margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); text-align: center; line-height: 1.8; }}
 .footer a {{ color: var(--link); }}
 .footer .github {{ display: inline-flex; align-items: center; gap: 0.3rem; }}
@@ -106,6 +348,7 @@ mark {{ background: var(--mark-bg); color: inherit; }}
   .ep-posters {{ grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }}
   .ep-posters img {{ width: 100%; }}
   .game-list {{ columns: 1; }}
+  .stats-grid {{ grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }}
   body {{ padding: 1rem; }}
 }}
 </style>
@@ -121,6 +364,10 @@ mark {{ background: var(--mark-bg); color: inherit; }}
   </div>
   <button id="theme">☀ Light</button>
 </div>
+<div class="tabs">
+  <button class="tab active" id="tab-episodes">🎙 Episodes</button>
+  <button class="tab" id="tab-stats">📊 Stats</button>
+</div>
 <div class="search-row">
   <input type="text" id="search" placeholder="Search episodes…" autofocus>
   <input type="number" id="ep-filter" placeholder="Ep #" min="1">
@@ -131,6 +378,10 @@ mark {{ background: var(--mark-bg); color: inherit; }}
   <button id="carlos-toggle">🤘 Carlos</button>
 </div>
 <div id="results"></div>
+<div id="stats-view">
+  <div class="stats-hint">20 fun facts about the show, computed from the episode archive.</div>
+  {stats_html}
+</div>
 <div class="footer">
   <span>made by a fan —</span>
   <a class="github" href="https://github.com/normware/TheSoVideogames-fanpage" target="_blank">
@@ -164,6 +415,19 @@ let postersVisible = false;
     t.textContent = isLight ? '☾ Dark' : '☀ Light';
   }};
 }})();
+
+function showTab(name) {{
+  const isStats = name === 'stats';
+  document.getElementById('tab-episodes').classList.toggle('active', !isStats);
+  document.getElementById('tab-stats').classList.toggle('active', isStats);
+  document.getElementById('stats-view').classList.toggle('vis', isStats);
+  const others = document.querySelectorAll('.search-row, .controls, #results');
+  for (let i = 0; i < others.length; i++) {{
+    others[i].style.display = isStats ? 'none' : '';
+  }}
+}}
+document.getElementById('tab-episodes').onclick = function() {{ showTab('episodes'); }};
+document.getElementById('tab-stats').onclick = function() {{ showTab('stats'); }};
 
 const epEls = episodes.map((e, i) => {{
   const div = document.createElement('div');
@@ -324,8 +588,13 @@ def main():
         with_poster = sum(1 for v in game_posters.values() if v.get("poster"))
         print(f"  {len(game_posters)} games enriched ({with_poster} with posters)")
 
+    print("Computing statistics...")
+    stats = compute_stats(eps, episode_games, game_posters)
+    print(f"  {len(stats)} statistics")
+
     print("Generating index.html...")
-    html_out = generate_html(eps, episode_games, game_posters)
+    stats_html = render_stats_html(stats)
+    html_out = generate_html(eps, episode_games, game_posters, stats_html)
     with open("index.html", "w") as f:
         f.write(html_out)
     print(f"Done. {len(eps)} episodes ({len(html_out)} bytes)")

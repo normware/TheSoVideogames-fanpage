@@ -72,6 +72,22 @@ mark { background: var(--mark-bg); color: inherit; }
 .ep-posters.hidden { display: none; }
 .ep-posters img[src=""] { display: none; }
 
+.tabs { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }
+.tab { background: none; border: 1px solid var(--border); color: var(--muted); cursor: pointer; font-size: 0.85rem; padding: 0.4rem 0.9rem; border-radius: 999px; }
+.tab:hover { color: var(--fg); background: var(--card-bg); }
+.tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+#stats-view { display: none; }
+#stats-view.vis { display: block; }
+.stats-hint { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.75rem; }
+.stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }
+.stat-card:hover { background: var(--card-hover); }
+.stat-emoji { font-size: 1.1rem; }
+.stat-value { font-size: 1.35rem; font-weight: 700; margin: 0.35rem 0 0.1rem; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+.stat-label { font-size: 0.85rem; color: var(--muted); }
+.stat-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.4rem; opacity: 0.8; }
+
 .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); text-align: center; line-height: 1.8; }
 .footer a { color: var(--link); }
 .footer .github { display: inline-flex; align-items: center; gap: 0.3rem; }
@@ -81,6 +97,7 @@ mark { background: var(--mark-bg); color: inherit; }
   .ep-posters { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
   .ep-posters img { width: 100%; }
   .game-list { columns: 1; }
+  .stats-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
   body { padding: 1rem; }
 }
 </style>
@@ -96,6 +113,10 @@ mark { background: var(--mark-bg); color: inherit; }
   </div>
   <button id="theme">☀ Light</button>
 </div>
+<div class="tabs">
+  <button class="tab active" id="tab-episodes">🎙 Episodes</button>
+  <button class="tab" id="tab-stats">📊 Stats</button>
+</div>
 <div class="search-row">
   <input type="text" id="search" placeholder="Search episodes…" autofocus>
   <input type="number" id="ep-filter" placeholder="Ep #" min="1">
@@ -106,6 +127,10 @@ mark { background: var(--mark-bg); color: inherit; }
   <button id="carlos-toggle">🤘 Carlos</button>
 </div>
 <div id="results"></div>
+<div id="stats-view">
+  <div class="stats-hint">20 fun facts about the show, computed from the episode archive.</div>
+  <div class="stats-grid"><div class="stat-card"><div class="stat-emoji">🎙</div><div class="stat-value">355</div><div class="stat-label">Episodes in the feed</div><div class="stat-note">347 numbered + 8 bonus</div></div><div class="stat-card"><div class="stat-emoji">🆕</div><div class="stat-value">#500</div><div class="stat-label">Newest episode</div><div class="stat-note">Three Musketeers! · 2026-08</div></div><div class="stat-card"><div class="stat-emoji">📅</div><div class="stat-value">14 yrs</div><div class="stat-label">Show history</div><div class="stat-note">2012-07-14 → 2026-08-10</div></div><div class="stat-card"><div class="stat-emoji">⏳</div><div class="stat-value">1,281 days</div><div class="stat-label">Longest hiatus</div><div class="stat-note">2012-10-24 → 2016-04-27</div></div><div class="stat-card"><div class="stat-emoji">📈</div><div class="stat-value">50 eps</div><div class="stat-label">Busiest year</div><div class="stat-note">2022</div></div><div class="stat-card"><div class="stat-emoji">🗄</div><div class="stat-value">153</div><div class="stat-label">Episode numbers missing</div><div class="stat-note">pre-2019 shows not in the archive</div></div><div class="stat-card"><div class="stat-emoji">📏</div><div class="stat-value">171 chars</div><div class="stat-label">Longest title</div><div class="stat-note">#467 · Night Swarm, Shadow Labyrinth, I Am F…</div></div><div class="stat-card"><div class="stat-emoji">✂️</div><div class="stat-value">17 chars</div><div class="stat-label">Shortest title</div><div class="stat-note">#393</div></div><div class="stat-card"><div class="stat-emoji">🎤</div><div class="stat-value">349×</div><div class="stat-label">Host shout-outs</div><div class="stat-note">“Brad” in the show notes</div></div><div class="stat-card"><div class="stat-emoji">🤘</div><div class="stat-value">110×</div><div class="stat-label">Carlos mentions</div><div class="stat-note">he even has a toggle button on this site</div></div><div class="stat-card"><div class="stat-emoji">🏟</div><div class="stat-value">10</div><div class="stat-label">E3 episodes</div><div class="stat-note">E3 in the title · rest in peace</div></div><div class="stat-card"><div class="stat-emoji">🤝</div><div class="stat-value">2020</div><div class="stat-label">Reunion special</div><div class="stat-note">GameCritics.com Podcast 2020 Reunion</div></div><div class="stat-card"><div class="stat-emoji">🕹</div><div class="stat-value">2,944</div><div class="stat-label">Game mentions</div><div class="stat-note">across the whole show</div></div><div class="stat-card"><div class="stat-emoji">🎮</div><div class="stat-value">2,176</div><div class="stat-label">Distinct games</div><div class="stat-note">unique titles ever discussed</div></div><div class="stat-card"><div class="stat-emoji">🧺</div><div class="stat-value">27</div><div class="stat-label">Most games in one episode</div><div class="stat-note">Episode 185</div></div><div class="stat-card"><div class="stat-emoji">➗</div><div class="stat-value">6.3</div><div class="stat-label">Games per episode</div><div class="stat-note">episodes that discussed games</div></div><div class="stat-card"><div class="stat-emoji">🏆</div><div class="stat-value">Control</div><div class="stat-label">Most-discussed game</div><div class="stat-note">12 episodes</div></div><div class="stat-card"><div class="stat-emoji">🔁</div><div class="stat-value">405</div><div class="stat-label">Repeat offenders</div><div class="stat-note">games discussed in 2+ episodes</div></div><div class="stat-card"><div class="stat-emoji">🃏</div><div class="stat-value">GOTY</div><div class="stat-label">The top “game” is a lie</div><div class="stat-note">“GOTY” shows up 15× — it&#x27;s not a game</div></div><div class="stat-card"><div class="stat-emoji">🖼</div><div class="stat-value">85%</div><div class="stat-label">Findable on Steam</div><div class="stat-note">1,843 of 2,176 games · 333 too obscure</div></div></div>
+</div>
 <div class="footer">
   <span>made by a fan —</span>
   <a class="github" href="https://github.com/normware/TheSoVideogames-fanpage" target="_blank">
@@ -139,6 +164,19 @@ let postersVisible = false;
     t.textContent = isLight ? '☾ Dark' : '☀ Light';
   };
 })();
+
+function showTab(name) {
+  const isStats = name === 'stats';
+  document.getElementById('tab-episodes').classList.toggle('active', !isStats);
+  document.getElementById('tab-stats').classList.toggle('active', isStats);
+  document.getElementById('stats-view').classList.toggle('vis', isStats);
+  const others = document.querySelectorAll('.search-row, .controls, #results');
+  for (let i = 0; i < others.length; i++) {
+    others[i].style.display = isStats ? 'none' : '';
+  }
+}
+document.getElementById('tab-episodes').onclick = function() { showTab('episodes'); };
+document.getElementById('tab-stats').onclick = function() { showTab('stats'); };
 
 const epEls = episodes.map((e, i) => {
   const div = document.createElement('div');

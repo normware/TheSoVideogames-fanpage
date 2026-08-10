@@ -75,8 +75,8 @@ def main():
         if not key:
             continue
 
-        # Skip if already cached
-        if key in existing and existing[key].get("poster"):
+        # Skip if already cached (poster found or previously not found)
+        if key in existing:
             enriched[key] = existing[key]
             continue
 

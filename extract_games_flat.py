@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""Extract games from episode descriptions using LLM via GitHub Models API. Outputs flat JSON."""
+"""Extract games from episode descriptions using an LLM via the Groq API. Outputs flat JSON."""
 
 import json
 import argparse
 import re
 import os
+import sys
 import urllib.request, urllib.error
 import time
 from pathlib import Path
 
-API_URL = "https://models.inference.ai.azure.com/chat/completions"
+API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 
 def clean_description(desc: str) -> str:
@@ -85,7 +86,8 @@ def extract_games(episode: dict, model: str, token: str) -> list:
         data=body,
         headers={
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {token}"
+            "Authorization": f"Bearer {token}",
+            "User-Agent": "sovideogames-fanpage/1.0"
         }
     )
 
@@ -94,38 +96,43 @@ def extract_games(episode: dict, model: str, token: str) -> list:
             with urllib.request.urlopen(req, timeout=60) as resp:
                 data = json.loads(resp.read())
             raw = data["choices"][0]["message"]["content"]
+            raw = re.sub(r'^```(?:json)?\s*', '', raw.strip())
+            raw = re.sub(r'\s*```$', '', raw)
             result = json.loads(raw)
             games = result.get("games", []) if isinstance(result, dict) else []
-            return post_process(games)
+            return post_process(games), True
         except urllib.error.HTTPError as e:
             if e.code == 429 and attempt < 2:
-                wait = 10 * (attempt + 1)
+                wait = int(e.headers.get("Retry-After", "") or 0) if e.headers.get("Retry-After") else 0
+                if not wait or wait <= 0:
+                    wait = 30 * (attempt + 1)
+                wait = min(wait, 120)
                 print(f"\nRate limited on episode {episode.get('episode')}, waiting {wait}s...")
                 time.sleep(wait)
             else:
                 print(f"\nError on episode {episode.get('episode')}: {e}")
-                return []
+                return [], False
         except Exception as e:
             print(f"\nError on episode {episode.get('episode')}: {e}")
-            return []
+            return [], False
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Extract games → Flat JSON via GitHub Models")
+    parser = argparse.ArgumentParser(description="Extract games → Flat JSON via Groq")
     parser.add_argument("-i", "--input", default="episodes.json", help="Input JSON file")
     parser.add_argument("-o", "--output", default="games_flat.json", help="Output flat JSON file")
-    parser.add_argument("-m", "--model", default="gpt-4o-mini",
-                        help="GitHub Models model (default: gpt-4o-mini)")
+    parser.add_argument("-m", "--model", default="llama-3.3-70b-versatile",
+                        help="Groq model (default: llama-3.3-70b-versatile)")
     parser.add_argument("--token", default="",
-                        help="GitHub token (defaults to GITHUB_TOKEN env var)")
+                        help="Groq API key (defaults to GROQ_API_KEY env var)")
     parser.add_argument("--force", action="store_true",
                         help="Re-process ALL episodes (overwrite existing)")
 
     args = parser.parse_args()
 
-    token = args.token or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    token = args.token or os.environ.get("GROQ_API_KEY") or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if not token:
-        print("Error: no GitHub token found. Set GITHUB_TOKEN env var or pass --token.")
+        print("Error: no Groq API key found. Set GROQ_API_KEY env var or pass --token.")
         return
 
     input_path = Path(args.input)
@@ -159,10 +166,13 @@ def main():
     print(f"Processing {len(to_process)} episodes → {args.output} (model: {args.model})")
 
     results = existing.copy() if not args.force else {}
+    failures = 0
 
     for i, ep in enumerate(to_process, 1):
         ep_id = str(ep["episode"])
-        games = extract_games(ep, args.model, token)
+        games, ok = extract_games(ep, args.model, token)
+        if not ok:
+            failures += 1
         results[ep_id] = games
 
         with open(output_path, 'w', encoding='utf-8') as f:
@@ -172,6 +182,10 @@ def main():
             print(f"  {i}/{len(to_process)}")
 
         time.sleep(1.0)
+
+    if to_process and failures == len(to_process):
+        print(f"\nFATAL: all {failures} attempted episodes failed. API down or key invalid?")
+        sys.exit(1)
 
     total = sum(len(v) for v in results.values())
     with_games = sum(1 for v in results.values() if v)

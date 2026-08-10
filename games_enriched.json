@@ -158,6 +158,10 @@
     "steam_id": 1699820,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1699820/capsule_231x87.jpg?t=1628226675"
   },
+  "Adventures of Elliot": {
+    "steam_id": 3483510,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3483510/85a9954203b9e5379de65adf99bfa846e7cbb242/capsule_231x87.jpg?t=1782353681"
+  },
   "Aeon Drive": {
     "steam_id": 1252240,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1252240/capsule_231x87.jpg?t=1731176057"
@@ -607,6 +611,10 @@
     "steam_id": 4011790,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4011790/a9ed1b27b9d68a5dee76d016d5b353aaf31de0bb/capsule_231x87.jpg?t=1774547505"
   },
+  "Beast of Reincarnation": {
+    "steam_id": 2001760,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2001760/8051f36f9874f82c4d998354409343346b5f6b3f/capsule_231x87.jpg?t=1786337922"
+  },
   "Beat Cop": {
     "steam_id": 461950,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/461950/capsule_231x87.jpg?t=1701878616"
@@ -1038,6 +1046,10 @@
   "Case of the Golden Idol": {
     "steam_id": 1677770,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1677770/capsule_231x87.jpg?t=1758227116"
+  },
+  "Case Solved: the London Files": {
+    "steam_id": 4127360,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4127360/4040ebf55a1add5253c69e3bbc590ed316de55a8/capsule_231x87_alt_assets_1.jpg?t=1785333209"
   },
   "Castle Kong": {
     "steam_id": 877330,
@@ -1638,6 +1650,10 @@
     "steam_id": 3280350,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/6e07f61e2585bae97d2406d45666a7ee70543792/capsule_231x87.jpg?t=1774022345"
   },
+  "Death Stranding 2": {
+    "steam_id": 3280350,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/6e07f61e2585bae97d2406d45666a7ee70543792/capsule_231x87.jpg?t=1774022345"
+  },
   "Death Stranding 2: On the Beach": {
     "steam_id": 3280350,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3280350/6e07f61e2585bae97d2406d45666a7ee70543792/capsule_231x87.jpg?t=1774022345"
@@ -1934,6 +1950,10 @@
   "Doom Eternal": {
     "steam_id": 782330,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/782330/capsule_231x87.jpg?t=1755109910"
+  },
+  "Doom: Dark Ages Revelations": {
+    "steam_id": 3469450,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3469450/8e94c2ef4bb2cb63105755d0a0fd3233f20922a5/capsule_231x87.jpg?t=1785785087"
   },
   "Doom: The Dark Ages": {
     "steam_id": 3017860,
@@ -3100,6 +3120,10 @@
     "steam_id": 1240440,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1240440/9d64f5027f08e849ed1369f98b22326e2377b2b7/capsule_231x87.jpg?t=1774464322"
   },
+  "Halo: Campaign Evolved": {
+    "steam_id": 2806050,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2806050/c4569404286b4e8bc5810fbc11282d7b842d4e4a/capsule_231x87.jpg?t=1786379031"
+  },
   "Halo: Reach": {
     "steam_id": 1064220,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1064220/capsule_231x87.jpg?t=1634231207"
@@ -3236,6 +3260,10 @@
   },
   "High on Life: High on Knife DLC": {
     "poster": null
+  },
+  "High Times": {
+    "steam_id": 2251220,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2251220/230d5306be45278bc2fef72488af980b9cc0dfc1/capsule_231x87.jpg?t=1785430801"
   },
   "Highrise Heroes": {
     "steam_id": 415670,
@@ -3721,6 +3749,10 @@
   "Kunitsu-Gami: Path of the Goddess": {
     "steam_id": 2510710,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2510710/2c2d4f6f6fe2891e8501af888a129f7cce041ac3/capsule_231x87.jpg?t=1752199364"
+  },
+  "Kynseed": {
+    "steam_id": 758870,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/758870/a16998592d87f302fc02e1598043715cb1130dd6/capsule_231x87_alt_assets_2.jpg?t=1784301962"
   },
   "L.A. Noire": {
     "steam_id": 110800,
@@ -4518,6 +4550,10 @@
   "Mosaic Chronicles Deluxe": {
     "poster": null
   },
+  "Moss: the Forgotten Relic": {
+    "steam_id": 3914860,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3914860/d45702a8a84af1cca5dda3075e3ce968b968360c/capsule_231x87.jpg?t=1784211072"
+  },
   "Mothmen 1966": {
     "steam_id": 1755030,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1755030/capsule_231x87.jpg?t=1703184140"
@@ -5179,6 +5215,9 @@
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570900/capsule_231x87.jpg?t=1706706161"
   },
   "Pocket Card Jockey: Ride On!": {
+    "poster": null
+  },
+  "Poinpy": {
     "poster": null
   },
   "Poison Control": {
@@ -7154,6 +7193,10 @@
     "steam_id": 2531310,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2531310/29904ca69ae022479d64207cc40ce549d0a68acb/capsule_231x87.jpg?t=1750959180"
   },
+  "The Last of Us Part 2": {
+    "steam_id": 2531310,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2531310/29904ca69ae022479d64207cc40ce549d0a68acb/capsule_231x87.jpg?t=1750959180"
+  },
   "The Last of Us, Part II": {
     "steam_id": 2531310,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2531310/29904ca69ae022479d64207cc40ce549d0a68acb/capsule_231x87.jpg?t=1750959180"
@@ -7589,6 +7632,10 @@
   "Turmoil: The Heat is On": {
     "steam_id": 804760,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/804760/capsule_231x87.jpg?t=1655481350"
+  },
+  "Turnip Mountain": {
+    "steam_id": 2138410,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2138410/30802fbac63d7f17e493570b4a1202d36e78e284/capsule_231x87.jpg?t=1785949559"
   },
   "Turok: Dinosaur Hunter": {
     "poster": null

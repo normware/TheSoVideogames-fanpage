@@ -6,7 +6,7 @@ Searchable episode listing with game title extraction, Steam enrichment, and pos
 
 ## How It Works
 
-The podcast RSS feed is fetched and parsed into structured episode data. Each episode's description is sent through the GitHub Models API (GPT-4o-mini) to extract mentioned game titles. Manually added overrides and a backfill pass catch anything the LLM missed. Finally, game names are deduplicated, enriched with Steam poster URLs, and baked into a single `index.html` with search, dark mode, and episode filtering.
+The podcast RSS feed is fetched and parsed into structured episode data. Each episode's description is sent through the Groq API (Llama 3.3 70B, free tier) to extract mentioned game titles. Manually added overrides and a backfill pass catch anything the LLM missed. Finally, game names are deduplicated, enriched with Steam poster URLs, and baked into a single `index.html` with search, dark mode, and episode filtering.
 
 ## Data Pipeline
 
@@ -192,7 +192,7 @@ export $(cat .env | xargs)   # or use direnv, or set them in your shell rc
 ## Notes
 
 - **366 / 486** episodes in feed (pre-2019 not in RSS)
-- Game extraction uses **GitHub Models API** (free) via `GITHUB_TOKEN`
+- Game extraction uses **Groq API** (free tier, `llama-3.3-70b-versatile`) via `GROQ_API_KEY`
 - Poster enrichment uses **Steam Store API** (free, no key needed)
 - Set `RAWG_API_KEY` env var for better poster coverage (free at rawg.io/apidocs)
 - Game artwork © respective publishers

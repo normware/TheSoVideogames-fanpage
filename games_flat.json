@@ -823,7 +823,8 @@
     "FF16",
     "20 Minutes Till Dawn",
     "Broken Roads",
-    "Fallout 4"
+    "Fallout 4",
+    "Fallout"
   ],
   "383": [
     "Stellar Blade",
@@ -906,7 +907,8 @@
     "Tomb Raider Remaster 1-3",
     "Ultros",
     "Suicide Squad",
-    "Helldivers"
+    "Helldivers",
+    "Tomb Raider"
   ],
   "375": [
     "Hauntii",
@@ -931,7 +933,8 @@
     "WH40K: Rogue Trader",
     "Pal World",
     "Lil Guardsman",
-    "Enshrouded"
+    "Enshrouded",
+    "Palworld"
   ],
   "372": [
     "Bahnsen Knights",
@@ -997,7 +1000,8 @@
     "The Invincible",
     "The Talos Principle II",
     "The Talos Principle",
-    "Talos Principle II"
+    "Talos Principle II",
+    "Sequence"
   ],
   "364": [
     "Alina of the Arena",
@@ -1035,14 +1039,16 @@
     "Spider-Man 2",
     "Star Ocean: The Second Story R",
     "Thirsty Suitors",
-    "The Lamplighters League"
+    "The Lamplighters League",
+    "Alan Wake"
   ],
   "360": [
     "Alan Wake 2",
     "Diablo 4 Season 2",
     "Endless Dungeon",
     "Spider-Man 2",
-    "Diablo 4"
+    "Diablo 4",
+    "Alan Wake"
   ],
   "359": [
     "Deflector",
@@ -1111,7 +1117,8 @@
     "Chants of Sennaar",
     "Oceanhorn 2",
     "Red Dead Redemption (PS4)",
-    "Last Epoch"
+    "Last Epoch",
+    "Red Dead Redemption"
   ],
   "352": [
     "Black Skylands",
@@ -1215,7 +1222,8 @@
     "NeverAwake",
     "Noob: The Factionless",
     "Sky Caravan",
-    "Soulvars"
+    "Soulvars",
+    "Thief"
   ],
   "342": [
     "Auralux: Constellations",
@@ -1246,7 +1254,8 @@
     "Puzzle Quest 3",
     "Street Fighter 6",
     "Diablo 4",
-    "Gerda: A Flame In Winter"
+    "Gerda: A Flame In Winter",
+    "Street Fighter"
   ],
   "338": [
     "Astronaut: The Best",
@@ -2107,7 +2116,8 @@
     "I Am Fish",
     "Eastward",
     "Tales of Arise",
-    "Struggling"
+    "Struggling",
+    "Weapon of Choice"
   ],
   "249": [
     "Craftopia",
@@ -2209,7 +2219,8 @@
     "Sludge Life",
     "Warhammer 40,000: Space Wolf",
     "Chicory",
-    "Monster Hunter Stories 2"
+    "Monster Hunter Stories 2",
+    "Monster Hunter"
   ],
   "239": [
     "Dungeon of Naheulbeuk",
@@ -2239,7 +2250,8 @@
     "Miitopia",
     "Song of Horror",
     "Warhammer: Age of Sigmar — Storm Ground",
-    "Kowloon Highschool Chronicle"
+    "Kowloon Highschool Chronicle",
+    "Mass Effect"
   ],
   "235": [
     "Mass Effect: LE",
@@ -2248,7 +2260,8 @@
     "The Wild at Heart",
     "Stonefly",
     "Biomutant",
-    "Mechwarrior 5: Mercenaries"
+    "Mechwarrior 5: Mercenaries",
+    "Mass Effect"
   ],
   "234": [
     "Crossroads Inn",
@@ -2258,14 +2271,16 @@
     "Biomutant",
     "Mass Effect: LE",
     "Beautiful Desolation",
-    "Resident Evil 7"
+    "Resident Evil 7",
+    "Mass Effect"
   ],
   "233": [
     "Talisman: Digital Edition",
     "Mass Effect: Legendary Edition",
     "Space Commander: War & Trade",
     "Death Crown",
-    "Resident Evil: Village"
+    "Resident Evil: Village",
+    "Mass Effect"
   ],
   "232": [
     "Don't Give up",
@@ -2281,7 +2296,8 @@
     "Returnal",
     "Monster Hunter Rise",
     "Protocol",
-    "Smashing The Battle"
+    "Smashing The Battle",
+    "Monster Hunter"
   ],
   "230": [
     "Breathedge",
@@ -2290,7 +2306,8 @@
     "Journey of the Broken Circle",
     "Terminator: Resistance",
     "Nier Replicant",
-    "El Hijo"
+    "El Hijo",
+    "Nier"
   ],
   "229": [
     "RE: Village Demo",
@@ -2315,7 +2332,8 @@
   "227": [
     "Disco Elysium: The Final Cut",
     "Luckslinger",
-    "Monster Hunter Rise"
+    "Monster Hunter Rise",
+    "Monster Hunter"
   ],
   "226": [
     "Balan Wonderworld",
@@ -2404,7 +2422,8 @@
     "Olija",
     "Werewolf: Earthblood",
     "Ys 9: Monstrum Nox",
-    "Ys 9"
+    "Ys 9",
+    "Crackdown"
   ],
   "217": [
     "Maiden",
@@ -2433,7 +2452,8 @@
     "Monster Hunter Rise Demo",
     "Cyberpunk 2077",
     "AC Odyssey",
-    "Monster Hunter Rise"
+    "Monster Hunter Rise",
+    "Monster Hunter"
   ],
   "214": [
     "Ac Odyssey",
@@ -2467,7 +2487,8 @@
     "Morkredd",
     "Nine Witches: Family Disruption",
     "Picklock",
-    "Temtem"
+    "Temtem",
+    "The Walking Dead"
   ],
   "210": [],
   "209": [
@@ -2524,7 +2545,8 @@
   ],
   "203": [
     "Shoot 1UP DX",
-    "Birth"
+    "Birth",
+    "Shoot 1UP"
   ],
   "202": [
     "Torchlight III",
@@ -2534,7 +2556,8 @@
     "Cloupunk",
     "Amnesia: Rebirth",
     "Pumpkin Jack",
-    "Scourgebringer"
+    "Scourgebringer",
+    "Torchlight"
   ],
   "201": [
     "The Outer Worlds",
@@ -2543,7 +2566,8 @@
     "Fallout 76",
     "Space Crew",
     "Rebel Galaxy Outlaws",
-    "Outer Worlds"
+    "Outer Worlds",
+    "Fallout"
   ],
   "200": [
     "Genshin Impact",
@@ -2608,7 +2632,8 @@
     "Lonely Mountains: Downhill",
     "Raji: An Ancient Epic",
     "Runestone Keeper",
-    "Wasteland 3"
+    "Wasteland 3",
+    "Divinity: Original Sin"
   ],
   "194": [],
   "193": [
@@ -2706,7 +2731,8 @@
     "Wampus",
     "Ys: memories of Celceta",
     "A Short Hike",
-    "Fallout 76"
+    "Fallout 76",
+    "Fallout"
   ],
   "184": [
     "Trails of Cold Steel",
@@ -2714,7 +2740,8 @@
     "Fallout 76: Wastelanders",
     "Nioh 2",
     "Those Who Remain",
-    "Fallout 76"
+    "Fallout 76",
+    "Fallout"
   ],
   "183": [
     "Atomicrops",
@@ -2725,7 +2752,8 @@
     "Minecraft Dungeons",
     "Mortal Kombat 11: Aftermath",
     "Neo Cab",
-    "Fallout 76"
+    "Fallout 76",
+    "Fallout"
   ],
   "182": [
     "The Mafia Trilogy: Remastered",
@@ -2774,14 +2802,16 @@
     "Surviving the Aftermath",
     "Snakeybus",
     "Final Fantasy 7 Remake",
-    "No Man’s Sky"
+    "No Man’s Sky",
+    "Final Fantasy 7"
   ],
   "175": [
     "Final Fantasy 7 Remake",
     "No Man's Sky",
     "Convoy",
     "Rush Rover",
-    "No Man’s Sky"
+    "No Man’s Sky",
+    "Final Fantasy 7"
   ],
   "174": [
     "Resident Evil 3",
@@ -2800,7 +2830,8 @@
     "Control: The Foundation",
     "Bravely Default 2",
     "Vampire: the Masquerade – Coteries of New York",
-    "Control"
+    "Control",
+    "Bravely Default"
   ],
   "171": [
     "Doom Eternal",
@@ -2811,7 +2842,8 @@
     "Trials of Mana"
   ],
   "169": [
-    "Disaster Report 4"
+    "Disaster Report 4",
+    "Disaster Report"
   ],
   "168": [
     "The Longing",
@@ -2849,7 +2881,8 @@
     "Snack World",
     "Warhammer 40K: Inquisitor – Martyr",
     "Xenoblade Chronicles 2",
-    "40K: Inquisitor"
+    "40K: Inquisitor",
+    "Darksiders"
   ],
   "165": [
     "Little Misfortune",
@@ -2885,7 +2918,8 @@
     "Super Tennis",
     "Vermintide 2",
     "Journey to the Savage Planet",
-    "Bard's Tale 4"
+    "Bard's Tale 4",
+    "Salt"
   ],
   "162": [
     "Baba is You",
@@ -2903,7 +2937,9 @@
     "Warlocks 2",
     "Meteorfall"
   ],
-  "161": [],
+  "161": [
+    "Kerbal Space Program: Breaking Ground"
+  ],
   "160": [
     "Ember",
     "Space Pioneer",
@@ -3888,5 +3924,6 @@
     "Beast of Reincarnation",
     "Death Stranding",
     "Halo"
-  ]
+  ],
+  "72": []
 }

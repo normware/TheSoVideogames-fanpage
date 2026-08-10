@@ -62,6 +62,35 @@ def parse_item(item):
         "url": url,
     }
 
+def sort_key(e):
+    n = e.get("episode")
+    if n is not None:
+        return (0, -int(n))
+    d = e.get("date", "").replace("-", "")
+    return (1, -(int(d) if d.isdigit() else 0))
+
+
+def dedupe_by_number(eps):
+    """Same episode number can appear in both the GC Podcast and So… Videogames feeds.
+    Keep one entry per number, preferring the GameCritics.com Podcast title."""
+    best = {}
+    for e in eps:
+        n = e.get("episode")
+        if n is None:
+            best.setdefault(("u", e["url"]), e)
+            continue
+        key = ("n", n)
+        cur = best.get(key)
+        if cur is None:
+            best[key] = e
+        else:
+            cur_is_gc = "gamecritics.com podcast" in cur["title"].lower()
+            new_is_gc = "gamecritics.com podcast" in e["title"].lower()
+            if not cur_is_gc and new_is_gc:
+                best[key] = e
+    return list(best.values())
+
+
 def fetch_rss():
     eps = []
     seen = set()
@@ -81,24 +110,35 @@ def fetch_rss():
                 if url in seen:
                     continue
                 title = item.findtext("title", "").lower()
-                if not any(kw in title for kw in ["so videogames", "gamecritics.com podcast", "the so videogames"]):
+                title_norm = re.sub(r"\s+", " ", title.replace("…", " "))
+                is_svg = ("so videogames" in title_norm or "the so videogames" in title_norm
+                          or re.search(r"\bsvg\b", title_norm))
+                is_gcpod = (re.search(r"gamecritics(\.com)?\s*podcast\b", title_norm)
+                            or "gamecritics.com podcast" in title_norm)
+                if not (is_svg or is_gcpod):
                     continue
-                if "bridge crew" in title or "transcript" in title:
+                # skip GC Radio re-syndications and other shows (duplicate of numbered SVG eps)
+                if re.search(r"gamecritics(\.com)?\s*radio", title_norm):
+                    continue
+                if "bridge crew" in title_norm or "transcript" in title_norm:
+                    continue
+                # skip WordPress archive pagination placeholder items (e.g. "… Podcast – Page 2")
+                if re.search(r"[–—-]\s*page\s*\d+\s*$", title_norm):
                     continue
                 seen.add(url)
                 eps.append(parse_item(item))
             print(f"  {label} page {page}: {len(items)} items ({len(eps)} unique)")
             time.sleep(0.2)
-    eps.sort(key=lambda e: e.get("date", ""), reverse=True)
-    return eps
+    eps.sort(key=sort_key)
+    return dedupe_by_number(eps)
+
 
 def merge(existing, fresh):
     by_url = {e["url"]: e for e in existing}
     for e in fresh:
         if e["url"] not in by_url:
             by_url[e["url"]] = e
-    return sorted(by_url.values(), key=lambda x: x.get("date", ""), reverse=True)
-
+    return sorted(dedupe_by_number(by_url.values()), key=sort_key)
 def load_existing():
     if os.path.exists(EPISODES_FILE):
         with open(EPISODES_FILE) as f:

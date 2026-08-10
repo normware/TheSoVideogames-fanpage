@@ -7,10 +7,11 @@ import re
 import os
 import sys
 import urllib.request, urllib.error
-import time
+import time, ssl
 from pathlib import Path
 
 API_URL = "https://api.groq.com/openai/v1/chat/completions"
+ctx = ssl._create_unverified_context()
 
 
 def clean_description(desc: str) -> str:
@@ -93,7 +94,7 @@ def extract_games(episode: dict, model: str, token: str) -> list:
 
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(req, timeout=60) as resp:
+            with urllib.request.urlopen(req, timeout=60, context=ctx) as resp:
                 data = json.loads(resp.read())
             raw = data["choices"][0]["message"]["content"]
             raw = re.sub(r'^```(?:json)?\s*', '', raw.strip())

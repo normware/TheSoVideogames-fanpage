@@ -501,11 +501,14 @@ function epHTML(e) {{
   const title = esc(e.title);
   const epLabel = e.episode ? 'Ep. ' + e.episode : '';
   const desc = e.desc || '';
+  const extraSources = (e.sources || []).slice(1).map(s =>
+    ' · <a href="' + s.url + '" target="_blank" style="color:var(--muted)">' + esc(s.label) + '</a>'
+  ).join('');
 
   return '<div class="ep">'
     + '<div class="ep-main">'
     + '<div class="ep-title"><a href="' + e.url + '" target="_blank">' + title + '</a></div>'
-    + '<div class="ep-meta">' + (epLabel ? epLabel + ' · ' : '') + e.date + '</div>'
+    + '<div class="ep-meta">' + (epLabel ? epLabel + ' · ' : '') + e.date + extraSources + '</div>'
     + gameList(e.episode)
     + (desc ? '<div id="' + tid + '" class="desc">' + desc + '</div>' : '')
     + (desc ? '<div class="tog" onclick="var d=document.getElementById(\\'' + tid + '\\');d.classList.toggle(\\'vis\\');this.textContent=d.classList.contains(\\'vis\\')?\\'▾ Hide description\\':\\'▸ Show description\\'">▸ Show description</div>' : '')

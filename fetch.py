@@ -60,6 +60,7 @@ def parse_item(item):
         "desc": desc,
         "date": date,
         "url": url,
+        "sources": [{"label": "GameCritics.com", "url": url}],
     }
 
 def sort_key(e):
@@ -136,8 +137,13 @@ def fetch_rss():
 def merge(existing, fresh):
     by_url = {e["url"]: e for e in existing}
     for e in fresh:
-        if e["url"] not in by_url:
+        cur = by_url.get(e["url"])
+        if cur is None:
             by_url[e["url"]] = e
+        else:
+            merged_sources = {s["url"]: s for s in cur.get("sources", []) + e.get("sources", [])}
+            cur.update(e)
+            cur["sources"] = list(merged_sources.values())
     return sorted(dedupe_by_number(by_url.values()), key=sort_key)
 def load_existing():
     if os.path.exists(EPISODES_FILE):

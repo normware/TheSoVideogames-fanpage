@@ -241,11 +241,36 @@ def render_stats_html(stats):
     return '<div class="stats-grid">' + ''.join(cards) + '</div>'
 
 
+def _esc(s):
+    return str(s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+
+def _desc_tid(e):
+    return "d" + re.sub(r"[^a-zA-Z0-9]", "", e.get("url") or "")
+
+
+def _ep_html(e):
+    tid = _desc_tid(e)
+    title = _esc(e.get("title"))
+    ep_label = "Ep. {}".format(e["episode"]) if e.get("episode") else ""
+    extra = "".join(
+        ' · <a href="{u}" target="_blank" style="color:var(--muted)">{l}</a>'.format(u=_esc(s.get("url")), l=_esc(s.get("label")))
+        for s in (e.get("sources") or [])[1:]
+    )
+    meta = (ep_label + " · " if ep_label else "") + _esc(e.get("date")) + extra
+    out = ['<div class="ep" data-episode="{}">'.format(e["episode"]) if e.get("episode") else '<div class="ep">']
+    out.append('<div class="ep-main">')
+    out.append('<div class="ep-title"><a href="{u}" target="_blank">{t}</a></div>'.format(u=_esc(e.get("url")), t=title))
+    out.append('<div class="ep-meta">{}</div>'.format(meta))
+    out.append('<div class="desc" id="{}"></div>'.format(tid))
+    out.append("</div>")
+    out.append("</div>")
+    return "".join(out)
+
+
 def generate_html(eps, episode_games, game_posters, stats_html=""):
-    data_json = json.dumps(eps)
-    games_json = json.dumps(episode_games)
-    posters_json = json.dumps(game_posters)
     highest = max((e.get("episode") or 0 for e in eps), default=0)
+    results_html = "".join(_ep_html(e) for e in eps)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -253,6 +278,9 @@ def generate_html(eps, episode_games, game_posters, stats_html=""):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>So Videogames Podcast – Episodes</title>
+<script src="games.js" defer></script>
+<script src="posters.js" defer></script>
+<script src="descriptions.js" defer></script>
 <style>
 :root {{
   color-scheme: dark;
@@ -316,9 +344,9 @@ h1 {{ font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }}
 .tog:hover {{ opacity: 1; }}
 mark {{ background: var(--mark-bg); color: inherit; }}
 
-.ep-posters {{ display: grid; grid-template-columns: 1fr 1fr; gap: 4px; align-content: start; flex-shrink: 0; }}
+.ep-posters {{ display: none; grid-template-columns: 1fr 1fr; gap: 4px; align-content: start; flex-shrink: 0; }}
 .ep-posters img {{ width: 110px; height: auto; border-radius: 4px; background: var(--border); display: block; }}
-.ep-posters.hidden {{ display: none; }}
+body.show-posters .ep-posters {{ display: grid; }}
 .ep-posters img[src=""] {{ display: none; }}
 
 .tabs {{ display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }}
@@ -375,7 +403,7 @@ mark {{ background: var(--mark-bg); color: inherit; }}
   <button id="toggle-posters">Show posters</button>
   <button id="carlos-toggle">🤘 Carlos</button>
 </div>
-<div id="results"></div>
+<div id="results">{results_html}</div>
 <div id="stats-view">
   <div class="stats-hint">20 fun facts about the show, computed from the episode archive.</div>
   {stats_html}
@@ -394,10 +422,6 @@ mark {{ background: var(--mark-bg); color: inherit; }}
   Game artwork © respective publishers · Posters via <a href="https://store.steampowered.com">Steam</a>
 </div>
 <script>
-const episodes = {data_json};
-const episodeGames = {games_json};
-const gamePosters = {posters_json};
-
 let postersVisible = false;
 
 (function initTheme() {{
@@ -427,25 +451,24 @@ function showTab(name) {{
 document.getElementById('tab-episodes').onclick = function() {{ showTab('episodes'); }};
 document.getElementById('tab-stats').onclick = function() {{ showTab('stats'); }};
 
-const epEls = episodes.map((e, i) => {{
-  const div = document.createElement('div');
-  div.innerHTML = epHTML(e);
-  const el = div.firstElementChild;
-  el.dataset.index = i;
-  el.dataset.episode = e.episode != null ? String(e.episode) : '';
-  el.dataset.title = (e.title || '').toLowerCase();
-  el.dataset.desc = (e.desc || '').toLowerCase();
-  return el;
-}});
-const r = document.getElementById('results');
-epEls.forEach(el => r.appendChild(el));
+const eps = Array.from(document.querySelectorAll('.ep'));
+
+function refreshSearchText() {{
+  searchText = eps.map(function(el) {{
+    const titleEl = el.querySelector('.ep-title a');
+    const descEl = el.querySelector('.desc');
+    return ((titleEl ? titleEl.textContent : '') + ' ' + (descEl ? descEl.textContent : '')).toLowerCase();
+  }});
+}}
+let searchText = [];
+refreshSearchText();
 
 let carlosOnly = false;
 
 document.getElementById('toggle-posters').onclick = function() {{
   postersVisible = !postersVisible;
   this.textContent = postersVisible ? 'Hide posters' : 'Show posters';
-  document.querySelectorAll('.ep-posters').forEach(p => p.classList.toggle('hidden'));
+  document.body.classList.toggle('show-posters', postersVisible);
 }};
 
 document.getElementById('carlos-toggle').onclick = function() {{
@@ -464,58 +487,91 @@ function hl(t, q) {{
   catch(e) {{ return t; }}
 }}
 
-function gameList(epNum) {{
-  const games = episodeGames[String(epNum)];
-  if (!games || !games.length) return '';
-  return '<ul class="game-list">' + games.map(g => {{
-    const entry = gamePosters[g];
+function gameListHTML(games) {{
+  const posters = window.SVG_POSTERS || {{}};
+  let out = '<ul class="game-list">';
+  for (let i = 0; i < games.length; i++) {{
+    const g = games[i];
+    const entry = posters[g];
     const hasSteam = entry && entry.steam_id;
     const name = esc(g);
     if (hasSteam) {{
-      return '<li class="known"><a href="https://store.steampowered.com/app/' + entry.steam_id + '" target="_blank" rel="noopener">' + name + '<span class="steam-badge">Steam</span></a></li>';
+      out += '<li class="known"><a href="https://store.steampowered.com/app/' + entry.steam_id + '" target="_blank" rel="noopener">' + name + '<span class="steam-badge">Steam</span></a></li>';
+    }} else {{
+      out += '<li>' + name + '</li>';
     }}
-    return '<li>' + name + '</li>';
-  }}).join('') + '</ul>';
+  }}
+  return out + '</ul>';
 }}
 
-function posterGrid(epNum) {{
-  const games = episodeGames[String(epNum)];
-  if (!games || !games.length) return '';
-  const imgs = games.map(g => {{
-    const entry = gamePosters[g];
-    let url = entry ? entry.poster : null;
-    if (!url && entry && entry.steam_id) {{
-      url = 'https://shared.akamai.steamstatic.com/steam/apps/' + entry.steam_id + '/capsule_231x87.jpg';
+function renderGameLists() {{
+  if (!window.SVG_GAMES) return;
+  for (let i = 0; i < eps.length; i++) {{
+    const el = eps[i];
+    const num = el.dataset.episode;
+    const games = window.SVG_GAMES[num];
+    if (!games || !games.length) continue;
+    const ul = document.createElement('div');
+    ul.innerHTML = gameListHTML(games);
+    const list = ul.firstElementChild;
+    const existing = el.querySelector('.game-list');
+    if (existing) {{
+      existing.replaceWith(list);
+    }} else {{
+      const meta = el.querySelector('.ep-meta');
+      meta.parentNode.insertBefore(list, meta.nextSibling);
     }}
-    if (!url) return '';
-    const steamLink = entry && entry.steam_id ? 'https://store.steampowered.com/app/' + entry.steam_id : null;
-    const img = '<img src="' + esc(url) + '" alt="' + esc(g) + '" loading="lazy">';
-    return steamLink ? '<a href="' + steamLink + '" target="_blank" rel="noopener">' + img + '</a>' : img;
-  }}).filter(s => s).join('');
-  if (!imgs) return '';
-  return '<div class="ep-posters' + (postersVisible ? '' : ' hidden') + '">' + imgs + '</div>';
+  }}
+  refreshSearchText();
 }}
 
-function epHTML(e) {{
-  const tid = 'd' + e.url.replace(/[^a-zA-Z0-9]/g, '');
-  const title = esc(e.title);
-  const epLabel = e.episode ? 'Ep. ' + e.episode : '';
-  const desc = e.desc || '';
-  const extraSources = (e.sources || []).slice(1).map(s =>
-    ' · <a href="' + s.url + '" target="_blank" style="color:var(--muted)">' + esc(s.label) + '</a>'
-  ).join('');
-
-  return '<div class="ep">'
-    + '<div class="ep-main">'
-    + '<div class="ep-title"><a href="' + e.url + '" target="_blank">' + title + '</a></div>'
-    + '<div class="ep-meta">' + (epLabel ? epLabel + ' · ' : '') + e.date + extraSources + '</div>'
-    + gameList(e.episode)
-    + (desc ? '<div id="' + tid + '" class="desc">' + desc + '</div>' : '')
-    + (desc ? '<div class="tog" onclick="var d=document.getElementById(\\'' + tid + '\\');d.classList.toggle(\\'vis\\');this.textContent=d.classList.contains(\\'vis\\')?\\'▾ Hide description\\':\\'▸ Show description\\'">▸ Show description</div>' : '')
-    + '</div>'
-    + posterGrid(e.episode)
-    + '</div>';
+function renderPosterGrids() {{
+  if (!window.SVG_GAMES || !window.SVG_POSTERS) return;
+  for (let i = 0; i < eps.length; i++) {{
+    const el = eps[i];
+    const games = window.SVG_GAMES[el.dataset.episode];
+    if (!games || !games.length) continue;
+    const imgs = [];
+    for (let j = 0; j < games.length; j++) {{
+      const g = games[j];
+      const entry = window.SVG_POSTERS[g];
+      let url = entry ? entry.poster : null;
+      if (!url && entry && entry.steam_id) {{
+        url = 'https://shared.akamai.steamstatic.com/steam/apps/' + entry.steam_id + '/capsule_231x87.jpg';
+      }}
+      if (!url) continue;
+      const steamLink = entry && entry.steam_id ? 'https://store.steampowered.com/app/' + entry.steam_id : null;
+      const img = '<img src="' + esc(url) + '" alt="' + esc(g) + '" loading="lazy">';
+      imgs.push(steamLink ? '<a href="' + steamLink + '" target="_blank" rel="noopener">' + img + '</a>' : img);
+    }}
+    if (!imgs.length) continue;
+    const grid = document.createElement('div');
+    grid.className = 'ep-posters';
+    grid.innerHTML = imgs.join('');
+    el.appendChild(grid);
+  }}
 }}
+
+function fillDescriptions() {{
+  const map = window.SVG_DESCRIPTIONS || {{}};
+  for (const tid in map) {{
+    const el = document.getElementById(tid);
+    if (!el) continue;
+    el.innerHTML = map[tid];
+    const tog = document.createElement('div');
+    tog.className = 'tog';
+    tog.textContent = '▸ Show description';
+    tog.onclick = function() {{
+      el.classList.toggle('vis');
+      tog.textContent = el.classList.contains('vis') ? '▾ Hide description' : '▸ Show description';
+    }};
+    el.parentNode.insertBefore(tog, el.nextSibling);
+  }}
+}}
+
+window.SVG_onGames = function() {{ renderGameLists(); }};
+window.SVG_onPosters = function() {{ renderGameLists(); renderPosterGrids(); }};
+window.SVG_onDescriptions = function() {{ fillDescriptions(); refreshSearchText(); }};
 
 function filter() {{
   const q = document.getElementById('search').value.toLowerCase().trim();
@@ -523,31 +579,32 @@ function filter() {{
   let count = 0;
   let anyShown = false;
 
-  epEls.forEach(el => {{
+  for (let i = 0; i < eps.length; i++) {{
+    const el = eps[i];
     let show = true;
     if (q) {{
-      show = el.dataset.title.includes(q) || el.dataset.desc.includes(q);
+      show = searchText[i].includes(q);
     }}
     if (show && epNum) {{
       show = parseInt(el.dataset.episode) === parseInt(epNum);
     }}
     if (show && carlosOnly) {{
-      show = (el.dataset.title + ' ' + el.dataset.desc).includes('carlos');
+      show = searchText[i].includes('carlos');
     }}
     el.style.display = show ? '' : 'none';
     if (show) {{
       count++;
       anyShown = true;
-      const i = parseInt(el.dataset.index);
       const link = el.querySelector('.ep-title a');
       if (link) {{
-        link.innerHTML = q ? hl(esc(episodes[i].title), esc(q)) : esc(episodes[i].title);
+        link.innerHTML = q ? hl(esc(link.textContent), esc(q)) : esc(link.textContent);
       }}
     }}
-  }});
+  }}
 
-  document.getElementById('count').textContent = count + ' / ' + episodes.length + ' episodes';
+  document.getElementById('count').textContent = count + ' / ' + eps.length + ' episodes';
 
+  const r = document.getElementById('results');
   const nm = document.getElementById('no-match');
   if (!anyShown) {{
     if (!nm) {{
@@ -600,6 +657,28 @@ def main():
     with open("index.html", "w") as f:
         f.write(html_out)
     print(f"Done. {len(eps)} episodes ({len(html_out)} bytes)")
+
+    games = {k: v for k, v in episode_games.items() if k.isdigit() and v}
+    descs = {_desc_tid(e): e["desc"] for e in eps if e.get("desc")}
+    write_data_files(games, game_posters, descs)
+
+
+def write_data_files(episode_games, game_posters, descs):
+    files = {
+        "games.js": "window.SVG_GAMES = {games};\nwindow.SVG_onGames && window.SVG_onGames();\n",
+        "posters.js": "window.SVG_POSTERS = {posters};\nwindow.SVG_onPosters && window.SVG_onPosters();\n",
+        "descriptions.js": "window.SVG_DESCRIPTIONS = {descs};\nwindow.SVG_onDescriptions && window.SVG_onDescriptions();\n",
+    }
+    payloads = {
+        "games": json.dumps(episode_games),
+        "posters": json.dumps(game_posters),
+        "descs": json.dumps(descs),
+    }
+    for name, template in files.items():
+        content = template.format(**payloads)
+        with open(name, "w") as f:
+            f.write(content)
+        print(f"  {name}: {len(content)} bytes")
 
 
 if __name__ == "__main__":

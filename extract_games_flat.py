@@ -12,6 +12,7 @@ from pathlib import Path
 
 API_URL = "https://api.groq.com/openai/v1/chat/completions"
 ctx = ssl._create_unverified_context()
+EMPTY_KEY = "__empty__"
 
 
 def clean_description(desc: str) -> str:
@@ -147,17 +148,19 @@ def main():
         episodes = json.load(f)
 
     existing = {}
+    empty_ids = set()
     if output_path.exists() and not args.force:
         try:
             with open(output_path, 'r', encoding='utf-8') as f:
                 existing = json.load(f)
+            empty_ids = set(existing.get(EMPTY_KEY, []) or [])
         except:
             existing = {}
 
     to_process = []
     for ep in episodes:
         ep_id = str(ep["episode"])
-        if args.force or ep_id not in existing or not existing.get(ep_id):
+        if args.force or ep_id not in existing or (not existing.get(ep_id) and ep_id not in empty_ids):
             to_process.append(ep)
 
     if not to_process:
@@ -174,7 +177,13 @@ def main():
         games, ok = extract_games(ep, args.model, token)
         if not ok:
             failures += 1
+        else:
+            if games:
+                empty_ids.discard(ep_id)
+            else:
+                empty_ids.add(ep_id)
         results[ep_id] = games
+        results[EMPTY_KEY] = sorted(empty_ids)
 
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
@@ -188,9 +197,10 @@ def main():
         print(f"\nFATAL: all {failures} attempted episodes failed. API down or key invalid?")
         sys.exit(1)
 
-    total = sum(len(v) for v in results.values())
-    with_games = sum(1 for v in results.values() if v)
-    print(f"\nDone! {len(results)} episodes, {with_games} with games, {total} total game mentions")
+    ep_keys = [k for k in results if not k.startswith("_")]
+    total = sum(len(results[k]) for k in ep_keys)
+    with_games = sum(1 for k in ep_keys if results[k])
+    print(f"\nDone! {len(ep_keys)} episodes, {with_games} with games, {total} total game mentions")
     print(f"Saved to: {output_path}")
 
 

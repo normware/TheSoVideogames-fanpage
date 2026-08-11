@@ -155,7 +155,7 @@ def compute_stats(eps, episode_games, game_posters):
         })
 
     gcounts = {k: len(v) for k, v in episode_games.items()
-               if k != "__manual__" and isinstance(v, list)}
+               if k.isdigit() and isinstance(v, list)}
     total = sum(gcounts.values())
     stats.append({
         "emoji": "🕹", "value": f"{total:,}",
@@ -165,7 +165,7 @@ def compute_stats(eps, episode_games, game_posters):
 
     distinct = len(game_posters)
     if not distinct:
-        distinct = len({g for v in episode_games.values() if isinstance(v, list) for g in v})
+        distinct = len({g for k, v in episode_games.items() if k.isdigit() and isinstance(v, list) for g in v})
     stats.append({
         "emoji": "🎮", "value": f"{distinct:,}",
         "label": "Distinct games",
@@ -173,8 +173,8 @@ def compute_stats(eps, episode_games, game_posters):
     })
 
     mention = Counter()
-    for v in episode_games.values():
-        if isinstance(v, list):
+    for k, v in episode_games.items():
+        if k.isdigit() and isinstance(v, list):
             for g in set(v):
                 mention[g] += 1
 
@@ -584,7 +584,8 @@ def main():
     game_posters = load_json(ENRICHED_FILE)
 
     if episode_games:
-        print(f"  {len(episode_games)} episodes with game data")
+        ep_with_data = sum(1 for k, v in episode_games.items() if k.isdigit() and v)
+        print(f"  {ep_with_data} episodes with game data")
     if game_posters:
         with_poster = sum(1 for v in game_posters.values() if v.get("poster"))
         print(f"  {len(game_posters)} games enriched ({with_poster} with posters)")

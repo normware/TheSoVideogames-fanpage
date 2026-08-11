@@ -17,6 +17,8 @@ def main():
 
     seen = {}
     for ep_id, games in data.items():
+        if ep_id.startswith("_") and ep_id != "__manual__":
+            continue
         for g in games:
             key = g.strip().lower()
             if key and key not in seen:

@@ -40,7 +40,9 @@ def main():
 
     # Build a set of all known game names (≥4 chars)
     known = set()
-    for games in flat.values():
+    for eid, games in flat.items():
+        if eid.startswith("_") and eid != "__manual__":
+            continue
         for g in games:
             g = g.strip()
             if len(g) >= 4:

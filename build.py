@@ -369,6 +369,19 @@ body.show-posters .ep-posters {{ display: grid; }}
 .footer a {{ color: var(--link); }}
 .footer .github {{ display: inline-flex; align-items: center; gap: 0.3rem; }}
 
+#minimap {{ position: fixed; right: 12px; top: 50%; transform: translateY(-50%); height: 68vh; max-height: 460px; width: 34px; display: flex; flex-direction: column; align-items: center; gap: 6px; z-index: 50; }}
+#mm-wheel {{ display: flex; gap: 1px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; line-height: 14px; height: 14px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 0 3px; color: var(--fg); user-select: none; }}
+#mm-wheel .mm-digit {{ overflow: hidden; height: 14px; width: 8px; text-align: center; }}
+#mm-wheel .mm-digit .mm-spool {{ display: flex; flex-direction: column; transition: transform 0.18s linear; }}
+#mm-wheel .mm-digit .mm-spool span {{ height: 14px; line-height: 14px; display: block; }}
+#mm-track {{ position: relative; flex: 1; width: 12px; background: var(--border); border-radius: 999px; cursor: pointer; }}
+#mm-track .mm-tick {{ position: absolute; left: 0; right: 0; height: 1px; background: var(--muted); opacity: 0.6; }}
+#mm-track .mm-tick:hover {{ background: var(--fg); opacity: 1; }}
+#mm-track .mm-tick.active {{ background: var(--accent); opacity: 1; height: 2px; }}
+#mm-track .mm-tick .mm-label {{ position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 9px; color: var(--muted); white-space: nowrap; pointer-events: none; }}
+#mm-indicator {{ position: absolute; left: -2px; right: -2px; height: 14px; border-radius: 999px; background: var(--accent); opacity: 0.25; pointer-events: none; transition: top 0.08s linear; }}
+#minimap.hidden {{ display: none; }}
+
 @media (max-width: 700px) {{
   .ep {{ flex-direction: column; gap: 0.75rem; }}
   .ep-posters {{ grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }}
@@ -404,6 +417,14 @@ body.show-posters .ep-posters {{ display: grid; }}
   <button id="carlos-toggle">🤘 Carlos</button>
 </div>
 <div id="results">{results_html}</div>
+<div id="minimap" aria-hidden="true">
+  <div id="mm-wheel">
+    <div class="mm-digit"><div class="mm-spool"></div></div>
+    <div class="mm-digit"><div class="mm-spool"></div></div>
+    <div class="mm-digit"><div class="mm-spool"></div></div>
+  </div>
+  <div id="mm-track"></div>
+</div>
 <div id="stats-view">
   <div class="stats-hint">20 fun facts about the show, computed from the episode archive.</div>
   {stats_html}
@@ -447,6 +468,7 @@ function showTab(name) {{
   for (let i = 0; i < others.length; i++) {{
     others[i].style.display = isStats ? 'none' : '';
   }}
+  mmSetHidden();
 }}
 document.getElementById('tab-episodes').onclick = function() {{ showTab('episodes'); }};
 document.getElementById('tab-stats').onclick = function() {{ showTab('stats'); }};
@@ -462,6 +484,120 @@ function refreshSearchText() {{
 }}
 let searchText = [];
 refreshSearchText();
+
+// ---- minimap / scroll wheel ----
+const mm = document.getElementById('minimap');
+const mmTrack = document.getElementById('mm-track');
+const mmWheel = document.getElementById('mm-wheel');
+const mmStep = 25;
+const mmSpools = Array.from(mmWheel.querySelectorAll('.mm-spool'));
+mmSpools.forEach(function(spool) {{
+  let s = '';
+  for (let d = 0; d <= 9; d++) s += '<span>' + d + '</span>';
+  spool.innerHTML = s + '<span>&nbsp;</span>';
+}});
+const mmStepPx = mmSpools[0] ? mmSpools[0].children[0].offsetHeight : 14;
+
+let mmCards = [];
+let mmHidden = false;
+let mmDirty = false;
+
+function mmSetHidden() {{
+  const stats = document.getElementById('stats-view').classList.contains('vis');
+  mm.classList.toggle('hidden', mmHidden || stats);
+}}
+
+function setWheel(num) {{
+  for (let i = 0; i < 3; i++) {{
+    const spool = mmSpools[i];
+    const offset = (3 - String(num || 0).length);
+    const digit = (num && i >= offset) ? parseInt(String(num)[i - offset]) : null;
+    spool.style.transform = 'translateY(-' + (digit === null ? 10 : digit) * mmStepPx + 'px)';
+  }}
+}}
+
+function updateMinimap() {{
+  if (mmHidden || !mmCards.length) return;
+  const y = window.scrollY + window.innerHeight * 0.12;
+  let cur = mmCards[0];
+  for (let i = 0; i < mmCards.length; i++) {{
+    if (mmCards[i].top <= y) cur = mmCards[i];
+    else break;
+  }}
+  setWheel(cur.num);
+  const maxY = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  let ind = document.getElementById('mm-indicator');
+  if (!ind) {{
+    ind = document.createElement('div');
+    ind.id = 'mm-indicator';
+    mmTrack.appendChild(ind);
+  }}
+  const idx = mmCards.indexOf(cur);
+  const next = mmCards[idx + 1];
+  const top = next ? (cur.top + next.top) / 2 : cur.top;
+  ind.style.top = Math.round(100 * top / maxY) + '%';
+  const ticks = mmTrack.querySelectorAll('.mm-tick');
+  for (let i = 0; i < ticks.length; i++) {{
+    ticks[i].classList.toggle('active', parseInt(ticks[i].dataset.num) === cur.num);
+  }}
+}}
+
+function rebuildMinimap() {{
+  mmDirty = false;
+  mmTrack.innerHTML = '';
+  mmCards = [];
+  for (let i = 0; i < eps.length; i++) {{
+    const el = eps[i];
+    const num = parseInt(el.dataset.episode);
+    if (el.style.display === 'none' || !num) continue;
+    mmCards.push({{ num: num, el: el, top: el.offsetTop }});
+  }}
+  mmHidden = mmCards.length < 2;
+  mmSetHidden();
+  if (mmHidden) return;
+  const maxNum = mmCards[0].num;
+  const maxY = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  for (let n = maxNum; n >= mmStep; n -= mmStep) {{
+    const c = mmCards.find(function(x) {{ return x.num === n; }});
+    if (!c) continue;
+    const tick = document.createElement('div');
+    tick.className = 'mm-tick';
+    tick.dataset.num = n;
+    const label = document.createElement('span');
+    label.className = 'mm-label';
+    label.textContent = n;
+    tick.appendChild(label);
+    tick.style.top = Math.round(100 * c.top / maxY) + '%';
+    mmTrack.appendChild(tick);
+  }}
+  updateMinimap();
+}}
+
+function mmRefresh() {{
+  if (mmDirty) return;
+  mmDirty = true;
+  requestAnimationFrame(rebuildMinimap);
+}}
+
+let mmTicking = false;
+function onScroll() {{
+  if (mmTicking) return;
+  mmTicking = true;
+  requestAnimationFrame(function() {{
+    if (mmDirty) rebuildMinimap();
+    else updateMinimap();
+    mmTicking = false;
+  }});
+}}
+window.addEventListener('scroll', onScroll, {{ passive: true }});
+
+mmTrack.addEventListener('click', function(e) {{
+  const tick = e.target.closest('.mm-tick');
+  const target = tick
+    ? mmCards.find(function(x) {{ return x.num === parseInt(tick.dataset.num); }})
+    : mmCards[Math.round(((e.clientY - mmTrack.getBoundingClientRect().top) / mmTrack.getBoundingClientRect().height) * (mmCards.length - 1))];
+  if (target) target.el.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+}});
 
 let carlosOnly = false;
 
@@ -564,14 +700,16 @@ function fillDescriptions() {{
     tog.onclick = function() {{
       el.classList.toggle('vis');
       tog.textContent = el.classList.contains('vis') ? '▾ Hide description' : '▸ Show description';
+      mmRefresh();
     }};
     el.parentNode.insertBefore(tog, el.nextSibling);
   }}
+  mmRefresh();
 }}
 
-window.SVG_onGames = function() {{ renderGameLists(); }};
-window.SVG_onPosters = function() {{ renderGameLists(); renderPosterGrids(); }};
-window.SVG_onDescriptions = function() {{ fillDescriptions(); refreshSearchText(); }};
+window.SVG_onGames = function() {{ renderGameLists(); mmRefresh(); }};
+window.SVG_onPosters = function() {{ renderGameLists(); renderPosterGrids(); mmRefresh(); }};
+window.SVG_onDescriptions = function() {{ fillDescriptions(); refreshSearchText(); mmRefresh(); }};
 
 function filter() {{
   const q = document.getElementById('search').value.toLowerCase().trim();
@@ -617,6 +755,7 @@ function filter() {{
   }} else if (nm) {{
     nm.remove();
   }}
+  mmRefresh();
 }}
 
 let filterTimer;

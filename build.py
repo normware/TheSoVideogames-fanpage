@@ -44,26 +44,50 @@ def _ep_int(e):
 
 
 def compute_stats(eps, episode_games, game_posters):
-    """Compute 20 fun statistics from the episode/game data."""
+    """Compute oldschool list facts from the episode/game data."""
     stats = []
+
+    def link(n, text):
+        return '<a href="#ep-{0}" data-ep="{0}">{1}</a>'.format(n, html.escape(text))
+
+    def ep_row(n, extra=""):
+        e = by_num.get(n)
+        if not e:
+            return '<div class="srow">#{0} {1}</div>'.format(n, extra)
+        return ('<div class="srow">' + link(n, "Ep. " + str(n)) +
+                ' <span class="sval">' + html.escape(_short_title(e)) + '</span> ' +
+                html.escape(e.get("date") or "") + ' ' + extra + '</div>')
+
+    def ep_on_date(d):
+        for e in eps_num:
+            if e.get("date") == d.isoformat():
+                return _ep_int(e)
+        return None
 
     eps_num = [e for e in eps if _ep_int(e) is not None]
     nums = sorted({_ep_int(e) for e in eps_num})
     bonus = [e for e in eps if e not in eps_num]
+    by_num = {_ep_int(e): e for e in eps_num}
+    top = max(nums) if nums else 0
 
     stats.append({
-        "emoji": "🎙", "value": f"{len(eps):,}",
+        "value": str(len(eps)),
         "label": "Episodes in the feed",
-        "note": f"{len(eps_num):,} numbered + {len(bonus)} bonus",
+        "note": "{} numbered + {} bonus".format(len(eps_num), len(bonus)),
+        "more": ('<div class="srow">Every show in the archive, newest first.</div>'
+                 '<div class="srow">Numbered: <span class="sval">{0}</span> · Bonus/un-numbered: <span class="sval">{1}</span></div>'
+                 '<div class="srow">Range: <span class="sval">#{2}</span> to <span class="sval">#{3}</span></div>').format(
+                     len(eps_num), len(bonus),
+                     min(nums) if nums else "-", max(nums) if nums else "-"),
     })
 
     if nums:
-        top = max(nums)
-        e = next(x for x in eps_num if _ep_int(x) == top)
+        first = min(nums)
         stats.append({
-            "emoji": "🆕", "value": f"#{top}",
-            "label": "Newest episode",
-            "note": f"{_short_title(e)} · {(e.get('date') or 'no date')[:7]}",
+            "value": "#" + str(first),
+            "label": "First episode in the archive",
+            "note": _short_title(by_num[first]),
+            "more": ep_row(first, "the very first show"),
         })
 
     dates = []
@@ -79,36 +103,39 @@ def compute_stats(eps, episode_games, game_posters):
     if dates:
         span_years = (dates[-1] - dates[0]).days / 365.25
         stats.append({
-            "emoji": "📅", "value": f"{span_years:.0f} yrs",
+            "value": "{:.0f} yrs".format(span_years),
             "label": "Show history",
-            "note": f"{dates[0].isoformat()} → {dates[-1].isoformat()}",
+            "note": "{} → {}".format(dates[0].isoformat(), dates[-1].isoformat()),
+            "more": (ep_row(ep_on_date(dates[0]), "earliest in the feed") if ep_on_date(dates[0]) else "") +
+                    (ep_row(ep_on_date(dates[-1]), "newest in the feed") if ep_on_date(dates[-1]) else ""),
         })
 
         gaps = [(dates[i + 1] - dates[i]).days for i in range(len(dates) - 1)]
         if gaps:
             g = max(gaps)
             i = gaps.index(g)
+            d0, d1 = dates[i], dates[i + 1]
             stats.append({
-                "emoji": "⏳", "value": f"{g:,} days",
+                "value": "{:,} days".format(g),
                 "label": "Longest hiatus",
-                "note": f"{dates[i].isoformat()} → {dates[i + 1].isoformat()}",
+                "note": "{} → {}".format(d0.isoformat(), d1.isoformat()),
+                "more": '<div class="srow">Roughly <span class="sval">{} months</span> with no show.</div>'.format(round(g / 30.44)) +
+                        (ep_row(ep_on_date(d0), "before the break") if ep_on_date(d0) else "") +
+                        (ep_row(ep_on_date(d1), "back after the break") if ep_on_date(d1) else ""),
             })
 
     years = Counter(e.get("date", "")[:4] for e in eps if e.get("date"))
     if years:
         y, c = years.most_common(1)[0]
+        rows = "".join(
+            '<div class="srow syear"><span>{0}</span><span class="sval">{1} eps</span></div>'.format(yy, cc)
+            for yy, cc in years.most_common(6))
         stats.append({
-            "emoji": "📈", "value": f"{c} eps",
+            "value": "{} eps".format(c),
             "label": "Busiest year",
             "note": y,
+            "more": '<div class="srow">Top 6 years by episode count:</div>' + rows,
         })
-
-    in_range = [n for n in nums if 1 <= n <= 500]
-    stats.append({
-        "emoji": "🗄", "value": f"{500 - len(in_range):,}",
-        "label": "Episode numbers missing",
-        "note": "pre-2019 shows not in the archive",
-    })
 
     titles = sorted(eps, key=lambda e: len(e.get("title") or ""))
     if titles:
@@ -116,61 +143,101 @@ def compute_stats(eps, episode_games, game_posters):
         sn, ln = len(short.get("title") or ""), len(long.get("title") or "")
         if ln:
             stats.append({
-                "emoji": "📏", "value": f"{ln} chars",
+                "value": "{} chars".format(ln),
                 "label": "Longest title",
-                "note": f"#{long.get('episode')} · {_short_title(long)}",
+                "note": "#{}".format(long.get("episode")),
+                "more": ('<div class="srow">Full title ({0} chars):</div>'
+                         '<div class="srow"><span class="sval">{1}</span></div>').format(ln, html.escape(long.get("title") or "")) +
+                        (ep_row(_ep_int(long)) if _ep_int(long) else ""),
             })
         if sn < ln:
             stats.append({
-                "emoji": "✂️", "value": f"{sn} chars",
+                "value": "{} chars".format(sn),
                 "label": "Shortest title",
-                "note": f"#{short.get('episode')}",
+                "note": "#{}".format(short.get("episode")),
+                "more": ('<div class="srow">Full title ({0} chars):</div>'
+                         '<div class="srow"><span class="sval">{1}</span></div>').format(sn, html.escape(short.get("title") or "")) +
+                        (ep_row(_ep_int(short)) if _ep_int(short) else ""),
             })
+
+    descs = [(e, len(e.get("desc") or "")) for e in eps]
+    if descs:
+        de, dl = max(descs, key=lambda t: t[1])
+        if dl:
+            stats.append({
+                "value": "{} chars".format(dl),
+                "label": "Longest show notes",
+                "note": "#{}".format(de.get("episode")),
+                "more": (ep_row(_ep_int(de), "the longest notes") if _ep_int(de) else "") +
+                        '<div class="srow">' + html.escape(_clean_text(de.get("desc"))[:150]) + '…</div>',
+            })
+
+    total_desc = sum(len(e.get("desc") or "") for e in eps)
+    stats.append({
+        "value": "{:,} chars".format(total_desc),
+        "label": "Total show notes",
+        "note": "all episodes combined",
+        "more": '<div class="srow">Average <span class="sval">{:,}</span> chars per episode.</div>'.format(
+            round(total_desc / max(1, len(eps)))),
+    })
+
+    def mention_eps(word, cap=10):
+        out = []
+        for e in eps_num:
+            if re.search(r"\b" + word + r"\b", _clean_text(e.get("desc"))):
+                out.append(ep_row(_ep_int(e)))
+                if len(out) >= cap:
+                    break
+        return "".join(out)
 
     alltext = " ".join(_clean_text(e.get("desc")) for e in eps)
     stats.append({
-        "emoji": "🎤", "value": f"{alltext.count('brad'):,}×",
+        "value": "{:,}×".format(alltext.count("brad")),
         "label": "Host shout-outs",
         "note": "“Brad” in the show notes",
+        "more": mention_eps("brad") + '<div class="srow">…and more.</div>',
     })
     stats.append({
-        "emoji": "🤘", "value": f"{alltext.count('carlos'):,}×",
+        "value": "{:,}×".format(alltext.count("carlos")),
         "label": "Carlos mentions",
         "note": "he even has a toggle button on this site",
+        "more": mention_eps("carlos") + '<div class="srow">…and more.</div>',
     })
 
-    e3 = sum(1 for e in eps if re.search(r"\be3\b", (e.get("title") or "").lower()))
+    e3_eps = [e for e in eps_num if re.search(r"\be3\b", (e.get("title") or "").lower())]
     stats.append({
-        "emoji": "🏟", "value": f"{e3}",
+        "value": str(len(e3_eps)),
         "label": "E3 episodes",
         "note": "E3 in the title · rest in peace",
+        "more": "".join(ep_row(_ep_int(e)) for e in e3_eps[:15]) +
+                ('<div class="srow">…and {} more.</div>'.format(len(e3_eps) - 15) if len(e3_eps) > 15 else ""),
     })
 
     reunion = next((e for e in eps if "reunion" in (e.get("title") or "").lower()), None)
     if reunion:
         stats.append({
-            "emoji": "🤝", "value": "2020",
+            "value": "2020",
             "label": "Reunion special",
             "note": _short_title(reunion),
+            "more": (ep_row(_ep_int(reunion), "reunion special") if _ep_int(reunion) else
+                     '<div class="srow">' + html.escape(reunion.get("title") or "") + '</div>'),
         })
 
     gcounts = {k: len(v) for k, v in episode_games.items()
                if k.isdigit() and isinstance(v, list)}
     total = sum(gcounts.values())
     stats.append({
-        "emoji": "🕹", "value": f"{total:,}",
+        "value": "{:,}".format(total),
         "label": "Game mentions",
         "note": "across the whole show",
+        "more": '<div class="srow">Games named in the show notes, extracted per episode.</div>'
+                '<div class="srow"><span class="sval">{:,}</span> episodes listed at least one game.</div>'.format(
+                    sum(1 for v in gcounts.values() if v)),
     })
 
     distinct = len(game_posters)
     if not distinct:
         distinct = len({g for k, v in episode_games.items() if k.isdigit() and isinstance(v, list) for g in v})
-    stats.append({
-        "emoji": "🎮", "value": f"{distinct:,}",
-        "label": "Distinct games",
-        "note": "unique titles ever discussed",
-    })
 
     mention = Counter()
     for k, v in episode_games.items():
@@ -178,67 +245,104 @@ def compute_stats(eps, episode_games, game_posters):
             for g in set(v):
                 mention[g] += 1
 
+    top5 = "".join(
+        '<div class="srow"><span class="sval">{0}</span> — {1} eps</div>'.format(html.escape(g), c)
+        for g, c in mention.most_common(5))
+    stats.append({
+        "value": "{:,}".format(distinct),
+        "label": "Distinct games",
+        "note": "unique titles ever discussed",
+        "more": '<div class="srow">Top 5 by episode count:</div>' + top5,
+    })
+
     if gcounts:
         top_num = max(gcounts, key=lambda k: gcounts[k])
+        glist = "".join('<li>' + html.escape(g) + '</li>' for g in episode_games[top_num])
         stats.append({
-            "emoji": "🧺", "value": f"{gcounts[top_num]}",
+            "value": str(gcounts[top_num]),
             "label": "Most games in one episode",
-            "note": f"Episode {top_num}",
+            "note": "Episode {}".format(top_num),
+            "more": ep_row(int(top_num), "the whole game list") + '<ul class="glist">' + glist + '</ul>',
         })
 
         gc = [c for c in gcounts.values() if c]
         if gc:
             stats.append({
-                "emoji": "➗", "value": f"{sum(gc) / len(gc):.1f}",
+                "value": "{:.1f}".format(sum(gc) / len(gc)),
                 "label": "Games per episode",
                 "note": "episodes that discussed games",
+                "more": '<div class="srow"><span class="sval">{:,}</span> episodes discussed at least one game.</div>'.format(len(gc)) +
+                        '<div class="srow">Average <span class="sval">{:.1f}</span> games each.</div>'.format(sum(gc) / len(gc)),
             })
 
     if mention:
         top_game, top_count = mention.most_common(1)[0]
+        eps_with = [k for k, v in episode_games.items()
+                    if k.isdigit() and isinstance(v, list) and top_game in set(v)]
+        rows = "".join(ep_row(int(k)) for k in sorted(eps_with, key=int)[:15])
         stats.append({
-            "emoji": "🏆", "value": top_game,
+            "value": top_game,
             "label": "Most-discussed game",
-            "note": f"{top_count} episodes",
+            "note": "{} episodes".format(top_count),
+            "more": '<div class="srow">Talked about in <span class="sval">{}</span> episodes:</div>'.format(len(eps_with)) + rows,
         })
 
         repeats = sum(1 for c in mention.values() if c >= 2)
+        top10 = "".join(
+            '<div class="srow"><span class="sval">{0}</span> — {1} eps</div>'.format(html.escape(g), c)
+            for g, c in mention.most_common(10) if c >= 2)
         stats.append({
-            "emoji": "🔁", "value": f"{repeats:,}",
+            "value": "{:,}".format(repeats),
             "label": "Repeat offenders",
             "note": "games discussed in 2+ episodes",
+            "more": '<div class="srow">Top 10:</div>' + top10,
         })
 
         one_hit = sum(1 for c in mention.values() if c == 1)
+        sample = [g for g, c in mention.items() if c == 1][:12]
         stats.append({
-            "emoji": "🎲", "value": f"{one_hit:,}",
+            "value": "{:,}".format(one_hit),
             "label": "One-hit wonders",
             "note": "games that only ever got a single mention",
+            "more": '<div class="srow">A few of them:</div><ul class="glist">' +
+                    "".join("<li>" + html.escape(g) + "</li>" for g in sample) + "</ul>",
         })
 
     with_poster = sum(1 for v in game_posters.values() if isinstance(v, dict) and v.get("poster"))
     if game_posters:
         stats.append({
-            "emoji": "🖼", "value": f"{round(100 * with_poster / len(game_posters))}%",
+            "value": "{}%".format(round(100 * with_poster / len(game_posters))),
             "label": "Findable on Steam",
-            "note": f"{with_poster:,} of {len(game_posters):,} games · {len(game_posters) - with_poster:,} too obscure",
+            "note": "{} of {} games · {} too obscure".format(
+                with_poster, len(game_posters), len(game_posters) - with_poster),
+            "more": '<div class="srow">Games with a Steam capsule image for the poster grid.</div>'
+                    '<div class="srow">The rest are hidden gems only the hosts know.</div>',
         })
 
     return stats
 
 
 def render_stats_html(stats):
-    cards = []
-    for s in stats:
-        cards.append(
-            '<div class="stat-card">'
-            '<div class="stat-emoji">' + html.escape(s["emoji"]) + '</div>'
-            '<div class="stat-value">' + html.escape(s["value"]) + '</div>'
-            '<div class="stat-label">' + html.escape(s["label"]) + '</div>'
-            + (('<div class="stat-note">' + html.escape(s["note"]) + '</div>') if s.get("note") else '')
-            + '</div>'
+    rows = []
+    for i, s in enumerate(stats, 1):
+        summary = (
+            "<summary>"
+            + '<span class="idx">{:02d}</span>'.format(i)
+            + '<span class="prompt">&gt;</span>'
+            + '<span class="lbl">' + html.escape(s["label"]) + "</span>"
+            + '<span class="val">' + html.escape(s["value"]) + "</span>"
+            + (('<span class="nt">' + html.escape(s["note"]) + "</span>") if s.get("note") else "")
+            + "</summary>"
         )
-    return '<div class="stats-grid">' + ''.join(cards) + '</div>'
+        more = s.get("more") or '<div class="srow">—</div>'
+        rows.append(
+            '<li class="stat-item"><details>' + summary +
+            '<div class="stat-more">' + more + "</div></details></li>"
+        )
+    hint = "{} facts about the show — click a row to expand.".format(len(stats))
+    return ('<div class="stats-hint">{}</div>'.format(html.escape(hint)) +
+            '<ol class="stat-list">' + "".join(rows) + "</ol>")
+
 
 
 def _esc(s):
@@ -258,7 +362,10 @@ def _ep_html(e):
         for s in (e.get("sources") or [])[1:]
     )
     meta = (ep_label + " · " if ep_label else "") + _esc(e.get("date")) + extra
-    out = ['<div class="ep" data-episode="{}">'.format(e["episode"]) if e.get("episode") else '<div class="ep">']
+    if e.get("episode"):
+        out = ['<div class="ep" data-episode="{n}" id="ep-{n}">'.format(n=e["episode"])]
+    else:
+        out = ['<div class="ep">']
     out.append('<div class="ep-main">')
     out.append('<div class="ep-title"><a href="{u}" target="_blank">{t}</a></div>'.format(u=_esc(e.get("url")), t=title))
     out.append('<div class="ep-meta">{}</div>'.format(meta))
@@ -356,14 +463,30 @@ body.show-posters .ep-posters {{ display: grid; }}
 
 #stats-view {{ display: none; }}
 #stats-view.vis {{ display: block; }}
-.stats-hint {{ color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }}
-.stats-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.75rem; }}
-.stat-card {{ background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }}
-.stat-card:hover {{ background: var(--card-hover); }}
-.stat-emoji {{ font-size: 1.1rem; }}
-.stat-value {{ font-size: 1.35rem; font-weight: 700; margin: 0.35rem 0 0.1rem; letter-spacing: -0.02em; overflow-wrap: anywhere; }}
-.stat-label {{ font-size: 0.85rem; color: var(--muted); }}
-.stat-note {{ font-size: 0.75rem; color: var(--muted); margin-top: 0.4rem; opacity: 0.8; }}
+.stats-hint {{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); font-size: 0.8rem; margin-bottom: 1rem; letter-spacing: 0.03em; }}
+.stats-hint::before {{ content: "== "; }}
+.stats-hint::after {{ content: " =="; }}
+.stat-list {{ list-style: none; padding: 0; margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85rem; }}
+.stat-item {{ border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg); margin-bottom: 0.4rem; overflow: hidden; }}
+.stat-item details > summary {{ list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 0.6rem; padding: 0.55rem 0.8rem; user-select: none; }}
+.stat-item summary::-webkit-details-marker {{ display: none; }}
+.stat-item[open] summary {{ border-bottom: 1px dashed var(--border); }}
+.stat-item:hover {{ background: var(--card-hover); }}
+.stat-item[open]:hover {{ background: var(--card-bg); }}
+.stat-item .idx {{ color: var(--accent); opacity: 0.85; min-width: 2ch; }}
+.stat-item .prompt {{ color: var(--muted); }}
+.stat-item .lbl {{ flex: 1; min-width: 0; color: var(--fg); overflow-wrap: anywhere; }}
+.stat-item .val {{ font-weight: 700; color: var(--fg); text-align: right; }}
+.stat-item .nt {{ color: var(--muted); font-size: 0.8em; text-align: right; overflow-wrap: anywhere; }}
+.stat-more {{ padding: 0.65rem 0.8rem 0.8rem 3.4rem; color: var(--muted); line-height: 1.65; font-size: 0.85rem; }}
+.stat-more a {{ color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--link); }}
+.stat-more a:hover {{ border-bottom-style: solid; }}
+.stat-more .srow {{ padding: 0.12rem 0; overflow-wrap: anywhere; }}
+.stat-more .srow .sval {{ color: var(--fg); font-weight: 600; }}
+.stat-more .srow.syear {{ display: flex; justify-content: space-between; gap: 1rem; max-width: 440px; }}
+.stat-more .glist {{ list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 1.5rem; }}
+.stat-more .glist li {{ padding: 0.1rem 0; padding-left: 1em; text-indent: -1em; }}
+.stat-more .glist li::before {{ content: "▸"; color: var(--accent); padding-right: 0.4em; font-size: 0.7em; }}
 
 .footer {{ margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); text-align: center; line-height: 1.8; }}
 .footer a {{ color: var(--link); }}
@@ -387,7 +510,8 @@ body.show-posters .ep-posters {{ display: grid; }}
   .ep-posters {{ grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }}
   .ep-posters img {{ width: 100%; }}
   .game-list {{ columns: 1; }}
-  .stats-grid {{ grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }}
+  .stat-more {{ padding-left: 2.2rem; }}
+  .stat-more .glist {{ columns: 1; }}
   body {{ padding: 1rem; }}
 }}
 </style>
@@ -426,7 +550,6 @@ body.show-posters .ep-posters {{ display: grid; }}
   <div id="mm-track"></div>
 </div>
 <div id="stats-view">
-  <div class="stats-hint">20 fun facts about the show, computed from the episode archive.</div>
   {stats_html}
 </div>
 <div class="footer">
@@ -472,6 +595,15 @@ function showTab(name) {{
 }}
 document.getElementById('tab-episodes').onclick = function() {{ showTab('episodes'); }};
 document.getElementById('tab-stats').onclick = function() {{ showTab('stats'); }};
+
+document.getElementById('stats-view').addEventListener('click', function(e) {{
+  const a = e.target.closest('a[data-ep]');
+  if (!a) return;
+  e.preventDefault();
+  showTab('episodes');
+  const el = document.getElementById('ep-' + a.getAttribute('data-ep'));
+  if (el) el.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+}});
 
 const eps = Array.from(document.querySelectorAll('.ep'));
 

@@ -64,6 +64,15 @@ def compute_stats(eps, episode_games, game_posters):
                 return _ep_int(e)
         return None
 
+    def parse_ep_date(e):
+        d = e.get("date")
+        if not d:
+            return None
+        try:
+            return date.fromisoformat(d)
+        except ValueError:
+            return None
+
     eps_num = [e for e in eps if _ep_int(e) is not None]
     nums = sorted({_ep_int(e) for e in eps_num})
     bonus = [e for e in eps if e not in eps_num]
@@ -90,14 +99,7 @@ def compute_stats(eps, episode_games, game_posters):
             "more": ep_row(first, "the very first show"),
         })
 
-    dates = []
-    for e in eps:
-        d = e.get("date")
-        if d:
-            try:
-                dates.append(date.fromisoformat(d))
-            except ValueError:
-                pass
+    dates = [d for d in (parse_ep_date(e) for e in eps) if d]
     dates.sort()
 
     if dates:
@@ -110,11 +112,19 @@ def compute_stats(eps, episode_games, game_posters):
                     (ep_row(ep_on_date(dates[-1]), "newest in the feed") if ep_on_date(dates[-1]) else ""),
         })
 
-        gaps = [(dates[i + 1] - dates[i]).days for i in range(len(dates) - 1)]
-        if gaps:
-            g = max(gaps)
-            i = gaps.index(g)
-            d0, d1 = dates[i], dates[i + 1]
+        dated_num = sorted(((parse_ep_date(e), _ep_int(e)) for e in eps_num if parse_ep_date(e)), key=lambda t: t[0])
+        missing_nums = {_ep_int(e) for e in eps_num if not parse_ep_date(e)}
+        clean_gaps = []
+        for i in range(len(dated_num) - 1):
+            d0, n0 = dated_num[i]
+            d1, n1 = dated_num[i + 1]
+            lo, hi = sorted((n0, n1))
+            if any(lo < n < hi for n in missing_nums):
+                continue
+            clean_gaps.append((d1 - d0, d0, d1))
+        if clean_gaps:
+            gap, d0, d1 = max(clean_gaps, key=lambda t: t[0])
+            g = gap.days
             stats.append({
                 "value": "{:,} days".format(g),
                 "label": "Longest hiatus",
@@ -139,25 +149,16 @@ def compute_stats(eps, episode_games, game_posters):
 
     titles = sorted(eps, key=lambda e: len(e.get("title") or ""))
     if titles:
-        short, long = titles[0], titles[-1]
-        sn, ln = len(short.get("title") or ""), len(long.get("title") or "")
+        long = titles[-1]
+        ln = len(long.get("title") or "")
         if ln:
             stats.append({
                 "value": "{} chars".format(ln),
                 "label": "Longest title",
                 "note": "#{}".format(long.get("episode")),
                 "more": ('<div class="srow">Full title ({0} chars):</div>'
-                         '<div class="srow"><span class="sval">{1}</span></div>').format(ln, html.escape(long.get("title") or "")) +
+                        '<div class="srow"><span class="sval">{1}</span></div>').format(ln, html.escape(long.get("title") or "")) +
                         (ep_row(_ep_int(long)) if _ep_int(long) else ""),
-            })
-        if sn < ln:
-            stats.append({
-                "value": "{} chars".format(sn),
-                "label": "Shortest title",
-                "note": "#{}".format(short.get("episode")),
-                "more": ('<div class="srow">Full title ({0} chars):</div>'
-                         '<div class="srow"><span class="sval">{1}</span></div>').format(sn, html.escape(short.get("title") or "")) +
-                        (ep_row(_ep_int(short)) if _ep_int(short) else ""),
             })
 
     descs = [(e, len(e.get("desc") or "")) for e in eps]
@@ -169,7 +170,8 @@ def compute_stats(eps, episode_games, game_posters):
                 "label": "Longest show notes",
                 "note": "#{}".format(de.get("episode")),
                 "more": (ep_row(_ep_int(de), "the longest notes") if _ep_int(de) else "") +
-                        '<div class="srow">' + html.escape(_clean_text(de.get("desc"))[:150]) + '…</div>',
+                        '<div class="srow">' + html.escape(
+                            re.sub(r"\s+", " ", _clean_text(de.get("desc"))).strip()[:150]) + '…</div>',
             })
 
     total_desc = sum(len(e.get("desc") or "") for e in eps)
@@ -191,12 +193,6 @@ def compute_stats(eps, episode_games, game_posters):
         return "".join(out)
 
     alltext = " ".join(_clean_text(e.get("desc")) for e in eps)
-    stats.append({
-        "value": "{:,}×".format(alltext.count("brad")),
-        "label": "Host shout-outs",
-        "note": "“Brad” in the show notes",
-        "more": mention_eps("brad") + '<div class="srow">…and more.</div>',
-    })
     stats.append({
         "value": "{:,}×".format(alltext.count("carlos")),
         "label": "Carlos mentions",
@@ -739,12 +735,12 @@ const CATEGORIES = [
   {{ id: 'goty',     label: '🏆 GOTY',      re: /\\bgoty\\b|game of the year|pre-goty|top \d+ of \d{{4}}|best of the year/i }},
   {{ id: 'events',   label: '🎪 Events',    re: /\\bpax\\b|gamescom|summer game ?fest|state of play|nintendo direct|live from|recorded live/i }},
   {{ id: 'e3',       label: '🎮 E3',        re: /\\be3\\b/i }},
-  {{ id: 'reviews',  label: '🎬 Reviews',   re: /\\breview\\b|reviewing/i }},
-  {{ id: 'mailbag',  label: '💌 Mailbag',   re: /mailbag|mail bag|listener|fan mail|community/i }},
+  {{ id: 'mailbag',  label: '💌 Mailbag',   re: /mail\\s*bag|mailbag|listener\\s*(?:created|qs?|questions?|mail)|fan\\s*mail|community|q\\s*&?\\s*a|\\bqa\\b|question\\s*time/i }},
   {{ id: 'specials', label: '🎁 Specials',  re: /\\bbonus\\b|\\bspecial\\b|micro-?sode/i }},
   {{ id: 'souls',    label: '⚔️ Souls',     re: /\\bsouls\\b|souls-like|soulslike|elden ring/i }},
   {{ id: 'chicken',  label: '🐔 Chicken',   re: /chicken/i }},
   {{ id: 'trek',     label: '🪐 Star Trek', re: /star trek/i }},
+  {{ id: 'unnumbered', label: '#️⃣ Unnumbered', re: null }},
 ];
 const activeCats = new Set();
 const epCats = eps.map(function(el) {{
@@ -752,7 +748,11 @@ const epCats = eps.map(function(el) {{
   const t = (a ? a.textContent : '').toLowerCase();
   const ids = [];
   for (let i = 0; i < CATEGORIES.length; i++) {{
-    if (CATEGORIES[i].re.test(t)) ids.push(CATEGORIES[i].id);
+    if (CATEGORIES[i].id === 'unnumbered') {{
+      if (!el.dataset.episode) ids.push(CATEGORIES[i].id);
+    }} else if (CATEGORIES[i].re.test(t)) {{
+      ids.push(CATEGORIES[i].id);
+    }}
   }}
   return ids;
 }});

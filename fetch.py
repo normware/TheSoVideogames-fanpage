@@ -142,7 +142,10 @@ def merge(existing, fresh):
             by_url[e["url"]] = e
         else:
             merged_sources = {s["url"]: s for s in cur.get("sources", []) + e.get("sources", [])}
+            existing_date = cur.get("date")
             cur.update(e)
+            if existing_date and not e.get("date"):
+                cur["date"] = existing_date
             cur["sources"] = list(merged_sources.values())
     return sorted(dedupe_by_number(by_url.values()), key=sort_key)
 def load_existing():

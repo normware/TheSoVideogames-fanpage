@@ -426,9 +426,10 @@ h1 {{ font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }}
 #ep-filter:focus {{ border-color: var(--accent); }}
 .controls {{ display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }}
 #count {{ color: var(--muted); font-size: 0.85rem; }}
-#toggle-posters, #carlos-toggle {{ background: none; border: 1px solid var(--border); color: var(--fg); cursor: pointer; font-size: 0.8rem; padding: 0.3rem 0.7rem; border-radius: 6px; }}
-#toggle-posters:hover, #carlos-toggle:hover {{ background: var(--card-bg); }}
-#carlos-toggle.active {{ background: var(--accent); color: #fff; border-color: var(--accent); }}
+#toggle-posters, #carlos-toggle, .cat-toggle {{ background: none; border: 1px solid var(--border); color: var(--fg); cursor: pointer; font-size: 0.8rem; padding: 0.3rem 0.7rem; border-radius: 6px; }}
+#toggle-posters:hover, #carlos-toggle:hover, .cat-toggle:hover {{ background: var(--card-bg); }}
+#carlos-toggle.active, .cat-toggle.active {{ background: var(--accent); color: #fff; border-color: var(--accent); }}
+#cat-filters {{ display: inline-flex; gap: 0.4rem; flex-wrap: wrap; }}
 
 .ep {{ display: flex; gap: 1.5rem; margin-bottom: 1.5rem; padding: 1.25rem; border-radius: 10px; background: var(--card-bg); border: 1px solid var(--border); transition: background 0.15s; }}
 .ep:hover {{ background: var(--card-hover); }}
@@ -539,6 +540,7 @@ body.show-posters .ep-posters {{ display: grid; }}
   <span id="count"></span>
   <button id="toggle-posters">Show posters</button>
   <button id="carlos-toggle">🤘 Carlos</button>
+  <span id="cat-filters"></span>
 </div>
 <div id="results">{results_html}</div>
 <div id="minimap" aria-hidden="true">
@@ -733,6 +735,47 @@ mmTrack.addEventListener('click', function(e) {{
 
 let carlosOnly = false;
 
+const CATEGORIES = [
+  {{ id: 'goty',     label: '🏆 GOTY',      re: /\\bgoty\\b|game of the year|pre-goty|top \d+ of \d{{4}}|best of the year/i }},
+  {{ id: 'events',   label: '🎪 Events',    re: /\\bpax\\b|gamescom|summer game ?fest|state of play|nintendo direct|live from|recorded live/i }},
+  {{ id: 'e3',       label: '🎮 E3',        re: /\\be3\\b/i }},
+  {{ id: 'reviews',  label: '🎬 Reviews',   re: /\\breview\\b|reviewing/i }},
+  {{ id: 'mailbag',  label: '💌 Mailbag',   re: /mailbag|mail bag|listener|fan mail|community/i }},
+  {{ id: 'specials', label: '🎁 Specials',  re: /\\bbonus\\b|\\bspecial\\b|micro-?sode/i }},
+  {{ id: 'souls',    label: '⚔️ Souls',     re: /\\bsouls\\b|souls-like|soulslike|elden ring/i }},
+  {{ id: 'chicken',  label: '🐔 Chicken',   re: /chicken/i }},
+  {{ id: 'trek',     label: '🪐 Star Trek', re: /star trek/i }},
+];
+const activeCats = new Set();
+const epCats = eps.map(function(el) {{
+  const a = el.querySelector('.ep-title a');
+  const t = (a ? a.textContent : '').toLowerCase();
+  const ids = [];
+  for (let i = 0; i < CATEGORIES.length; i++) {{
+    if (CATEGORIES[i].re.test(t)) ids.push(CATEGORIES[i].id);
+  }}
+  return ids;
+}});
+
+function renderCatButtons() {{
+  const box = document.getElementById('cat-filters');
+  for (let i = 0; i < CATEGORIES.length; i++) {{
+    const c = CATEGORIES[i];
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'cat-toggle';
+    b.dataset.cat = c.id;
+    b.textContent = c.label;
+    b.title = c.label.replace(/[^A-Za-z ]/g, '').trim() + ' episodes';
+    b.onclick = function() {{
+      if (activeCats.has(c.id)) {{ activeCats.delete(c.id); b.classList.remove('active'); }}
+      else {{ activeCats.add(c.id); b.classList.add('active'); }}
+      filter();
+    }};
+    box.appendChild(b);
+  }}
+}}
+
 document.getElementById('toggle-posters').onclick = function() {{
   postersVisible = !postersVisible;
   this.textContent = postersVisible ? 'Hide posters' : 'Show posters';
@@ -861,6 +904,9 @@ function filter() {{
     if (show && carlosOnly) {{
       show = searchText[i].includes('carlos');
     }}
+    if (show && activeCats.size) {{
+      show = epCats[i].some(function(id) {{ return activeCats.has(id); }});
+    }}
     el.style.display = show ? '' : 'none';
     if (show) {{
       count++;
@@ -897,6 +943,7 @@ function debounceFilter() {{
 }}
 document.getElementById('search').addEventListener('input', debounceFilter);
 document.getElementById('ep-filter').addEventListener('input', debounceFilter);
+renderCatButtons();
 filter();
 </script>
 </body>

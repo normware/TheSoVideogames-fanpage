@@ -737,7 +737,6 @@ const CATEGORIES = [
   {{ id: 'e3',       label: '🎮 E3',        re: /\\be3\\b/i }},
   {{ id: 'mailbag',  label: '💌 Mailbag',   re: /mail\\s*bag|mailbag|listener\\s*(?:created|qs?|questions?|mail)|fan\\s*mail|community|q\\s*&?\\s*a|\\bqa\\b|question\\s*time/i }},
   {{ id: 'specials', label: '🎁 Specials',  re: /\\bbonus\\b|\\bspecial\\b|micro-?sode/i }},
-  {{ id: 'souls',    label: '⚔️ Souls',     re: /\\bsouls\\b|souls-like|soulslike|elden ring/i }},
   {{ id: 'chicken',  label: '🐔 Chicken',   re: /chicken/i }},
   {{ id: 'trek',     label: '🪐 Star Trek', re: /star trek/i }},
   {{ id: 'unnumbered', label: '#️⃣ Unnumbered', re: null }},

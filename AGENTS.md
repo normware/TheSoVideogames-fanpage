@@ -19,4 +19,4 @@ open index.html
 
 - RSS returns 366 / 486 episodes (pre-2019 not in feed)
 - HTML descriptions preserved in `index.html`
-- Game extraction uses Groq API (`llama-3.1-8b-instant`) via `GROQ_API_KEY`; `GROQ_MODEL` can override the default intentionally
+- Game extraction uses Groq API via `GROQ_API_KEY` and automatically selects the cheapest available preferred model; `GROQ_MODEL` can override the default intentionally

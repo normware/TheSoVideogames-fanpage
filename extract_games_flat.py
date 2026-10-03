@@ -11,7 +11,13 @@ import time, ssl
 from pathlib import Path
 
 API_URL = "https://api.groq.com/openai/v1/chat/completions"
+MODELS_URL = "https://api.groq.com/openai/v1/models"
 DEFAULT_MODEL = "llama-3.1-8b-instant"
+MODEL_PREFERENCE = [
+    "llama-3.1-8b-instant",
+    "openai/gpt-oss-20b",
+    "llama-3.3-70b-versatile",
+]
 ctx = ssl._create_unverified_context()
 EMPTY_KEY = "__empty__"
 
@@ -125,12 +131,33 @@ def extract_games(episode: dict, model: str, token: str) -> list:
             return [], False
 
 
+def choose_model(token: str) -> str:
+    """Choose the cheapest preferred model available to this Groq project."""
+    req = urllib.request.Request(
+        MODELS_URL,
+        headers={
+            "Authorization": f"Bearer {token}",
+            "User-Agent": "sovideogames-fanpage/1.0",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30, context=ctx) as resp:
+            available = {item.get("id") for item in json.loads(resp.read()).get("data", [])}
+        for model in MODEL_PREFERENCE:
+            if model in available:
+                return model
+        print("Warning: no preferred model is available; using the default model.")
+    except Exception as e:
+        print(f"Warning: could not list Groq models ({e}); using the default model.")
+    return DEFAULT_MODEL
+
+
 def main():
     parser = argparse.ArgumentParser(description="Extract games → Flat JSON via Groq")
     parser.add_argument("-i", "--input", default="episodes.json", help="Input JSON file")
     parser.add_argument("-o", "--output", default="games_flat.json", help="Output flat JSON file")
-    parser.add_argument("-m", "--model", default=os.environ.get("GROQ_MODEL", DEFAULT_MODEL),
-                        help=f"Groq model (default: {DEFAULT_MODEL}; override with GROQ_MODEL)")
+    parser.add_argument("-m", "--model", default=None,
+                        help=f"Groq model (default: cheapest available; override with GROQ_MODEL or this option)")
     parser.add_argument("--token", default="",
                         help="Groq API key (defaults to GROQ_API_KEY env var)")
     parser.add_argument("--force", action="store_true",
@@ -173,14 +200,15 @@ def main():
         print("Nothing to process. Use --force to re-run everything.")
         return
 
-    print(f"Processing {len(to_process)} episodes → {args.output} (model: {args.model})")
+    model = args.model or os.environ.get("GROQ_MODEL") or choose_model(token)
+    print(f"Processing {len(to_process)} episodes → {args.output} (model: {model})")
 
     results = existing.copy() if not args.force else {}
     failures = 0
 
     for i, ep in enumerate(to_process, 1):
         ep_id = str(ep["episode"])
-        games, ok = extract_games(ep, args.model, token)
+        games, ok = extract_games(ep, model, token)
         if not ok:
             failures += 1
         else:

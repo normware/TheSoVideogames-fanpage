@@ -105,6 +105,10 @@ def extract_games(episode: dict, model: str, token: str) -> list:
             games = result.get("games", []) if isinstance(result, dict) else []
             return post_process(games), True
         except urllib.error.HTTPError as e:
+            try:
+                detail = e.read().decode("utf-8", errors="replace").strip()
+            except Exception:
+                detail = ""
             if e.code == 429 and attempt < 2:
                 wait = int(e.headers.get("Retry-After", "") or 0) if e.headers.get("Retry-After") else 0
                 if not wait or wait <= 0:
@@ -113,7 +117,8 @@ def extract_games(episode: dict, model: str, token: str) -> list:
                 print(f"\nRate limited on episode {episode.get('episode')}, waiting {wait}s...")
                 time.sleep(wait)
             else:
-                print(f"\nError on episode {episode.get('episode')}: {e}")
+                suffix = f" — {detail}" if detail else ""
+                print(f"\nError on episode {episode.get('episode')}: HTTP {e.code}{suffix}")
                 return [], False
         except Exception as e:
             print(f"\nError on episode {episode.get('episode')}: {e}")

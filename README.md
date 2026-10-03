@@ -193,7 +193,7 @@ export $(cat .env | xargs)   # or use direnv, or set them in your shell rc
 ## Notes
 
 - **366 / 486** episodes in feed (pre-2019 not in RSS)
-- Game extraction uses **Groq API** (free tier, `llama-3.3-70b-versatile`) via `GROQ_API_KEY`
+- Game extraction uses **Groq API** (`llama-3.1-8b-instant`) via `GROQ_API_KEY`; set `GROQ_MODEL` only when intentionally selecting another model
 - Poster enrichment uses **Steam Store API** (free, no key needed)
 - Set `RAWG_API_KEY` env var for better poster coverage (free at rawg.io/apidocs)
 - Game artwork © respective publishers

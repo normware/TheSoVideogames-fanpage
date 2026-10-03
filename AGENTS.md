@@ -13,10 +13,10 @@ open index.html
 
 `fetch.py` pulls RSS (paginated from page 0), sanitizes safe HTML tags, writes `episodes.json`. `build.py` reads that and writes `index.html` with search, highlights, dark mode, episode-number filter, and a Statistics tab with 20 fun facts computed at build time. Count shows `N / 486 episodes`.
 
-`extract_games_flat.py` reads `episodes.json` and outputs `games_flat.json` — a flat dict mapping episode numbers to arrays of game titles extracted via the Groq API (free tier, `llama-3.3-70b-versatile`). Run with `--force` to re-process all episodes. `merge_overrides.py` reads `games_overrides.json` (flat list of game titles) and injects them into the `__manual__` key in `games_flat.json` so `backfill_games.py` can find them in episode descriptions, then clears the override file. `backfill_games.py` reads `games_flat.json` and scans episode descriptions for known game names the LLM might have missed, filling them in. `distinct_games.py` reads `games_flat.json` and outputs `distinct_games.json` — an alphabetically sorted list of all unique games. `enrich_games.py` reads `distinct_games.json` and fetches poster URLs from the Steam API (free, no key needed).
+`extract_games_flat.py` reads `episodes.json` and outputs `games_flat.json` — a flat dict mapping episode numbers to arrays of game titles extracted via the Groq API (`llama-3.1-8b-instant`). Run with `--force` to re-process all episodes. `merge_overrides.py` reads `games_overrides.json` (flat list of game titles) and injects them into the `__manual__` key in `games_flat.json` so `backfill_games.py` can find them in episode descriptions, then clears the override file. `backfill_games.py` reads `games_flat.json` and scans episode descriptions for known game names the LLM might have missed, filling them in. `distinct_games.py` reads `games_flat.json` and outputs `distinct_games.json` — an alphabetically sorted list of all unique games. `enrich_games.py` reads `distinct_games.json` and fetches poster URLs from the Steam API (free, no key needed).
 
 ## Notes
 
 - RSS returns 366 / 486 episodes (pre-2019 not in feed)
 - HTML descriptions preserved in `index.html`
-- Game extraction uses Groq API (free tier) via `GROQ_API_KEY`
+- Game extraction uses Groq API (`llama-3.1-8b-instant`) via `GROQ_API_KEY`; `GROQ_MODEL` can override the default intentionally

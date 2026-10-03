@@ -11,6 +11,7 @@ import time, ssl
 from pathlib import Path
 
 API_URL = "https://api.groq.com/openai/v1/chat/completions"
+DEFAULT_MODEL = "llama-3.1-8b-instant"
 ctx = ssl._create_unverified_context()
 EMPTY_KEY = "__empty__"
 
@@ -123,8 +124,8 @@ def main():
     parser = argparse.ArgumentParser(description="Extract games → Flat JSON via Groq")
     parser.add_argument("-i", "--input", default="episodes.json", help="Input JSON file")
     parser.add_argument("-o", "--output", default="games_flat.json", help="Output flat JSON file")
-    parser.add_argument("-m", "--model", default="llama-3.3-70b-versatile",
-                        help="Groq model (default: llama-3.3-70b-versatile)")
+    parser.add_argument("-m", "--model", default=os.environ.get("GROQ_MODEL", DEFAULT_MODEL),
+                        help=f"Groq model (default: {DEFAULT_MODEL}; override with GROQ_MODEL)")
     parser.add_argument("--token", default="",
                         help="Groq API key (defaults to GROQ_API_KEY env var)")
     parser.add_argument("--force", action="store_true",

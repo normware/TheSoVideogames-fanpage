@@ -166,6 +166,9 @@
     "steam_id": 1252240,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1252240/capsule_231x87.jpg?t=1731176057"
   },
+  "Aeriala: Wings of Delivery": {
+    "poster": null
+  },
   "Aero the Acro-Bat": {
     "poster": null
   },
@@ -1291,6 +1294,10 @@
   },
   "Control: AWE": {
     "poster": null
+  },
+  "Control: Resonant": {
+    "steam_id": 3669870,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3669870/867a73afa5f21c28aaa14e9b0a4d895c540d4a0c/capsule_231x87.jpg?t=1790673363"
   },
   "Control: The Foundation": {
     "poster": null
@@ -2929,6 +2936,10 @@
     "steam_id": 1117670,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1117670/capsule_231x87.jpg?t=1726582514"
   },
+  "Good Pizza, Great Pizza": {
+    "steam_id": 770810,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/770810/capsule_231x87.jpg?t=1781152257"
+  },
   "Goodbye, Volcano High": {
     "steam_id": 1310330,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1310330/capsule_231x87.jpg?t=1758723684"
@@ -2968,6 +2979,10 @@
   "Graveyard Keeper": {
     "steam_id": 599140,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/599140/cd8cb8097f236a6cfcaa2a08381f31775693fac1/capsule_231x87_alt_assets_4.jpg?t=1776259988"
+  },
+  "Graveyard Keeper 2": {
+    "steam_id": 4358690,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4358690/c74bedb07502eb35eedcb3990e44c9593875a1ef/capsule_231x87.jpg?t=1790169326"
   },
   "Graveyard Keeper: Last Journey Ed.": {
     "poster": null
@@ -3027,6 +3042,10 @@
     "steam_id": 1911860,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1911860/93ad0ea1eceef915c4b217918b54c46f9bb555e0/capsule_231x87.jpg?t=1777283024"
   },
+  "Ground Zero Hero": {
+    "steam_id": 2570580,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2570580/f4c83dd016d40b91484bc213e2004556cb95e90b/capsule_231x87.jpg?t=1790970203"
+  },
   "Grow Up": {
     "steam_id": 426790,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/426790/capsule_231x87.jpg?t=1773071931"
@@ -3040,6 +3059,9 @@
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/661680/capsule_231x87.jpg?t=1745503324"
   },
   "GTA 3": {
+    "poster": null
+  },
+  "GTA6": {
     "poster": null
   },
   "GTA: Definitive Edition": {
@@ -3151,6 +3173,10 @@
   "Haven": {
     "steam_id": 979110,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/979110/54abf3d574c310a2e73cd89734fb4cbd3b6a21ff/capsule_231x87.jpg?t=1778684449"
+  },
+  "Hazard Pay": {
+    "steam_id": 2692620,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2692620/cb2be18097157da0501a2303129c97d76877d70c/capsule_231x87.jpg?t=1789043073"
   },
   "Heave Ho 2": {
     "steam_id": 2802740,
@@ -3629,6 +3655,10 @@
   "Kathy Rain": {
     "steam_id": 370910,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/370910/capsule_231x87.jpg?t=1726577236"
+  },
+  "Keep Driving": {
+    "steam_id": 2756920,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2756920/66761a59e36c29839be0a2917df4a2dbac6620e8/capsule_231x87.jpg?t=1779368217"
   },
   "Keeper's Toll": {
     "steam_id": 2002220,
@@ -4495,6 +4525,10 @@
     "steam_id": 1102190,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1102190/capsule_231x87.jpg?t=1761065288"
   },
+  "Monsters are Coming": {
+    "steam_id": 2934220,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2934220/4b9ef68825ede2cdc94251d06a065e0fcec34dea/capsule_231x87.jpg?t=1788869989"
+  },
   "Moo Lander": {
     "steam_id": 1080040,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1080040/capsule_231x87.jpg?t=1682337951"
@@ -4506,6 +4540,10 @@
   "Moonlighter": {
     "steam_id": 2350790,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2350790/3524524545ff53b6b749e240bd4743345d797a4e/capsule_231x87.jpg?t=1776174704"
+  },
+  "Moonlighter 2": {
+    "steam_id": 2350790,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2350790/cec652d6a85f26a1db23bd26c5f5e8b2c69c4f6a/capsule_231x87.jpg?t=1789131935"
   },
   "Moons of Darsalon": {
     "steam_id": 1234180,
@@ -4542,6 +4580,14 @@
   "Mortal Shell": {
     "steam_id": 1110910,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1110910/capsule_231x87.jpg?t=1773766575"
+  },
+  "Mortal Shell 2": {
+    "steam_id": 2584270,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2584270/be45d87c9974a36f690480bceb01f03987a0c23a/capsule_231x87.jpg?t=1788251111"
+  },
+  "Mortal Shell II": {
+    "steam_id": 2584270,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2584270/be45d87c9974a36f690480bceb01f03987a0c23a/capsule_231x87.jpg?t=1788251111"
   },
   "Mosaic": {
     "steam_id": 3874230,
@@ -4953,6 +4999,10 @@
     "steam_id": 1167680,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1167680/capsule_231x87.jpg?t=1772111526"
   },
+  "Order Automatica": {
+    "steam_id": 2105840,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2105840/c6c9f319b74554a7cfeda7a4222969d8ba42d8c9/capsule_231x87.jpg?t=1790680794"
+  },
   "Oregon Trail (2024)": {
     "poster": null
   },
@@ -5243,6 +5293,10 @@
   "Ponpu": {
     "steam_id": 1261530,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1261530/capsule_231x87.jpg?t=1738068633"
+  },
+  "Port of Jumanah": {
+    "steam_id": 2998920,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2998920/dc5050bb080a4f3c1ea4a276ea4b54172d8a853e/capsule_231x87.jpg?t=1788795781"
   },
   "Portal": {
     "steam_id": 620,
@@ -5909,6 +5963,10 @@
     "steam_id": 1979440,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1979440/capsule_231x87.jpg?t=1744601452"
   },
+  "Sandwalkers": {
+    "steam_id": 2995230,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2995230/capsule_231x87.jpg?t=1778506398"
+  },
   "Saros": {
     "poster": null
   },
@@ -6082,6 +6140,10 @@
   "Shape Suitable": {
     "poster": null
   },
+  "Shard Squad": {
+    "steam_id": 3363560,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3363560/e7c40f8d0611ab9ed90aca6f0cea16eceaa159ec/capsule_231x87.jpg?t=1783040096"
+  },
   "Shattered Lights": {
     "steam_id": 1057720,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1057720/capsule_231x87.jpg?t=1583249031"
@@ -6173,6 +6235,10 @@
   "Sir Lovelot": {
     "steam_id": 1055170,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1055170/capsule_231x87.jpg?t=1716873091"
+  },
+  "Sizeable": {
+    "steam_id": 1333910,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1333910/capsule_231x87.jpg?t=1786109813"
   },
   "Skab'ma": {
     "steam_id": 1665280,
@@ -6572,6 +6638,10 @@
     "steam_id": 1286830,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286830/capsule_231x87.jpg?t=1776790854"
   },
+  "Star Wars: Zero Company": {
+    "steam_id": 2075800,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2075800/56484e8832119b4b37b3fa3a6a5ec23209cd835c/capsule_231x87.jpg?t=1790340688"
+  },
   "Starbase Startopia": {
     "poster": null
   },
@@ -6886,6 +6956,10 @@
   "Tales of Zestiria": {
     "steam_id": 351970,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/351970/capsule_231x87.jpg?t=1718967588"
+  },
+  "Talespinner": {
+    "steam_id": 4039370,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4039370/288e3f37f65c20b41e559b1d7d88bccb087acfbf/capsule_231x87.jpg?t=1784724249"
   },
   "Talisman: Digital Edition": {
     "steam_id": 247000,
@@ -7311,6 +7385,10 @@
     "steam_id": 1627570,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1627570/eee6343d7a26cea6e2bd2c241300f971a526ba31/capsule_231x87.jpg?t=1757545827"
   },
+  "The Posthumous Investigation": {
+    "steam_id": 2466900,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2466900/918931206a7909c16a87e83dd8ba55547743a29d/capsule_231x87.jpg?t=1787161650"
+  },
   "The Precinct": {
     "steam_id": 490110,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/490110/31a13201e1a9e050ec1d6cbc6032b7cc39c902e5/capsule_231x87_alt_assets_4.jpg?t=1777626842"
@@ -7318,6 +7396,10 @@
   "The Red Strings Club": {
     "steam_id": 589780,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/589780/capsule_231x87.jpg?t=1728690203"
+  },
+  "The Relic: First Guardian": {
+    "steam_id": 2827820,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2827820/cf2b6804abc0ded2bd2a47861f3812eddb942045/capsule_231x87.jpg?t=1789741761"
   },
   "The Secret Mine": {
     "steam_id": 395160,

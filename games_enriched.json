@@ -671,6 +671,10 @@
   "Bio Inc. Nemesis": {
     "poster": null
   },
+  "Bio-Eden": {
+    "steam_id": 3265840,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3265840/6e03a5835dd00aadf0b80b0f9f1d95114794d664/capsule_231x87.jpg?t=1788874528"
+  },
   "Biomutant": {
     "steam_id": 597820,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/597820/capsule_231x87.jpg?t=1696421418"
@@ -1445,6 +1449,10 @@
     "steam_id": 3322630,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3322630/99b06320f63645eacb74f190b6b937992df7450e/capsule_231x87.jpg?t=1783574407"
   },
+  "Culdcept: the First": {
+    "steam_id": 3825600,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3825600/a66ee67e66adc0a331b28c2a782cf5a292bb444b/capsule_231x87.jpg?t=1785496709"
+  },
   "Cult of the Lamb": {
     "steam_id": 1313140,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1313140/1ac7c83bd1ce239a12d8e67b8ebc45765bb60319/capsule_231x87.jpg?t=1769836674"
@@ -1736,6 +1744,10 @@
   "Deflector": {
     "steam_id": 1736550,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1736550/capsule_231x87.jpg?t=1727716569"
+  },
+  "Degenerate Gamblers": {
+    "steam_id": 2400510,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2400510/capsule_231x87.jpg?t=1785879501"
   },
   "Deity Driving": {
     "steam_id": 1213460,
@@ -2112,6 +2124,10 @@
   "Dungeon of the Endless": {
     "steam_id": 249050,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/249050/capsule_231x87.jpg?t=1762448284"
+  },
+  "Dungeons": {
+    "steam_id": 1912410,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1912410/a189cb1a47d619baeb962ede3362330f81f24e5f/capsule_231x87.jpg?t=1790998164"
   },
   "Dungeons of Dreadrock": {
     "steam_id": 1896880,
@@ -2623,6 +2639,10 @@
   "Flower": {
     "steam_id": 1896700,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1896700/ec80c7b43b81e3e3fff7618b9c741babcd9fa5f2/capsule_231x87.jpg?t=1765310909"
+  },
+  "Flowstone Saga": {
+    "steam_id": 1372000,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1372000/capsule_231x87.jpg?t=1751050914"
   },
   "Fluffy Horde": {
     "steam_id": 777880,

@@ -1733,6 +1733,10 @@
     "steam_id": 548430,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/548430/capsule_231x87.jpg?t=1775555380"
   },
+  "Deep Rock Galactic Survivor": {
+    "steam_id": 2321470,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2321470/82a1a92836c83b32f83ceb8bff5f9133efb98442/capsule_231x87.jpg?t=1790750403"
+  },
   "Deep Sky Derelicts": {
     "steam_id": 698640,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/698640/capsule_231x87.jpg?t=1765383822"
@@ -2276,6 +2280,9 @@
     "steam_id": 2243110,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2243110/515e0d71027109a637c6f3730674a54068bbaf1a/capsule_231x87.jpg?t=1770340227"
   },
+  "End of Abyss": {
+    "poster": null
+  },
   "Ender Lilies": {
     "steam_id": 1369630,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1369630/capsule_231x87.jpg?t=1713433509"
@@ -2674,6 +2681,10 @@
   "Foregone": {
     "steam_id": 1000760,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1000760/capsule_231x87.jpg?t=1637670091"
+  },
+  "Forever Ago": {
+    "steam_id": 1215940,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1215940/fcac2e5dedea70175b16964b82cc70bdec730513/capsule_231x87.jpg?t=1791579249"
   },
   "Forgive Me, Father": {
     "steam_id": 1590910,
@@ -3482,6 +3493,10 @@
   "Inazuma Eleven": {
     "steam_id": 2799860,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2799860/9ee2aa35c24c19588eec70c6f7ff94f6efa26b1f/capsule_231x87.jpg?t=1764296831"
+  },
+  "Increbraintal": {
+    "steam_id": 3863830,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3863830/e40e955a8661f8b94cb31dc6b9fd1c4583ec7338/capsule_231x87.jpg?t=1786559144"
   },
   "Indiana Jones & the Great Circle": {
     "steam_id": 2677660,
@@ -6653,6 +6668,10 @@
   "Star Wars Outlaws": {
     "steam_id": 2842040,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2842040/9e887b6e39c690a305e509e598a125cbc6b2bd1c/capsule_231x87.jpg?t=1773407100"
+  },
+  "Star Wars: Galactic Racer": {
+    "steam_id": 4078430,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4078430/13ac6002a7cd1c867f8bf2f650101fe9d91ce4f9/capsule_231x87.jpg?t=1791388584"
   },
   "Star Wars: The Old Republic": {
     "steam_id": 1286830,

@@ -2662,6 +2662,10 @@
   "FNAF: Into the Pit": {
     "poster": null
   },
+  "Folk Hero": {
+    "steam_id": 2342150,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2342150/f0a6cef504cd2978dd7afe1dd01d10823848b70b/capsule_231x87.jpg?t=1792736581"
+  },
   "For the King": {
     "steam_id": 527230,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/527230/6fcff14bc11c14563d7b4fe3390c59ef193f4d05/capsule_231x87_alt_assets_14.jpg?t=1762445651"
@@ -7270,6 +7274,10 @@
   "The Isle Tide Hotel": {
     "steam_id": 2000090,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2000090/capsule_231x87.jpg?t=1727964070"
+  },
+  "The Killing Stone": {
+    "steam_id": 2781470,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2781470/2b251d1e56f2ae738c652d00e0ad92b131f4a4af/capsule_231x87.jpg?t=1792568599"
   },
   "The Kindeman Remedy": {
     "steam_id": 2055410,

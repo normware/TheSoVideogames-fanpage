@@ -770,6 +770,10 @@
     "steam_id": 1189800,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1189800/capsule_231x87.jpg?t=1776350195"
   },
+  "Blood Dungeon": {
+    "steam_id": 2431080,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2431080/dc74858eaedfd7e54d15033f0fcfe55fdaf5226d/capsule_231x87.jpg?t=1788324465"
+  },
   "Blood West": {
     "steam_id": 1587130,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1587130/33bac2ab86d7280570fe034a1bacd3bb3412c54d/capsule_231x87.jpg?t=1767218148"
@@ -3197,6 +3201,10 @@
     "steam_id": 600610,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/600610/capsule_231x87.jpg?t=1725010019"
   },
+  "Hard West II": {
+    "steam_id": 1282410,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1282410/capsule_231x87.jpg?t=1750073661"
+  },
   "Hardcore Mecha": {
     "steam_id": 746580,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/746580/capsule_231x87.jpg?t=1661221178"
@@ -5392,6 +5400,10 @@
   "Prey: TranStar VR": {
     "poster": null
   },
+  "Primal Planet": {
+    "steam_id": 2350270,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2350270/capsule_231x87.jpg?t=1790073995"
+  },
   "Primordia": {
     "steam_id": 3011360,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3011360/559f579eb632257133303bbcc903fcd3bf7d60c9/capsule_231x87.jpg?t=1751567633"
@@ -6840,6 +6852,10 @@
     "steam_id": 1035560,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1035560/capsule_231x87.jpg?t=1725377739"
   },
+  "Stupid Never Dies": {
+    "steam_id": 3486530,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3486530/6ecaf52004ceb92cc994f3c0d452688056f7a231/capsule_231x87.jpg?t=1792722824"
+  },
   "Subdivision Infinity": {
     "steam_id": 908790,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/908790/capsule_231x87.jpg?t=1643320980"
@@ -8127,6 +8143,10 @@
   },
   "Warhammer 40K: Inquisitor – Martyr": {
     "poster": null
+  },
+  "Warhammer Survivors": {
+    "steam_id": 3669620,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3669620/10d13658e3bbef16b8bbcef51aa6965377be1359/capsule_231x87.jpg?t=1794485359"
   },
   "Warhammer: Age of Sigmar — Storm Ground": {
     "steam_id": 1233590,

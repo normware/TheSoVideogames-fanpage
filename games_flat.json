@@ -2206,7 +2206,8 @@
     "Unavowed",
     "Valheim",
     "Greedfall",
-    "Rage"
+    "Rage",
+    "Hook"
   ],
   "241": [
     "Greedfall",
@@ -3248,7 +3249,8 @@
     "Stories from Sol: the Gun-Dog",
     "Vampire Survivors",
     "Gears Tactics",
-    "Elden Ring"
+    "Elden Ring",
+    "Hook"
   ],
   "78": [
     "Sleeping Dogs",
@@ -3373,7 +3375,9 @@
     "Bloodborne"
   ],
   "125": [],
-  "124": [],
+  "124": [
+    "Hook"
+  ],
   "119": [
     "Monster Hunter 4 Ultimate",
     "Danganronpa: Another Episode",
@@ -4107,5 +4111,18 @@
     "Primal Planet",
     "Stupid Never Dies",
     "Hard West II"
+  ],
+  "516": [
+    "Stupid Never Dies",
+    "Hook",
+    "Dark Rail",
+    "Spiritfarer",
+    "Queen’s Domain",
+    "Duskpunk",
+    "Where the Seeds Fall"
+  ],
+  "515": [
+    "Grand Theft Auto VI",
+    "GTA VI"
   ]
 }

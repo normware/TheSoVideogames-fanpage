@@ -1565,6 +1565,10 @@
     "steam_id": 2453840,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2453840/2d97b757cee9c9626f8c56a418d8c865a29a1a00/capsule_231x87.jpg?t=1766179713"
   },
+  "Dark Rail": {
+    "steam_id": 4553620,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553620/a5c72960e8793121516b311e3c16e85f6b67fa3a/capsule_231x87.jpg?t=1795017826"
+  },
   "Dark Souls 2 Crown of the Sunken King": {
     "steam_id": 271942,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/271942/capsule_231x87.jpg?t=1721683384"
@@ -2164,6 +2168,10 @@
   "Dusk": {
     "steam_id": 1974520,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1974520/capsule_231x87.jpg?t=1771872881"
+  },
+  "Duskpunk": {
+    "steam_id": 2610880,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2610880/000b81fbce9f1b01a19ee1720a6c76d81f7218aa/capsule_231x87.jpg?t=1786967224"
   },
   "Dustwind": {
     "steam_id": 3110370,
@@ -3023,6 +3031,10 @@
     "steam_id": 2157560,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2157560/capsule_231x87.jpg?t=1770692361"
   },
+  "Grand Theft Auto VI": {
+    "steam_id": 1546990,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1546990/capsule_231x87.jpg?t=1781138647"
+  },
   "Grapple Dog": {
     "steam_id": 1345860,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1345860/capsule_231x87.jpg?t=1770300662"
@@ -3110,6 +3122,9 @@
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/661680/capsule_231x87.jpg?t=1745503324"
   },
   "GTA 3": {
+    "poster": null
+  },
+  "GTA VI": {
     "poster": null
   },
   "GTA6": {
@@ -3386,6 +3401,10 @@
   },
   "Honkai Star Rail": {
     "poster": null
+  },
+  "Hook": {
+    "steam_id": 1130410,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1130410/capsule_231x87.jpg?t=1755126094"
   },
   "Horace": {
     "steam_id": 629090,
@@ -5498,6 +5517,10 @@
     "steam_id": 4037760,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4037760/5e84fb4cb4868327818d2b94745dee71ccb906ac/capsule_231x87.jpg?t=1764950896"
   },
+  "Queen’s Domain": {
+    "steam_id": 1799840,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1799840/a6f01f7863ee0be19fa710061f41799b84c1f371/capsule_231x87.jpg?t=1795428375"
+  },
   "Racine": {
     "steam_id": 2428790,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2428790/capsule_231x87.jpg?t=1778517686"
@@ -6633,6 +6656,10 @@
   "Spirit Swap: Lofi Beats To Match-3 To": {
     "steam_id": 1592170,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1592170/781b59084efdcd11133ee90e7b3d003164442fca/capsule_231x87.jpg?t=1754057708"
+  },
+  "Spiritfarer": {
+    "steam_id": 972660,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/972660/capsule_231x87.jpg?t=1752503178"
   },
   "Spitkiss": {
     "steam_id": 949770,
@@ -8300,6 +8327,10 @@
   "Where Cards Fall": {
     "steam_id": 589450,
     "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/589450/capsule_231x87.jpg?t=1636045036"
+  },
+  "Where the Seeds Fall": {
+    "steam_id": 4139580,
+    "poster": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4139580/cfd69910201f43449c8dba09c30a202221ff4b6d/capsule_231x87.jpg?t=1793936543"
   },
   "Where Winds Meet": {
     "steam_id": 3564740,
